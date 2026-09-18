@@ -1,0 +1,56 @@
+# ============================================================
+# En-têtes de sécurité — format Netlify / Cloudflare Pages
+#
+# Ce fichier est lu automatiquement au déploiement. Sur Vercel,
+# c'est vercel.json qui fait le même travail. Sur un serveur
+# Apache, reporter ces valeurs dans .htaccess.
+#
+# frame-ancestors et X-Frame-Options ne fonctionnent QUE depuis
+# un en-tête HTTP : une balise <meta> est ignorée par le
+# navigateur. C'est la raison d'être de ce fichier.
+# ============================================================
+
+/*
+  # Le site ne peut pas être affiché dans une iframe tierce.
+  # Protège contre le détournement de clic (clickjacking) : un
+  # site pirate ne peut pas superposer le formulaire de contact.
+  X-Frame-Options: DENY
+  Content-Security-Policy: frame-ancestors 'none'
+
+  # Le navigateur s'en tient au type déclaré du fichier et
+  # n'essaie pas de le deviner.
+  X-Content-Type-Options: nosniff
+
+  # L'URL complète n'est transmise qu'aux pages du site.
+  # Un lien sortant ne révèle que le domaine.
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Aucune API sensible n'est nécessaire à ce site.
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()
+
+  # HTTPS obligatoire pendant deux ans, sous-domaines compris.
+  # À n'activer qu'une fois le certificat en place et vérifié.
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+  # Isolation vis-à-vis des autres onglets et fenêtres.
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+
+# ---------- Cache ----------
+# Les médias et styles portent un nom stable : on les garde
+# longtemps en cache, mais on revalide les pages à chaque visite.
+
+/assets/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/video/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/css/*
+  Cache-Control: public, max-age=604800, must-revalidate
+
+/assets/js/*
+  Cache-Control: public, max-age=604800, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate

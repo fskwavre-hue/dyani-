@@ -1,0 +1,13 @@
+# ============================================================
+# Fichiers exclus du dépôt — et donc du déploiement Netlify
+# ============================================================
+
+# Médias d'origine fournis par le client. Conservés en local comme
+# archive de travail ; ils ne sont pas utilisés par le site et n'ont
+# rien à faire en ligne (7,5 Mo, et des rushes non destinés au public).
+src vid et photo/
+
+# Résidus de système
+Thumbs.db
+desktop.ini
+.DS_Store

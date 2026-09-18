@@ -1,0 +1,12 @@
+# ============================================================
+# Règles de redirection — format Netlify
+# Lues au déploiement, avant que le fichier statique ne soit servi.
+# ============================================================
+
+# Le README est un document de maintenance interne : notes de reprise,
+# arbitrages restés ouverts, fonctionnement des protections. Il est
+# versionné avec le site, donc présent dans le déploiement, mais il ne
+# doit pas être lisible publiquement. La règle renvoie vers l'accueil
+# avant que Netlify ne serve le fichier ; le « ! » force la règle même
+# lorsqu'un fichier existe à cette adresse.
+/README.md   /   301!
