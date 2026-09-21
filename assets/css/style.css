@@ -151,8 +151,6 @@ button{font-family:inherit;color:inherit;}
 .site-header.stuck .nav{height:68px;}
 
 .brand{display:flex;flex-direction:column;align-items:flex-start;background:none;border:0;padding:0;cursor:pointer;line-height:1.1;}
-.brand__n{font-family:var(--serif);font-size:21px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);}
-.brand__t{font-size:8.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted-l);margin-top:5px;}
 
 .nav__links{display:flex;align-items:center;gap:clamp(18px,2vw,32px);}
 .navlink{position:relative;background:none;border:0;padding:8px 0;font-size:14px;color:var(--muted);cursor:pointer;transition:color 260ms var(--e);}
@@ -253,28 +251,19 @@ button{font-family:inherit;color:inherit;}
 /* ============================================================
    6. INTERVENTIONS
    ============================================================ */
-.dom{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule-dark);border-bottom:1px solid var(--rule-dark);}
+.dom{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.5vw,22px);}
 .dom__c{
-  position:relative;padding:40px clamp(18px,2vw,30px) 46px;
-  border-right:1px solid var(--rule-dark);
+  position:relative;display:flex;flex-direction:column;
   transition:background 420ms var(--e);
 }
-.dom__c:first-child{padding-left:0;} .dom__c:last-child{padding-right:0;border-right:0;}
-.dom__c::before{content:"";position:absolute;top:-1px;left:0;right:0;height:1px;background:var(--terre-clair);transform:scaleX(0);transform-origin:left;transition:transform 480ms var(--e);}
-.dom__c:hover::before{transform:scaleX(1);}
-.dom__c > *{transition:transform 420ms var(--e);}
-.dom__c:hover > *{transform:translateY(-4px);}
 .dom__n{font-family:var(--serif);font-size:13px;letter-spacing:.14em;color:var(--terre-clair);margin-bottom:20px;}
 .dom__c h3{font-family:var(--serif);font-size:21px;color:var(--on-navy);margin-bottom:14px;line-height:1.24;min-height:2.5em;}
 .dom__c p{font-size:14px;color:var(--on-navy-muted);line-height:1.75;}
 @media (max-width:1000px){
   .dom{grid-template-columns:1fr 1fr;}
-  .dom__c{border-bottom:1px solid var(--rule-dark);}
-  .dom__c:nth-child(odd){padding-left:0;} .dom__c:nth-child(even){padding-right:0;border-right:0;}
-  .dom__c:nth-last-child(-n+2){border-bottom:0;}
   .dom__c h3{min-height:0;}
 }
-@media (max-width:620px){.dom{grid-template-columns:1fr;} .dom__c{padding-inline:0;border-right:0;}}
+@media (max-width:620px){.dom{grid-template-columns:1fr;}}
 
 /* ============================================================
    7. FORMATIONS
@@ -344,76 +333,33 @@ button{font-family:inherit;color:inherit;}
 }
 
 /* ============================================================
-   9. MÉTHODE — scène fixe, les sept étapes restent visibles
-   ============================================================ */
-.meth{position:relative;}
-.meth__stage{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(34px,5vw,76px);align-items:center;}
-
-/* état de repli : liste simple, sans script et sur petit écran */
-.meth__list{display:none;}
-.meth__panel{display:flex;flex-direction:column;}
-.meth__it{padding:26px 0;border-bottom:1px solid var(--border-fort);}
-.meth__it:last-child{border-bottom:0;}
-.meth__bar{display:block;height:1px;width:46px;background:var(--terre);margin-bottom:20px;}
-.meth__k{display:flex;align-items:baseline;gap:18px;margin-bottom:14px;}
-.meth__num{font-family:var(--serif);font-size:19px;color:var(--terre);letter-spacing:.06em;}
-.meth__it h3{font-family:var(--serif);font-size:clamp(24px,2.8vw,36px);color:var(--ink);}
-.meth__it p{font-size:15.5px;color:var(--muted);line-height:1.85;max-width:46ch;}
-
-/* mode scène : activé par le script sur grand écran */
-.meth.is-stage{height:calc(100vh + var(--steps) * var(--per));}
-.meth.is-stage .meth__stick{position:sticky;top:0;height:100vh;display:flex;align-items:center;}
-.meth.is-stage .meth__panel{position:relative;min-height:clamp(250px,36vh,340px);}
-.meth.is-stage .meth__it{
-  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
-  padding:0;border:0;opacity:0;transform:translateY(20px);pointer-events:none;
-  transition:opacity 560ms var(--e-out),transform 560ms var(--e-out);
-}
-.meth.is-stage .meth__it.on{opacity:1;transform:none;pointer-events:auto;}
-.meth.is-stage .meth__bar{width:0;transition:width 720ms var(--e-out) 140ms;}
-.meth.is-stage .meth__it.on .meth__bar{width:66px;}
-.meth.is-stage .meth__list{display:block;}
-
-/* sommaire des sept temps, toujours lisible */
-.meth__list li{
-  display:grid;grid-template-columns:30px 48px 1fr;align-items:center;gap:16px;
-  padding:15px 0;border-bottom:1px solid var(--border-fort);
-  color:var(--muted);transition:color 420ms var(--e);
-}
-.meth__list li:last-child{border-bottom:0;}
-.meth__list .n{font-family:var(--serif);font-size:14.5px;letter-spacing:.06em;}
-.meth__list .b{position:relative;height:1px;background:var(--border-fort);overflow:hidden;}
-.meth__list .b::after{content:"";position:absolute;inset:0;background:var(--terre);transform:scaleX(0);transform-origin:left;transition:transform 640ms var(--e);}
-.meth__list .t{font-size:14.5px;transition:color 420ms var(--e);}
-.meth__list li.done .b::after{transform:scaleX(1);}
-.meth__list li.now{color:var(--terre);}
-.meth__list li.now .b{height:2px;}
-.meth__list li.now .t{color:var(--ink);}
-
-@media (max-width:940px){
-  .meth,.meth.is-stage{height:auto!important;}
-  .meth.is-stage .meth__stick{position:static;height:auto;display:block;}
-  .meth.is-stage .meth__panel{position:static;min-height:0;}
-  .meth.is-stage .meth__it{position:static;opacity:1;transform:none;padding:26px 0;border-bottom:1px solid var(--border-fort);pointer-events:auto;}
-  .meth.is-stage .meth__it:last-child{border-bottom:0;}
-  .meth.is-stage .meth__bar{width:46px;}
-  .meth.is-stage .meth__list{display:none;}
-  .meth__stage{grid-template-columns:1fr;}
-}
-
-/* ============================================================
    10. FONDATEUR
    ============================================================ */
-.fond{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,5.5vw,84px);align-items:start;}
-.fond__t{max-width:18ch;margin-bottom:28px;}
-.fond__id{font-size:16px;color:var(--ink);margin-bottom:26px;}
+.fond{display:grid;grid-template-columns:1.32fr .68fr;gap:clamp(36px,5vw,78px);align-items:start;}
+.fond__t{max-width:20ch;margin-bottom:22px;}
+.fond__id{font-size:16px;color:var(--ink);}
 .fond__id b{font-weight:500;}
 .fond__b p + p{margin-top:20px;}
 .quote{
   margin:34px 0;padding-left:26px;border-left:2px solid var(--terre);
   font-family:var(--serif);font-size:clamp(21px,2.2vw,27px);line-height:1.4;color:var(--ink);
 }
-.fond .arch__img{aspect-ratio:3/4;}
+.s-navy .quote{color:var(--on-navy);}
+/* colonne des références, adossée au texte du fondateur */
+.fond__a{padding-top:8px;}
+.fond__at{
+  font-family:var(--sans);font-weight:600;font-size:11.5px;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+  padding-bottom:16px;border-bottom:1px solid var(--border);
+}
+.fond__a .refs{margin-top:22px;}
+
+@media (min-width:901px){
+  .fond__a{position:sticky;top:104px;}
+}
+@media (max-width:900px){
+  .fond{grid-template-columns:1fr;}
+}
 
 /* parcours */
 .cv{margin-top:clamp(44px,5vw,70px);border-top:1px solid var(--border);}
@@ -579,14 +525,11 @@ textarea.bin{min-height:96px;resize:vertical;line-height:1.7;}
 
 .site-footer{background:var(--navy-deep);color:var(--on-navy-muted);padding-block:clamp(56px,6vw,84px) 34px;}
 .foot__g{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px;padding-bottom:48px;border-bottom:1px solid rgba(243,241,236,.11);}
-.foot__n{display:block;font-family:var(--serif);font-size:21px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--on-navy);}
-.foot__t{display:block;font-size:8.5px;letter-spacing:.26em;text-transform:uppercase;margin-top:6px;}
 .foot__b{font-size:14px;line-height:1.8;margin-top:22px;max-width:32ch;}
 .site-footer h4{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--on-navy);font-weight:500;margin-bottom:20px;}
 .site-footer li{margin-bottom:13px;font-size:14px;}
 .lbtn{background:none;border:0;padding:0;font-size:14px;color:inherit;cursor:pointer;text-align:left;transition:color 260ms var(--e);}
 .lbtn:hover{color:var(--on-navy);}
-.soon{color:rgba(169,175,184,.5);}
 .foot__bt{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;padding-top:28px;font-size:12.5px;}
 @media (max-width:860px){.foot__g{grid-template-columns:1fr 1fr;gap:36px;}}
 @media (max-width:520px){.foot__g{grid-template-columns:1fr;}}
@@ -618,8 +561,6 @@ textarea.bin{min-height:96px;resize:vertical;line-height:1.7;}
   [data-rv],.stage{opacity:1!important;transform:none!important;}
   .arch__img::after{transform:scaleY(0)!important;}
   .arch__img img{transform:none!important;}
-  .step{opacity:1!important;}
-  .meth__side{position:static;}
 }/* ============================================================
    AJOUTS — Dyani Hospitality
    1. Sélecteur de langue
@@ -922,10 +863,7 @@ body.lbox-on{overflow:hidden;}
    sécurité du contenu — ce que ce site évite délibérément.
    ------------------------------------------------------------ */
 .u-m0{margin:0;}
-.u-w100{width:100%;}
 .u-mt-l{margin-top:22px;}
-.u-mt-xl{margin-top:clamp(44px,5vw,68px);}
-.u-mb-22{margin-bottom:22px;}
 .u-mb-26{margin-bottom:26px;}
 .u-mb-m{margin-bottom:clamp(34px,4.2vw,52px);}
 .u-mb-l{margin-bottom:clamp(40px,5vw,62px);}
@@ -1120,7 +1058,6 @@ body{font-family:var(--sans);font-weight:400;}
    6. EN-TÊTE
    ------------------------------------------------------------ */
 .site-header{backdrop-filter:saturate(1.4) blur(14px);}
-.brand__n{font-family:var(--serif);font-weight:700;letter-spacing:-.02em;}
 .navlink{font-weight:500;letter-spacing:0;font-size:14px;}
 .lang-sw{border-radius:100px;overflow:hidden;}
 .lang-sw a{font-weight:600;letter-spacing:.08em;}
@@ -1151,123 +1088,79 @@ body{font-family:var(--sans);font-weight:400;}
 
 
 /* ------------------------------------------------------------
-   9. SLIDER DE LA MÉTHODE
-   Défilement horizontal natif avec accroche (scroll-snap) :
-   le tactile et la molette fonctionnent sans code, les boutons
-   et le clavier viennent en complément.
+   9. MÉTHODE — les sept temps
+   Deux colonnes remplies en colonne d'abord (01→04, puis 05→07) :
+   l'ordre de lecture reste celui des numéros, et la section tient
+   en un écran au lieu de trois. Le filet est porté par chaque
+   étape ; les extrémités de chaque colonne s'estompent.
    ------------------------------------------------------------ */
-.mslider{--gap:clamp(16px,1.8vw,26px);}
-
-.mslider__head{
-  display:flex;align-items:center;justify-content:space-between;
-  gap:20px;flex-wrap:wrap;
-  margin-bottom:clamp(24px,3vw,38px);
+.steps{
+  --gut:clamp(46px,4.2vw,66px);
+  --pas:clamp(30px,2.7vw,36px);
+  display:grid;grid-template-columns:1fr 1fr;
+  grid-template-rows:repeat(4,auto);grid-auto-flow:column;
+  column-gap:clamp(28px,4vw,62px);
 }
 
-/* pastilles numérotées */
-.mslider__dots{
-  display:flex;flex-wrap:wrap;gap:8px;
-  list-style:none;margin:0;padding:0;
+.steps__i{
+  position:relative;
+  display:grid;grid-template-columns:var(--gut) 1fr;
+  align-items:start;gap:clamp(12px,1.4vw,22px);
+  padding:clamp(17px,1.8vw,23px) 0;
 }
-.mslider__dots button{
-  width:38px;height:38px;border-radius:50%;
-  border:1px solid var(--border-fort);background:transparent;
-  font-family:var(--sans);font-size:12px;font-weight:600;
-  color:var(--muted);cursor:pointer;
+
+/* le filet, derrière les pastilles */
+.steps__i::before{
+  content:"";position:absolute;z-index:0;
+  top:0;bottom:0;left:calc(var(--gut) / 2 - .5px);width:1px;
+  background:var(--border-fort);
+}
+/* haut de chaque colonne */
+.steps__i:first-child::before,
+.steps__i:nth-child(5)::before{
+  background:linear-gradient(to bottom,transparent 0,var(--border-fort) 34%);
+}
+/* bas de chaque colonne */
+.steps__i:nth-child(4)::before,
+.steps__i:nth-child(7)::before{
+  background:linear-gradient(to bottom,var(--border-fort) 0,transparent 100%);
+}
+
+.steps__i + .steps__i{border-top:1px solid var(--border);}
+/* la 5e ouvre la seconde colonne : pas de filet horizontal au-dessus */
+.steps__i:nth-child(5){border-top:0;}
+
+.steps__n{
+  position:relative;z-index:1;
   display:flex;align-items:center;justify-content:center;
-  transition:background 300ms var(--e),color 300ms var(--e),
-             border-color 300ms var(--e),transform 300ms var(--e-out);
+  width:var(--pas);height:var(--pas);
+  margin-left:calc(var(--gut) / 2 - var(--pas) / 2);
+  border:1px solid var(--border-fort);border-radius:50%;
+  background:var(--sable);
+  font-family:var(--serif);font-size:12px;letter-spacing:.06em;
+  color:var(--terre);
+  transition:border-color 400ms var(--e),background 400ms var(--e);
 }
-.mslider__dots button:hover{border-color:var(--ink);color:var(--ink);}
-.mslider__dots button[aria-current="true"]{
-  background:var(--ink);border-color:var(--ink);color:var(--chaux);
-  transform:scale(1.06);
-}
-.mslider__dots button:focus-visible{outline:2px solid var(--terre);outline-offset:3px;}
+.steps__i:hover .steps__n{border-color:var(--terre);background:var(--chaux);}
 
-/* compteur et flèches */
-.mslider__ctrl{display:flex;align-items:center;gap:12px;}
-.mslider__count{
-  font-family:var(--sans);font-size:12px;font-weight:600;
-  letter-spacing:.1em;color:var(--muted);
-  font-variant-numeric:tabular-nums;
-}
-.mslider__count i{font-style:normal;color:var(--border-fort);margin:0 2px;}
-.sbtn{
-  width:44px;height:44px;border-radius:50%;
-  border:1px solid var(--border-fort);background:transparent;
-  color:var(--ink);cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:background 300ms var(--e),color 300ms var(--e),
-             border-color 300ms var(--e),opacity 300ms var(--e);
-}
-.sbtn:hover:not(:disabled){background:var(--ink);border-color:var(--ink);color:var(--chaux);}
-.sbtn:disabled{opacity:.3;cursor:default;}
-.sbtn:focus-visible{outline:2px solid var(--terre);outline-offset:3px;}
+.steps__c{padding-top:2px;}
+.steps__t{font-size:clamp(19px,1.6vw,23px);margin-bottom:8px;}
+.steps__d{font-size:14.5px;color:var(--muted);line-height:1.7;}
 
-/* rail */
-.mslider__rail{
-  display:flex;
-  gap:var(--gap);
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;
-  scrollbar-width:none;
-  padding-bottom:4px;
-}
-.mslider__rail::-webkit-scrollbar{display:none;}
-.mslider__rail:focus-visible{outline:2px solid var(--terre);outline-offset:6px;border-radius:var(--r);}
-
-/* étape */
-.mslide{
-  scroll-snap-align:start;
-  flex:0 0 calc((100% - 2*var(--gap)) / 3);
-  background:var(--chaux);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  padding:clamp(24px,2.4vw,34px);
-  display:flex;flex-direction:column;
-  min-height:clamp(250px,26vw,310px);
-  transition:border-color 380ms var(--e),transform 380ms var(--e-out);
-}
-.mslide:hover{border-color:var(--border-fort);transform:translateY(-3px);}
-.mslide__n{
-  font-family:var(--sans);font-weight:700;font-size:12px;
-  letter-spacing:.14em;color:var(--terre);
-  margin-bottom:auto;
-}
-.mslide__t{
-  font-size:clamp(21px,2.1vw,27px);
-  margin:34px 0 13px;color:var(--ink);
-}
-.mslide__d{
-  font-family:var(--sans);font-size:14.5px;line-height:1.7;
-  color:var(--muted);margin:0;
-}
-
-/* barre de progression */
-.mslider__bar{
-  height:2px;background:var(--border);
-  margin-top:clamp(22px,2.4vw,32px);
-  border-radius:2px;overflow:hidden;
-}
-.mslider__bar span{
-  display:block;height:100%;width:33%;
-  background:var(--terre);border-radius:2px;
-  transition:width 320ms var(--e),transform 320ms var(--e);
-}
-
-@media (max-width:900px){
-  .mslide{flex-basis:calc((100% - var(--gap)) / 2);}
+/* une seule colonne : le flux redevient continu, les fondus aussi */
+@media (max-width:860px){
+  .steps{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row;}
+  .steps__i:nth-child(5){border-top:1px solid var(--border);}
+  .steps__i:nth-child(4)::before,
+  .steps__i:nth-child(5)::before{background:var(--border-fort);}
+  .steps__i:last-child::before{
+    background:linear-gradient(to bottom,var(--border-fort) 0,transparent 100%);
+  }
 }
 @media (max-width:620px){
-  .mslide{flex-basis:86%;}
-  .mslider__dots{display:none;}
-  .mslider__head{justify-content:space-between;}
-}
-@media (prefers-reduced-motion:reduce){
-  .mslider__rail{scroll-behavior:auto;}
-  .mslide:hover{transform:none;}
+  .steps__i::before{display:none;}
+  .steps__i{grid-template-columns:1fr;gap:12px;}
+  .steps__n{margin-left:0;}
 }
 
 
@@ -1395,7 +1288,6 @@ body{font-family:var(--sans);font-weight:400;}
 .doc__back:hover svg{transform:translateX(-3px);}
 .foot__a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule-dark);}
 .foot__a:hover{border-color:var(--on-navy-muted);}
-.lbtn--a{text-decoration:none;display:inline-block;}
 
 /* ============================================================
    EN-TÊTE — LOGO, BARRE GLISSANTE, MENU DÉROULANT
@@ -1564,4 +1456,101 @@ body{font-family:var(--sans);font-weight:400;}
 @media (prefers-reduced-motion:reduce){
   .nav__ind{transition:opacity 200ms;}
   .mmenu,.mlink{transition-duration:1ms!important;transition-delay:0ms!important;}
+}
+
+
+/* ------------------------------------------------------------
+   12. ÉTUDE DE CAS — LE CONSTANTIN
+   Un diptyque chantier / salle dressée, le périmètre de la
+   mission en liste, une galerie, puis ce qui reste après le
+   départ. Les images portent le rapport 4/5 ou 3/4 selon leur
+   rôle, jamais recadrées au point de perdre leur sujet.
+   ------------------------------------------------------------ */
+.cas__dip{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,32px);}
+.cas__f,.cas__gf{margin:0;}
+
+.cas__im{
+  position:relative;overflow:hidden;
+  border-radius:var(--r);border:1px solid var(--rule-dark);
+  aspect-ratio:3/2;background:var(--navy-deep);
+}
+/* les deux vues sont des salles en profondeur : le paysage leur va,
+   on ne perd que du plafond et du sol. */
+.cas__f .cas__im img{object-position:50% 46%;}
+.cas__im img{width:100%;height:100%;object-fit:cover;transition:transform 1100ms var(--e-out);}
+.cas__f:hover .cas__im img,.cas__gf:hover .cas__im img{transform:scale(1.04);}
+
+.cas__cap{margin-top:15px;font-size:13.5px;color:var(--on-navy-muted);line-height:1.65;}
+.cas__t{
+  display:inline-block;margin-right:10px;
+  font-family:var(--sans);font-weight:700;font-size:10.5px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--terre-clair);
+}
+
+/* périmètre de la mission */
+.cas__per{margin-top:clamp(44px,5vw,74px);}
+.cas__l{
+  display:grid;grid-template-columns:1fr 1fr;
+  column-gap:clamp(28px,4vw,62px);
+  border-top:1px solid var(--rule-dark);
+}
+.cas__li{
+  display:grid;grid-template-columns:clamp(44px,5vw,72px) 1fr;
+  gap:clamp(12px,1.6vw,26px);align-items:start;
+  padding:22px 0;border-bottom:1px solid var(--rule-dark);
+  transition:padding-left 420ms var(--e);
+}
+.cas__li:hover{padding-left:10px;}
+.cas__ln{font-family:var(--serif);font-size:12.5px;letter-spacing:.12em;color:var(--terre-clair);padding-top:4px;}
+.cas__lt{font-size:16.5px;color:var(--on-navy);margin-bottom:6px;}
+.cas__ld{font-size:14px;color:var(--on-navy-muted);line-height:1.72;}
+
+/* galerie */
+.cas__g{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:clamp(10px,1.4vw,20px);margin-top:clamp(44px,5vw,74px);
+}
+.cas__gf .cas__im{aspect-ratio:3/4;}
+.cas__gc{margin-top:12px;font-size:12.5px;color:var(--on-navy-muted);line-height:1.55;}
+
+/* ce qui reste après le départ */
+.cas__end{
+  display:grid;grid-template-columns:minmax(0,.52fr) minmax(0,1.48fr);
+  gap:clamp(22px,3.6vw,58px);align-items:center;
+  margin-top:clamp(44px,5vw,74px);
+}
+.cas__ep{max-width:330px;}
+.cas__ep .cas__im{aspect-ratio:2/3;}
+/* la source est très haute : on remonte le cadrage sur le sujet */
+.cas__ep .cas__im img{object-position:50% 26%;}
+
+@media (max-width:860px){
+  .cas__l{grid-template-columns:1fr;}
+}
+/* les vignettes tiennent leurs quatre colonnes jusqu au telephone :
+   en deux colonnes elles redeviendraient plus grandes que sur
+   ordinateur, ce qui desequilibrait la section. */
+@media (max-width:640px){
+  .cas__g{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:620px){
+  .cas__dip{grid-template-columns:1fr;}
+  .cas__end{grid-template-columns:1fr;}
+  .cas__ep{max-width:300px;margin-inline:auto;}
+}
+
+/* ------------------------------------------------------------
+   13. VUES AGRANDISSABLES
+   Les photographies du terrain et de l'etude de cas s'ouvrent
+   en plein ecran. Elles sont atteignables au clavier, d'ou
+   l'anneau de focus explicite.
+   ------------------------------------------------------------ */
+.tcard,
+#constantin figure,
+#constantin .cas__ep{cursor:zoom-in;}
+
+.tcard:focus-visible,
+#constantin figure:focus-visible,
+#constantin .cas__ep:focus-visible{
+  outline:2px solid var(--terre);outline-offset:6px;border-radius:var(--r);
 }

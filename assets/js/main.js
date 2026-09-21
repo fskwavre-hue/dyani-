@@ -166,83 +166,6 @@
     poser(actif());
   }
 
-  /* ---------- méthode : slider horizontal ----------
-     Le défilement est natif (scroll-snap) : le tactile, la molette et
-     le clavier fonctionnent sans code. Les boutons, les pastilles et la
-     barre de progression ne font que piloter et refléter ce défilement. */
-  var msl = document.getElementById('meth');
-  if (msl){
-    var rail  = document.getElementById('mtrack');
-    var dots  = Array.prototype.slice.call(document.querySelectorAll('#mdots button'));
-    var bprev = document.getElementById('mprev');
-    var bnext = document.getElementById('mnext');
-    var bar   = document.getElementById('mbar');
-    var cpt   = document.getElementById('mcount');
-    var slides = Array.prototype.slice.call(rail.querySelectorAll('.mslide'));
-    var total = slides.length;
-
-    function pas(){
-      if (slides.length < 2) return rail.clientWidth;
-      return slides[1].offsetLeft - slides[0].offsetLeft;
-    }
-    function visibles(){
-      return Math.max(1, Math.round(rail.clientWidth / pas()));
-    }
-    function index(){
-      return Math.round(rail.scrollLeft / pas());
-    }
-
-    function refleter(){
-      var i = index();
-      var v = visibles();
-      var dernier = Math.max(0, total - v);
-      var fin = rail.scrollLeft >= rail.scrollWidth - rail.clientWidth - 2;
-
-      bprev.disabled = rail.scrollLeft <= 2;
-      bnext.disabled = fin;
-
-      dots.forEach(function(d, k){
-        d.setAttribute('aria-current', String(k === i));
-      });
-
-      var deux = function(n){ return (n < 10 ? '0' : '') + n; };
-      cpt.innerHTML = deux(Math.min(i + 1, total)) + ' <i>/</i> ' + deux(total);
-
-      var p = dernier ? (Math.min(i, dernier) / dernier) : 1;
-      bar.style.width = Math.max(v / total, 0.08) * 100 + '%';
-      bar.style.transform = 'translateX(' + (p * (total - v) * 100) + '%)';
-    }
-
-    function aller(i){
-      rail.scrollTo({ left: Math.max(0, i) * pas(), behavior: doux ? 'smooth' : 'auto' });
-    }
-
-    bprev.addEventListener('click', function(){ aller(index() - 1); });
-    bnext.addEventListener('click', function(){ aller(index() + 1); });
-    dots.forEach(function(d){
-      d.addEventListener('click', function(){ aller(Number(d.dataset.i)); });
-    });
-
-    rail.addEventListener('keydown', function(e){
-      if (e.key === 'ArrowRight'){ e.preventDefault(); aller(index() + 1); }
-      if (e.key === 'ArrowLeft'){  e.preventDefault(); aller(index() - 1); }
-      if (e.key === 'Home'){ e.preventDefault(); aller(0); }
-      if (e.key === 'End'){  e.preventDefault(); aller(total - 1); }
-    });
-
-    var att = false;
-    rail.addEventListener('scroll', function(){
-      if (!att){ att = true; requestAnimationFrame(function(){ refleter(); att = false; }); }
-    }, { passive: true });
-
-    var minu;
-    window.addEventListener('resize', function(){
-      clearTimeout(minu); minu = setTimeout(refleter, 160);
-    });
-
-    refleter();
-  }
-
   /* ---------- lien de navigation actif ---------- */
   var liens = Array.prototype.slice.call(document.querySelectorAll('#navlinks .navlink'));
   var sections = liens.map(function(b){ return document.getElementById(b.dataset.go); }).filter(Boolean);
@@ -709,27 +632,49 @@
   /* ----------------------------------------------------------
      2. VISIONNEUSE PLEIN ÉCRAN
      ---------------------------------------------------------- */
-  var cartes = Array.prototype.slice.call(document.querySelectorAll('.tcard'));
   var lb = document.getElementById('lbox');
 
-  if (lb && cartes.length) {
+  if (lb) {
     var lbImg  = lb.querySelector('img');
     var lbCap  = lb.querySelector('.lbox__cap');
     var lbX    = lb.querySelector('.lbox__x');
     var lbPrev = lb.querySelector('.lbox__nav--p');
     var lbNext = lb.querySelector('.lbox__nav--n');
-    var idx = 0, avant = null;
+
+    /* La série ouverte. Les flèches ne circulent qu'à l'intérieur
+       d'une série : on ne passe pas du terrain à l'étude de cas. */
+    var serie = [], idx = 0, avant = null;
+
+    /* Deux formes de légende coexistent : les cartes du terrain
+       portent un titre et une description, les vues de l'étude de
+       cas une simple <figcaption>. À défaut, l'alternative textuelle
+       de l'image fait la légende. */
+    function legende(el) {
+      var t = el.querySelector('.tcard__t');
+      if (t) {
+        var d = el.querySelector('.tcard__d');
+        return '<b>' + t.textContent + '</b>' + (d ? d.textContent : '');
+      }
+      var f = el.querySelector('figcaption');
+      if (f) return f.textContent.trim();
+      var im = el.querySelector('img');
+      return im ? im.alt : '';
+    }
 
     function montrer(i) {
-      idx = (i + cartes.length) % cartes.length;
-      var c = cartes[idx];
+      if (!serie.length) return;
+      idx = (i + serie.length) % serie.length;
+      var c = serie[idx];
       var im = c.querySelector('img');
       lbImg.src = im.currentSrc || im.src;
       lbImg.alt = im.alt;
-      lbCap.innerHTML = '<b>' + c.querySelector('.tcard__t').textContent + '</b>' +
-                        c.querySelector('.tcard__d').textContent;
+      lbCap.innerHTML = legende(c);
+      var seul = serie.length < 2;
+      lbPrev.hidden = seul;
+      lbNext.hidden = seul;
     }
-    function ouvrir(i) {
+    function ouvrir(els, i) {
+      serie = els;
       avant = document.activeElement;
       montrer(i);
       lb.classList.add('open');
@@ -744,9 +689,24 @@
       if (avant) avant.focus();
     }
 
-    cartes.forEach(function (c, i) {
-      c.addEventListener('click', function () { ouvrir(i); });
-    });
+    /* Rend une série ouvrable, à la souris comme au clavier. */
+    function brancher(selecteur, etiquette) {
+      var els = Array.prototype.slice.call(document.querySelectorAll(selecteur));
+      els.forEach(function (el, i) {
+        el.setAttribute('role', 'button');
+        el.setAttribute('tabindex', '0');
+        el.setAttribute('aria-label', etiquette);
+        el.addEventListener('click', function () { ouvrir(els, i); });
+        el.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ouvrir(els, i); }
+        });
+      });
+      return els.length;
+    }
+
+    brancher('.tcard', 'Agrandir la photographie');
+    brancher('#constantin figure, #constantin .cas__ep', 'Agrandir la photographie');
+
     lbX.addEventListener('click', fermerLb);
     lbPrev.addEventListener('click', function () { montrer(idx - 1); });
     lbNext.addEventListener('click', function () { montrer(idx + 1); });
@@ -759,14 +719,14 @@
       if (e.key === 'ArrowRight') { montrer(idx + 1); }
       /* le focus reste enfermé dans la visionneuse */
       if (e.key === 'Tab') {
-        var f = lb.querySelectorAll('button');
+        var f = Array.prototype.filter.call(lb.querySelectorAll('button'),
+                                            function (b) { return !b.hidden; });
         var p = f[0], d = f[f.length - 1];
         if (e.shiftKey && document.activeElement === p) { e.preventDefault(); d.focus(); }
         else if (!e.shiftKey && document.activeElement === d) { e.preventDefault(); p.focus(); }
       }
     });
   }
-
 
   /* ----------------------------------------------------------
      3. PARALLAXE

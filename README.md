@@ -190,18 +190,38 @@ Remplacer les fichiers dans `assets/img/` en conservant les noms.
 Chaque image existe en deux formats : `.webp` (servi en priorité, plus
 léger) et `.jpg` (repli). Fournir les deux, au format portrait 3:4.
 
-### Méthode — le slider
+### Méthode — les sept temps
 
-Les sept étapes défilent horizontalement. Le défilement est natif
-(`scroll-snap`) : le tactile et la molette fonctionnent sans code ; les
-flèches, les pastilles numérotées et la barre de progression ne font que
-le piloter et le refléter.
+Les sept étapes se lisent d'un seul tenant, sur deux colonnes remplies
+en colonne d'abord (01 à 04, puis 05 à 07), reliées par un filet vertical.
+Aucun script : c'est une simple liste ordonnée (`<ol class="steps">`), donc
+tout le contenu est visible d'emblée, indexable et imprimable. Sous 860 px
+la liste repasse sur une seule colonne.
 
-Pour ajouter ou retirer une étape : dupliquer un bloc `<article class="mslide">`
-dans les deux pages. Le compteur, les pastilles et la barre s'ajustent seuls —
-aucun nombre n'est écrit en dur.
+Le carrousel horizontal qui occupait cette place a été retiré : il cachait
+six étapes sur sept derrière une manipulation, alors que l'intérêt de la
+méthode tient justement à son enchaînement.
 
-Trois étapes visibles sur ordinateur, deux sur tablette, une sur téléphone.
+Pour ajouter ou retirer une étape : dupliquer un bloc `<li class="steps__i">`
+dans les deux pages et renuméroter. Le filet et les pastilles suivent seuls.
+
+### Étude de cas — Le Constantin
+
+La section `#constantin` raconte une ouverture complète : un diptyque
+chantier / salle dressée, le périmètre de la mission en liste, une galerie
+de quatre vues, puis ce qui reste une fois le projet transmis.
+
+Les photographies sont dans `assets/img/`, nommées `constantin-01` à
+`constantin-07`, chacune en `.webp` et `.jpg`. Les originaux se trouvent
+dans `src vid et photo/temoinage/`. Pour en changer : conserver les noms,
+fournir les deux formats, et vérifier le cadrage — les vues sont recadrées
+en 3/2 pour le diptyque, 3/4 pour la galerie et 2/3 pour le portrait final.
+
+Chaque vue s'ouvre en plein écran au clic, ou au clavier avec Entrée. Les
+flèches font défiler les sept vues de l'étude de cas sans passer à celles
+de « Sur le terrain » : les deux séries sont indépendantes. Pour ajouter une
+vue à la série, il suffit de l'insérer dans la section sous forme de
+`<figure>` — le script la prend en compte seul.
 
 ### Vidéo
 
@@ -251,6 +271,8 @@ illisible en rendu logiciel.
 | Politique de sécurité du contenu | L'exécution de tout script injecté par un tiers |
 | `X-Frame-Options` + `frame-ancestors` | L'affichage du site dans une iframe étrangère (détournement de clic) |
 | `Permissions-Policy` | L'accès à la position, au micro et à la caméra |
+| `object-src 'none'` dans la politique de contenu | Le chargement de tout plugin (`<object>`, `<embed>`), qui héritait sinon de l'origine du site |
+| Règles de `_redirects` | La lecture publique de `README.md`, `vercel.json` et `.htaccess` : ces fichiers de travail ne sont plus servis |
 
 Le site ne comporte aucun serveur applicatif, aucun cookie et aucun
 traceur : il n'y a pas de base de données à protéger ni de consentement à
@@ -305,7 +327,9 @@ mentions légales (`/legal/`, section 4).
 
 Les deux langues ont été chargées dans un navigateur réel : aucune erreur
 de console, aucune ressource manquante, aucun débordement horizontal à
-390 px de large. Visionneuse, lecture vidéo, slider de la méthode
-(ordinateur et téléphone), champ-piège et délai anti-robot testés et
-fonctionnels. Les quatre pages — accueil et mentions légales, dans les deux
+390 px de large. Visionneuse, lecture vidéo, champ-piège et délai
+anti-robot testés et fonctionnels. La méthode, l'étude de cas et les
+cartes d'intervention ont été contrôlées à 390, 1160 et 1440 px :
+alignement des numéros, barre de navigation sur une seule ligne et
+aucun débordement. Les quatre pages — accueil et mentions légales, dans les deux
 langues — se chargent sans erreur.

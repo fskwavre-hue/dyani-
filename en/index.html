@@ -20,7 +20,7 @@
      tiers est refusé par le navigateur. Le site ne peut pas non plus
      être encadré dans une iframe étrangère (protection anti-clickjacking).
 -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://api.web3forms.com; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://api.web3forms.com; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
 <!-- ---------- Partage ---------- -->
@@ -87,6 +87,7 @@
       <li><button class="navlink" type="button" data-go="terrain">In the field</button></li>
       <li><button class="navlink" type="button" data-go="formations">Programmes</button></li>
       <li><button class="navlink" type="button" data-go="etablissements">Establishments</button></li>
+      <li><button class="navlink" type="button" data-go="constantin">Le Constantin</button></li>
       <li><button class="navlink" type="button" data-go="fondateur">The founder</button></li>
     </ul>
     </div>
@@ -105,6 +106,7 @@
       <button class="mlink" type="button" data-go="terrain">In the field</button>
       <button class="mlink" type="button" data-go="formations">Programmes</button>
       <button class="mlink" type="button" data-go="etablissements">Establishments</button>
+      <button class="mlink" type="button" data-go="constantin">Le Constantin</button>
       <button class="mlink" type="button" data-go="fondateur">The founder</button>
       <button class="mlink" type="button" data-go="avis">Recommendation</button>
       <button class="mlink" type="button" data-go="contact">Contact</button>
@@ -199,86 +201,63 @@
 
 <section class="section s-sable" id="methode">
   <div class="wrap">
-    <div data-rv="up" class="u-mb-l">
+    <div data-rv="up" class="u-mb-xl u-nar-62">
       <p class="eyebrow">Method</p>
       <h2 class="display h-1 head">A method in seven stages</h2>
       <p class="lead u-mt-l">Each stage produces a deliverable. None is optional: it is their sequence that makes the result last.</p>
     </div>
-  </div>
 
-  <div class="wrap">
-    <div class="mslider" id="meth" data-total="7">
-
-      <div class="mslider__head">
-        <ol class="mslider__dots" id="mdots">
-          <li><button type="button" data-i="0" aria-label="Go to stage 01 — Observe"><span>01</span></button></li>
-          <li><button type="button" data-i="1" aria-label="Go to stage 02 — Diagnose"><span>02</span></button></li>
-          <li><button type="button" data-i="2" aria-label="Go to stage 03 — Structure"><span>03</span></button></li>
-          <li><button type="button" data-i="3" aria-label="Go to stage 04 — Train"><span>04</span></button></li>
-          <li><button type="button" data-i="4" aria-label="Go to stage 05 — Deploy"><span>05</span></button></li>
-          <li><button type="button" data-i="5" aria-label="Go to stage 06 — Measure"><span>06</span></button></li>
-          <li><button type="button" data-i="6" aria-label="Go to stage 07 — Refine"><span>07</span></button></li>
-        </ol>
-        <div class="mslider__ctrl">
-          <span class="mslider__count" id="mcount" aria-live="polite">01 <i>/</i> 07</span>
-          <button class="sbtn" type="button" id="mprev" aria-label="Previous stage" disabled>
-            <svg width="9" height="14" viewBox="0 0 9 14" fill="none" aria-hidden="true"><path d="M8 1 2 7l6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <button class="sbtn" type="button" id="mnext" aria-label="Next stage">
-            <svg width="9" height="14" viewBox="0 0 9 14" fill="none" aria-hidden="true"><path d="m1 1 6 6-6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
+    <ol class="steps">
+      <li class="steps__i" data-rv="up">
+        <span class="steps__n" aria-hidden="true">01</span>
+        <div class="steps__c">
+          <h3 class="display steps__t">Observe</h3>
+          <p class="steps__d">Several services followed in real conditions, without intervening. What you see on a Friday night appears in no document.</p>
         </div>
-      </div>
-
-      <div class="mslider__rail" id="mtrack" tabindex="0"
-           role="region" aria-label="Sept étapes de la méthode">
-        <article class="mslide" role="group" aria-roledescription="slide"
-                 aria-label="01 of 7 — Observe">
-          <span class="mslide__n">01</span>
-          <h3 class="display mslide__t">Observe</h3>
-          <p class="mslide__d">Several services followed in real conditions, without intervening. What you see on a Friday night appears in no document.</p>
-        </article>
-        <article class="mslide" role="group" aria-roledescription="slide"
-                 aria-label="02 of 7 — Diagnose">
-          <span class="mslide__n">02</span>
-          <h3 class="display mslide__t">Diagnose</h3>
-          <p class="mslide__d">Identifying where the experience breaks down and why, distinguishing a skills problem from an organisational one.</p>
-        </article>
-        <article class="mslide" role="group" aria-roledescription="slide"
-                 aria-label="03 of 7 — Structure">
-          <span class="mslide__n">03</span>
-          <h3 class="display mslide__t">Structure</h3>
-          <p class="mslide__d">Writing the missing standards, procedures, checklists and role descriptions, in a format your teams will genuinely use.</p>
-        </article>
-        <article class="mslide" role="group" aria-roledescription="slide"
-                 aria-label="04 of 7 — Train">
-          <span class="mslide__n">04</span>
-          <h3 class="display mslide__t">Train</h3>
-          <p class="mslide__d">Transmission to the teams, on site, in real situations, in their working language.</p>
-        </article>
-        <article class="mslide" role="group" aria-roledescription="slide"
-                 aria-label="05 of 7 — Deploy">
-          <span class="mslide__n">05</span>
-          <h3 class="display mslide__t">Deploy</h3>
-          <p class="mslide__d">Supporting the supervisors through the first services of application — where new standards are usually lost.</p>
-        </article>
-        <article class="mslide" role="group" aria-roledescription="slide"
-                 aria-label="06 of 7 — Measure">
-          <span class="mslide__n">06</span>
-          <h3 class="display mslide__t">Measure</h3>
-          <p class="mslide__d">Assessment through mystery visits, a gap-to-standard grid and indicators agreed with management.</p>
-        </article>
-        <article class="mslide" role="group" aria-roledescription="slide"
-                 aria-label="07 of 7 — Refine">
-          <span class="mslide__n">07</span>
-          <h3 class="display mslide__t">Refine</h3>
-          <p class="mslide__d">Correcting what did not hold and adjusting the procedures to the reality of the operation.</p>
-        </article>
-      </div>
-
-      <div class="mslider__bar"><span id="mbar"></span></div>
-
-    </div>
+      </li>
+      <li class="steps__i" data-rv="up">
+        <span class="steps__n" aria-hidden="true">02</span>
+        <div class="steps__c">
+          <h3 class="display steps__t">Diagnose</h3>
+          <p class="steps__d">Identifying where the experience breaks down and why, distinguishing a skills problem from an organisational one.</p>
+        </div>
+      </li>
+      <li class="steps__i" data-rv="up">
+        <span class="steps__n" aria-hidden="true">03</span>
+        <div class="steps__c">
+          <h3 class="display steps__t">Structure</h3>
+          <p class="steps__d">Writing the missing standards, procedures, checklists and role descriptions, in a format your teams will genuinely use.</p>
+        </div>
+      </li>
+      <li class="steps__i" data-rv="up">
+        <span class="steps__n" aria-hidden="true">04</span>
+        <div class="steps__c">
+          <h3 class="display steps__t">Train</h3>
+          <p class="steps__d">Transmission to the teams, on site, in real situations, in their working language.</p>
+        </div>
+      </li>
+      <li class="steps__i" data-rv="up">
+        <span class="steps__n" aria-hidden="true">05</span>
+        <div class="steps__c">
+          <h3 class="display steps__t">Deploy</h3>
+          <p class="steps__d">Supporting the supervisors through the first services of application &mdash; where new standards are usually lost.</p>
+        </div>
+      </li>
+      <li class="steps__i" data-rv="up">
+        <span class="steps__n" aria-hidden="true">06</span>
+        <div class="steps__c">
+          <h3 class="display steps__t">Measure</h3>
+          <p class="steps__d">Assessment through mystery visits, a gap-to-standard grid and indicators agreed with management.</p>
+        </div>
+      </li>
+      <li class="steps__i" data-rv="up">
+        <span class="steps__n" aria-hidden="true">07</span>
+        <div class="steps__c">
+          <h3 class="display steps__t">Refine</h3>
+          <p class="steps__d">Correcting what did not hold and adjusting the procedures to the reality of the operation.</p>
+        </div>
+      </li>
+    </ol>
   </div>
 </section>
 
@@ -511,58 +490,174 @@
   </div>
 </section>
 
+<!-- ==================== ÉTUDE DE CAS — LE CONSTANTIN ==================== -->
+
+<section class="section s-navy" id="constantin">
+  <div class="wrap">
+
+    <div data-rv="up" class="u-mb-xl u-nar-62">
+      <p class="eyebrow">Case study</p>
+      <h2 class="display h-1 head">Opening Le Constantin &mdash; Knokke-Heist</h2>
+      <p class="lead u-mt-l">
+        From the building site to the first service, I led the creation of Le Constantin,
+        in the heart of the Carré d'Or. A house to be built entirely: no menu, no team,
+        no procedures.
+      </p>
+    </div>
+
+    <!-- diptych: the site, then the room ready -->
+    <div class="cas__dip">
+      <figure class="cas__f" data-rv="left">
+        <div class="cas__im">
+            <picture>
+              <source srcset="../assets/img/constantin-06.webp" type="image/webp">
+              <img src="../assets/img/constantin-06.jpg" alt="The Constantin building site: furniture under sheeting and a ladder in the future dining room" width="900" height="1200" loading="lazy" decoding="async">
+            </picture>
+          </div>
+        <figcaption class="cas__cap"><span class="cas__t">Before</span>The building site, furniture still under sheeting.</figcaption>
+      </figure>
+      <figure class="cas__f" data-rv="right">
+        <div class="cas__im">
+            <picture>
+              <source srcset="../assets/img/constantin-02.webp" type="image/webp">
+              <img src="../assets/img/constantin-02.jpg" alt="The Constantin dining room set, round tables and chequerboard floor" width="900" height="1200" loading="lazy" decoding="async">
+            </picture>
+          </div>
+        <figcaption class="cas__cap"><span class="cas__t">After</span>The room set, the evening before the first service.</figcaption>
+      </figure>
+    </div>
+
+    <!-- scope of the assignment -->
+    <div class="cas__per">
+      <h3 class="display h-2 u-mb-26" data-rv="up">The scope of the assignment</h3>
+      <ol class="cas__l" data-rv="up">
+        <li class="cas__li">
+          <span class="cas__ln" aria-hidden="true">01</span>
+          <div><div class="cas__lt">Menu and pricing</div><div class="cas__ld">Designing the menus and building the pricing structure.</div></div>
+        </li>
+        <li class="cas__li">
+          <span class="cas__ln" aria-hidden="true">02</span>
+          <div><div class="cas__lt">Suppliers and tableware</div><div class="cas__ld">Selecting the partners, the china, the linen and the glassware.</div></div>
+        </li>
+        <li class="cas__li">
+          <span class="cas__ln" aria-hidden="true">03</span>
+          <div><div class="cas__lt">Point-of-sale system</div><div class="cas__ld">Full configuration, from the product record through to payment.</div></div>
+        </li>
+        <li class="cas__li">
+          <span class="cas__ln" aria-hidden="true">04</span>
+          <div><div class="cas__lt">Recruitment and training</div><div class="cas__ld">Building the floor team, from a group with no shared experience through to the first service.</div></div>
+        </li>
+        <li class="cas__li">
+          <span class="cas__ln" aria-hidden="true">05</span>
+          <div><div class="cas__lt">Procedures and organisation</div><div class="cas__ld">Specifications, role descriptions, service sequence and checks.</div></div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- gallery -->
+    <div class="cas__g">
+        <figure class="cas__gf" data-rv="up">
+          <div class="cas__im">
+            <picture>
+              <source srcset="../assets/img/constantin-04.webp" type="image/webp">
+              <img src="../assets/img/constantin-04.jpg" alt="The Constantin shopfront and its signs, in the Carré d'Or of Knokke-Heist" width="738" height="985" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <figcaption class="cas__gc">The shopfront, Carré d'Or</figcaption>
+        </figure>
+        <figure class="cas__gf" data-rv="up">
+          <div class="cas__im">
+            <picture>
+              <source srcset="../assets/img/constantin-03.webp" type="image/webp">
+              <img src="../assets/img/constantin-03.jpg" alt="Plating a dish at the pass, in the kitchen" width="900" height="1200" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <figcaption class="cas__gc">The pass, at the first service</figcaption>
+        </figure>
+        <figure class="cas__gf" data-rv="up">
+          <div class="cas__im">
+            <picture>
+              <source srcset="../assets/img/constantin-05.webp" type="image/webp">
+              <img src="../assets/img/constantin-05.jpg" alt="The menu laid on a set table" width="900" height="1200" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <figcaption class="cas__gc">The menu, printed and laid</figcaption>
+        </figure>
+        <figure class="cas__gf" data-rv="up">
+          <div class="cas__im">
+            <picture>
+              <source srcset="../assets/img/constantin-07.webp" type="image/webp">
+              <img src="../assets/img/constantin-07.jpg" alt="The dining room in service, seen from the street at dusk" width="900" height="1200" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <figcaption class="cas__gc">The room, at dusk</figcaption>
+        </figure>
+    </div>
+
+    <!-- what remains once the project is handed over -->
+    <div class="cas__end">
+      <div class="cas__ep" data-rv="left">
+        <div class="cas__im">
+            <picture>
+              <source srcset="../assets/img/constantin-01.webp" type="image/webp">
+              <img src="../assets/img/constantin-01.jpg" alt="Ibrahim Dyani arranging the flowers in the dining room, before service" width="659" height="1200" loading="lazy" decoding="async">
+            </picture>
+          </div>
+      </div>
+      <div class="cas__eq" data-rv="right">
+        <p class="lead">
+          Beyond the opening, the aim was to build a house able to run without me:
+          specifications, role descriptions, procedures, and the transfer of know-how
+          to the supervisors.
+        </p>
+        <blockquote class="quote">A successful opening is not measured on the day the doors open, but by the ability of the house to hold the same standard once the project has been handed over.</blockquote>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ==================== FONDATEUR ==================== -->
 
 <section class="section" id="fondateur">
   <div class="wrap">
+
+    <div data-rv="up" class="u-nar-62 u-mb-xl">
+      <p class="eyebrow">The founder</p>
+      <h2 class="display h-1 fond__t">I have been training teams for six years, without ever leaving the floor</h2>
+      <p class="fond__id"><b>Ibrahim Dyani</b> &mdash; Maître d'Hôtel, trainer and consultant in operational structure.</p>
+    </div>
+
     <div class="fond">
-      <div class="arch" data-rv="left">
-        <!-- Pour changer ce portrait : remplacer la source ci-dessous. Format 3:4. -->
-        <div class="arch__img">
-          <picture><source srcset="../assets/img/portrait-fondateur.webp" type="image/webp"><img class="arch__ph" src="../assets/img/portrait-fondateur.jpg" alt="Ibrahim Dyani, founder of Dyani Hospitality, in service uniform" width="900" height="1200" loading="eager" decoding="sync" fetchpriority="high"></picture>
-        </div>
-        <p class="cap">Ibrahim Dyani, founder. Every assignment is led personally, from the first service observed to the final check.</p>
-      </div>
-
-      <div data-rv="right">
-        <p class="eyebrow">The founder</p>
-        <h2 class="display h-1 fond__t">I have been training teams for six years, without ever leaving the floor</h2>
-        <p class="fond__id"><b>Ibrahim Dyani</b> — Maître d'Hôtel, trainer and consultant in operational structure.</p>
-
-        <div class="fond__b">
-          <p class="lead">Training is not a career change; it has been part of my work since 2020. At JML Concept, official caterer to the Royal Palace of Belgium, I trained service teams to the requirements of protocol, including agency teams assembled for a single event who had to hold the same level as permanent staff. At Le Constantin, I recruited and then trained the entire floor team, from a group with no shared experience through to the first service. At RLM Service, I now prepare staff according to the standing each client requires: the level expected for a State dinner is not that of a corporate reception, and a team is trained differently depending on what it is asked to hold.</p>
-        </div>
+      <div class="fond__b" data-rv="up">
+        <p class="lead">Training is not a career change; it has been part of my work since 2020. At JML Concept, official caterer to the Royal Palace of Belgium, I trained service teams to the requirements of protocol &mdash; including agency teams assembled for a single event who had to hold the same level as permanent staff.</p>
 
         <blockquote class="quote">That is exactly what I do for you: setting a team's level against the standard your establishment wants to reach.</blockquote>
 
-        <div class="fond__b">
-          <p class="lead">I also train the managers, and that is often where everything is decided. A chef de rang promoted to maître d'hôtel knows how to serve, but no one has taught him to brief, to correct without humiliating, to pull up a colleague in the middle of service, or to hold a standard through a full Saturday night. Training a waiter improves one service. Training their supervisor improves every service that follows.</p>
-          <p class="lead">So I do not come to explain to teams how the job ought to be done. I have done it, I have been teaching it for years, and I still practise it.</p>
-        </div>
+        <p class="lead">I also train the managers, and that is often where everything is decided. A chef de rang promoted to maître d'hôtel knows how to serve, but no one has taught him to brief, to correct without humiliating, or to hold a standard through a full Saturday night. Training a waiter improves one service; training their supervisor improves every service that follows.</p>
       </div>
+
+      <aside class="fond__a" data-rv="up">
+        <h3 class="fond__at">Houses and institutions served</h3>
+        <div class="refs">
+          <span class="ref">Royal Palace of Belgium</span>
+          <span class="ref">European Parliament</span>
+          <span class="ref">European Commission</span>
+          <span class="ref">Louis Vuitton</span>
+          <span class="ref">Chanel</span>
+          <span class="ref">Hermès</span>
+          <span class="ref">Tiffany &amp; Co.</span>
+        </div>
+        <p class="refs__n">Institutions and houses for which service assignments have been carried out.</p>
+      </aside>
     </div>
 
     <!-- parcours -->
     <div class="cv" data-rv="up">
-      <div class="cv__i"><div class="cv__y">Since 2025</div><div><div class="cv__r">Head Maître d'Hôtel — European institutions</div><div class="cv__d">RLM Service. Directing service for the European Parliament, the European Commission and the European External Action Service. Training and levelling-up of teams according to the standing specific to each client and each type of event.</div></div></div>
-      <div class="cv__i"><div class="cv__y">2024</div><div><div class="cv__r">Opening Manager — fine-dining restaurant</div><div class="cv__d">Le Constantin, Knokke-Heist. Writing the service procedures and standards, then recruiting, training and supervising the entire floor team through to the first service.</div></div></div>
-      <div class="cv__i"><div class="cv__y">2020 — 2024</div><div><div class="cv__r">Maître d'Hôtel — JML Concept</div><div class="cv__d">Official caterer to the Royal Palace of Belgium. Directing service at royal, diplomatic and private receptions, and training teams — permanent and agency alike — to the requirements of protocol.</div></div></div>
-      <div class="cv__i"><div class="cv__y">2010 — 2019</div><div><div class="cv__r">Chef de Rang — Michelin-starred houses</div><div class="cv__d">La Villa Lorraine, La Villa in the Sky, Brussels. One year in Canada as bar manager.</div></div></div>
-    </div>
-
-    <!-- références -->
-    <div data-rv="up" class="u-mt-xl">
-      <h3 class="display h-2 u-mb-22">Houses and institutions served</h3>
-      <div class="refs">
-        <span class="ref">Royal Palace of Belgium</span>
-        <span class="ref">European Parliament</span>
-        <span class="ref">European Commission</span>
-        <span class="ref">Louis Vuitton</span>
-        <span class="ref">Chanel</span>
-        <span class="ref">Hermès</span>
-        <span class="ref">Tiffany &amp; Co.</span>
-      </div>
-      <p class="refs__n">Institutions and houses for which service assignments have been carried out.</p>
+      <div class="cv__i"><div class="cv__y">Since 2025</div><div><div class="cv__r">Head Maître d'Hôtel &mdash; European institutions</div><div class="cv__d">RLM Service. Directing service for the European Parliament, the European Commission and the European External Action Service. Training and levelling-up of teams according to the standing specific to each client and each type of event.</div></div></div>
+      <div class="cv__i"><div class="cv__y">2024</div><div><div class="cv__r">Opening Manager &mdash; fine-dining restaurant</div><div class="cv__d">Le Constantin, Knokke-Heist. Full opening of the restaurant, from the building site to the first service.</div></div></div>
+      <div class="cv__i"><div class="cv__y">2020 &mdash; 2024</div><div><div class="cv__r">Maître d'Hôtel &mdash; JML Concept</div><div class="cv__d">Official caterer to the Royal Palace of Belgium. Directing service at royal, diplomatic and private receptions, and training teams &mdash; permanent and agency alike &mdash; to the requirements of protocol.</div></div></div>
+      <div class="cv__i"><div class="cv__y">2010 &mdash; 2019</div><div><div class="cv__r">Chef de Rang &mdash; Michelin-starred houses</div><div class="cv__d">La Villa Lorraine, La Villa in the Sky, Brussels. One year in Canada as bar manager.</div></div></div>
     </div>
   </div>
 </section>
@@ -729,7 +824,7 @@
     <svg width="9" height="14" viewBox="0 0 9 14" fill="none"><path d="M8 1 2 7l6 6" stroke="currentColor" stroke-width="1.2"/></svg>
   </button>
   <figure class="lbox__fig u-m0">
-    <img src="" alt="">
+    <img alt="">
     <figcaption class="lbox__cap"></figcaption>
   </figure>
   <button class="lbox__nav lbox__nav--n" type="button" aria-label="Next photograph">
@@ -756,6 +851,7 @@
           <li><button class="lbtn" type="button" data-go="terrain">In the field</button></li>
           <li><button class="lbtn" type="button" data-go="formations">Programmes</button></li>
           <li><button class="lbtn" type="button" data-go="etablissements">Establishments</button></li>
+          <li><button class="lbtn" type="button" data-go="constantin">Le Constantin</button></li>
           <li><button class="lbtn" type="button" data-go="fondateur">The founder</button></li>
         </ul>
       </nav>
