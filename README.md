@@ -20,9 +20,8 @@ CSS et JavaScript que l'on dépose tels quels chez n'importe quel hébergeur.
 ├── favicon.ico
 ├── robots.txt              règles d'indexation et blocage des aspirateurs
 ├── sitemap.xml             plan du site, avec les correspondances FR/EN
-├── _headers                en-têtes de sécurité — Netlify / Cloudflare Pages
-├── vercel.json             en-têtes de sécurité — Vercel
-├── .htaccess               en-têtes de sécurité — Apache / mutualisé
+├── _headers                en-têtes de sécurité et de cache — Netlify
+├── _redirects              masque ce README au public — Netlify
 ├── assets/
 │   ├── css/style.css       feuille de styles unique
 │   ├── js/main.js          script unique
@@ -35,26 +34,23 @@ CSS et JavaScript que l'on dépose tels quels chez n'importe quel hébergeur.
 
 ## Mettre le site en ligne
 
-Déposer le contenu du dossier à la racine du domaine. C'est tout.
+Le site est hébergé chez **Netlify**, qui publie automatiquement la
+branche `main` du dépôt GitHub : un push suffit, la mise en ligne suit en
+moins d'une minute. Netlify lit `_headers` (sécurité, cache) et
+`_redirects` (règles de redirection).
 
-| Hébergeur | Fichier d'en-têtes lu automatiquement |
-| --- | --- |
-| Netlify, Cloudflare Pages | `_headers` |
-| Vercel | `vercel.json` |
-| Apache, hébergement mutualisé | `.htaccess` |
+Le domaine officiel est `https://dyanihospitality.com`, sans `www` —
+l'adresse avec `www` y redirige. C'est lui qui figure dans les balises
+`canonical`, `og:url`, `hreflang` et dans `sitemap.xml`.
 
-Les trois fichiers déclarent les mêmes règles. Celui qui ne correspond pas
-à votre hébergeur est simplement ignoré — inutile de le supprimer.
+**Cache.** Le CSS et le JS sont revérifiés à chaque visite (réponse 304
+s'ils n'ont pas changé) : une modification est visible immédiatement. Les
+images, elles, sont gardées un an : pour remplacer une image, lui donner
+un **nouveau nom**, sinon les visiteurs déjà venus garderont l'ancienne.
 
-**Avant la mise en ligne**, deux valeurs restent à traiter :
-
-1. Le domaine `https://www.dyanihospitality.com` figure dans les balises
-   `canonical`, `og:url`, `hreflang` et dans `sitemap.xml`. Si le domaine
-   final diffère, le remplacer partout.
-2. `Strict-Transport-Security` force le HTTPS pendant deux ans. Ne l'activer
-   qu'une fois le certificat en place et vérifié — sinon le site devient
-   inaccessible et l'en-tête reste en cache dans les navigateurs. Il est
-   actif dans `_headers` et `vercel.json`, commenté dans `.htaccess`.
+**Changer d'hébergeur.** `_headers` et `_redirects` sont propres à
+Netlify. Chez un autre hébergeur, reporter leurs règles dans son format
+(`vercel.json` pour Vercel, `.htaccess` pour Apache).
 
 ---
 
@@ -68,7 +64,7 @@ Les trois fichiers déclarent les mêmes règles. Celui qui ne correspond pas
 | Surfaces sombres | `#1C1E24` graphite, `#131419` graphite profond |
 | Accent | `#A8823F` laiton, `#C9A96B` laiton clair |
 | Motif | cadre à angles adoucis doublé d'un contour laiton décalé ; trame de points sur les sections sombres |
-| Logo | `assets/img/logo.*` (fonds clairs) et `logo-light.*` (fonds sombres) ; `mark.*` = l'arche seule, utilisée pour les favicons |
+| Logo | `assets/img/logo.*` (fonds clairs) et `logo-light.*` (fonds sombres) ; favicons dans `favicon.ico` et `assets/img/favicon-*` |
 
 Le logo est fourni en un seul fichier horizontal. Les variantes claires,
 la marque isolée, les favicons et l'image de partage en sont dérivés —
@@ -272,7 +268,7 @@ illisible en rendu logiciel.
 | `X-Frame-Options` + `frame-ancestors` | L'affichage du site dans une iframe étrangère (détournement de clic) |
 | `Permissions-Policy` | L'accès à la position, au micro et à la caméra |
 | `object-src 'none'` dans la politique de contenu | Le chargement de tout plugin (`<object>`, `<embed>`), qui héritait sinon de l'origine du site |
-| Règles de `_redirects` | La lecture publique de `README.md`, `vercel.json` et `.htaccess` : ces fichiers de travail ne sont plus servis |
+| Règle de `_redirects` | La lecture publique de `README.md`, document de maintenance interne |
 
 Le site ne comporte aucun serveur applicatif, aucun cookie et aucun
 traceur : il n'y a pas de base de données à protéger ni de consentement à

@@ -1,9 +1,9 @@
 # ============================================================
 # En-têtes de sécurité — format Netlify / Cloudflare Pages
 #
-# Ce fichier est lu automatiquement au déploiement. Sur Vercel,
-# c'est vercel.json qui fait le même travail. Sur un serveur
-# Apache, reporter ces valeurs dans .htaccess.
+# Ce fichier est lu automatiquement par Netlify au déploiement.
+# En cas de changement d'hébergeur, reporter ces règles dans son
+# format propre (vercel.json pour Vercel, .htaccess pour Apache).
 #
 # frame-ancestors et X-Frame-Options ne fonctionnent QUE depuis
 # un en-tête HTTP : une balise <meta> est ignorée par le

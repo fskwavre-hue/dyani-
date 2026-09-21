@@ -112,4 +112,4 @@ User-agent: *
 Allow: /
 Crawl-delay: 6
 
-Sitemap: https://www.dyanihospitality.com/sitemap.xml
+Sitemap: https://dyanihospitality.com/sitemap.xml

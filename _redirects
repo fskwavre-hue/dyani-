@@ -10,5 +10,3 @@
 # avant que Netlify ne serve le fichier ; le « ! » force la règle même
 # lorsqu'un fichier existe à cette adresse.
 /README.md   /   301!
-/vercel.json /   301!
-/.htaccess   /   301!
