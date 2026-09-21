@@ -273,10 +273,11 @@ button{font-family:inherit;color:inherit;}
   width:100%;background:none;border:0;border-bottom:1px solid var(--border);
   display:flex;align-items:center;justify-content:space-between;gap:24px;
   padding:26px 0;cursor:pointer;text-align:left;
-  transition:padding-left 380ms var(--e),color 300ms var(--e);
+  transition:color 300ms var(--e);
 }
-.fam__h:hover{padding-left:10px;}
-.fam__t{font-family:var(--serif);font-size:clamp(19px,2vw,24px);color:var(--ink);transition:color 300ms var(--e);}
+.fam__h > *{transition:transform 460ms var(--e-out);}
+.fam__h:hover > *{transform:translateX(10px);}
+.fam__t{font-family:var(--serif);font-size:clamp(19px,2vw,24px);color:var(--ink);transition:color 300ms var(--e),transform 460ms var(--e-out);}
 .fam__h:hover .fam__t,.fam__h[aria-expanded="true"] .fam__t{color:var(--terre);}
 .fam__r{display:flex;align-items:center;gap:22px;flex:0 0 auto;}
 .fam__c{font-size:12.5px;color:var(--muted-l);letter-spacing:.04em;}
@@ -293,10 +294,11 @@ button{font-family:inherit;color:inherit;}
   display:grid;grid-template-columns:1fr auto;gap:20px;align-items:baseline;
   padding:20px 0 20px 0;border-bottom:1px solid var(--border);
   opacity:0;transform:translateY(10px);
-  transition:opacity 520ms var(--e),transform 520ms var(--e),padding-left 340ms var(--e);
+  transition:opacity 520ms var(--e),transform 520ms var(--e);
 }
 .fam__p.open .prog{opacity:1;transform:none;}
-.prog:hover{padding-left:10px;}
+.prog > *{transition:transform 460ms var(--e-out);}
+.prog:hover > *{transform:translateX(10px);}
 .prog:last-child{border-bottom:0;}
 .prog__n{font-size:16px;color:var(--ink);}
 .prog__w{font-size:13px;color:var(--muted-l);margin-top:5px;}
@@ -316,11 +318,9 @@ button{font-family:inherit;color:inherit;}
 .etab__row{
   position:relative;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;
   padding:24px 0;border-bottom:1px solid var(--border);
-  transition:padding-left 380ms var(--e);
 }
 .etab__row:first-child{border-top:1px solid var(--border);}
 .etab__row::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:100%;background:var(--terre);transform:scaleX(0);transform-origin:left;transition:transform 560ms var(--e);}
-.etab__row:hover{padding-left:12px;}
 .etab__row:hover::after{transform:scaleX(1);}
 .etab__n{font-family:var(--serif);font-size:clamp(20px,2.1vw,26px);color:var(--ink);}
 .etab__d{font-size:13px;color:var(--muted);text-align:right;max-width:22ch;line-height:1.55;}
@@ -366,24 +366,97 @@ button{font-family:inherit;color:inherit;}
 .cv__i{
   display:grid;grid-template-columns:150px 1fr;gap:28px;
   padding:24px 0;border-bottom:1px solid var(--border);
-  transition:padding-left 380ms var(--e);
 }
-.cv__i:hover{padding-left:10px;}
 .cv__y{font-size:13px;color:var(--terre);letter-spacing:.04em;padding-top:3px;}
 .cv__r{font-size:16px;color:var(--ink);margin-bottom:7px;}
 .cv__d{font-size:14px;color:var(--muted);line-height:1.75;}
 @media (max-width:640px){.cv__i{grid-template-columns:1fr;gap:6px;}}
 
-/* profils */
+/* ------------------------------------------------------------
+   profils formés — médaillons
+   Six cartes, chacune portant un médaillon numéroté. Le filet
+   laiton du médaillon se trace à l'apparition de la carte, en
+   décalé d'une carte à l'autre ; au survol, il se remplit.
+   Sur téléphone, les cartes forment une rangée qu'on fait glisser.
+   ------------------------------------------------------------ */
 .profils{margin-top:clamp(52px,6vw,84px);padding-top:clamp(40px,4.5vw,60px);border-top:1px solid var(--border);}
-.prof{border-top:1px solid var(--border);}
-.prof__i{
-  display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:baseline;
-  padding:19px 0;border-bottom:1px solid var(--border);
+
+.prof{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(14px,1.6vw,22px);
 }
-.prof__n{font-size:15.5px;color:var(--ink);}
-.prof__d{font-size:13.5px;color:var(--muted);line-height:1.65;}
-@media (max-width:640px){.prof__i{grid-template-columns:1fr;gap:5px;}}
+.prof__card{
+  height:100%;
+  padding:clamp(24px,2.4vw,32px) clamp(22px,2.2vw,28px) clamp(26px,2.6vw,34px);
+  background:var(--chaux);
+  border:1px solid var(--border);border-radius:var(--r);
+  transition:transform 520ms var(--e-out),box-shadow 520ms var(--e-out),border-color 400ms var(--e);
+}
+.prof__i:hover .prof__card{
+  transform:translateY(-4px);
+  border-color:color-mix(in srgb,var(--terre) 38%,var(--border));
+  box-shadow:0 22px 44px -28px rgba(20,21,26,.38);
+}
+
+/* le médaillon */
+.prof__med{
+  position:relative;display:grid;place-items:center;
+  width:58px;height:58px;margin-bottom:22px;
+  border-radius:50%;
+}
+.prof__med::before{            /* le fond qui se remplit au survol */
+  content:"";position:absolute;inset:4px;border-radius:50%;
+  background:var(--navy);
+  transform:scale(0);transition:transform 520ms var(--e-out);
+}
+.prof__ring{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg);}
+.prof__ring circle{
+  fill:none;stroke:var(--terre);stroke-width:1.2;
+  stroke-dasharray:100;stroke-dashoffset:100;
+  transition:stroke-dashoffset 1200ms var(--e-out) 260ms;
+}
+.prof__i.is-in .prof__ring circle{stroke-dashoffset:0;}
+.prof__k{
+  position:relative;
+  font-family:var(--serif);font-size:13px;letter-spacing:.08em;
+  color:var(--terre);transition:color 400ms var(--e);
+}
+.prof__i:hover .prof__med::before{transform:scale(1);}
+.prof__i:hover .prof__k{color:var(--chaux);}
+
+.prof__n{
+  font-family:var(--serif);font-size:clamp(18px,1.5vw,21px);
+  line-height:1.25;color:var(--ink);margin-bottom:10px;
+}
+.prof__d{font-size:14px;color:var(--muted);line-height:1.7;}
+
+/* les petits ronds de position : téléphone seulement */
+.prof__dots{display:none;}
+
+@media (max-width:900px){
+  .prof{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  .prof{
+    display:flex;gap:12px;
+    overflow-x:auto;scroll-snap-type:x mandatory;
+    margin-inline:calc(var(--gutter) * -1);
+    padding:6px var(--gutter) 10px;
+    scroll-padding-inline:var(--gutter);
+    scrollbar-width:none;
+  }
+  .prof::-webkit-scrollbar{display:none;}
+  .prof__i{flex:0 0 80%;scroll-snap-align:start;}
+  .prof:focus-visible{outline:2px solid var(--terre);outline-offset:2px;}
+
+  .prof__dots{display:flex;justify-content:center;gap:8px;margin-top:18px;}
+  .prof__dots i{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--border-fort);
+    transition:background 300ms var(--e),transform 300ms var(--e);
+  }
+  .prof__dots i.on{background:var(--terre);transform:scale(1.35);}
+}
 
 /* références */
 .refs{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
@@ -1035,8 +1108,23 @@ body{font-family:var(--sans);font-weight:400;}
 .mark{border-radius:var(--r);}
 .mark__k{font-family:var(--serif);letter-spacing:-.03em;font-weight:600;}
 
-.prof__i,.cv__i,.etab__row{transition:background 320ms var(--e);}
-.prof__i{border-radius:10px;}
+/* Survol des listes : le contenu glisse vers la droite, le filet reste
+   en place. On anime transform, pas padding : aucun recalcul de mise en
+   page, donc un mouvement fluide et un texte qui ne se reflue pas. */
+.etab__row > *,
+.cv__i > *,
+.cas__li > *{transition:transform 460ms var(--e-out);}
+.etab__row:hover > *{transform:translateX(12px);}
+.cv__i:hover > *,
+.cas__li:hover > *{transform:translateX(10px);}
+
+/* la date du parcours et le numero du perimetre prennent la couleur
+   d'accent pendant le survol */
+.cv__y,.cas__ln{transition:transform 460ms var(--e-out),color 320ms var(--e);}
+.cv__i:hover .cv__y{color:var(--ink);}
+.cas__li:hover .cas__ln{color:var(--on-navy);}
+
+
 
 .ref{
   border-radius:100px;padding:9px 18px;
@@ -1498,9 +1586,7 @@ body{font-family:var(--sans);font-weight:400;}
   display:grid;grid-template-columns:clamp(44px,5vw,72px) 1fr;
   gap:clamp(12px,1.6vw,26px);align-items:start;
   padding:22px 0;border-bottom:1px solid var(--rule-dark);
-  transition:padding-left 420ms var(--e);
 }
-.cas__li:hover{padding-left:10px;}
 .cas__ln{font-family:var(--serif);font-size:12.5px;letter-spacing:.12em;color:var(--terre-clair);padding-top:4px;}
 .cas__lt{font-size:16.5px;color:var(--on-navy);margin-bottom:6px;}
 .cas__ld{font-size:14px;color:var(--on-navy-muted);line-height:1.72;}

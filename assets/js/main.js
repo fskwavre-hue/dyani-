@@ -80,7 +80,7 @@
     }, { threshold: 0.14, rootMargin: '0px 0px -10% 0px' });
 
     /* décalage automatique entre éléments frères d'un même groupe */
-    ['.marks__g','.dom','.refs'].forEach(function(sel){
+    ['.marks__g','.dom','.refs','.prof'].forEach(function(sel){
       var g = document.querySelector(sel);
       if (!g) return;
       Array.prototype.forEach.call(g.children, function(el, i){
@@ -164,6 +164,33 @@
       document.fonts.ready.then(function(){ poser(actif()); });
     }
     poser(actif());
+  }
+
+  /* ---------- profils : rangée glissante sur téléphone ----------
+     Les petits ronds suivent la carte visible. La rangée ne devient
+     atteignable au clavier que lorsqu'elle défile réellement. */
+  var profL = document.querySelector('.prof');
+  if (profL){
+    var profDots = Array.prototype.slice.call(document.querySelectorAll('.prof__dots i'));
+    var profIt = profL.children;
+    var profAtt = false;
+
+    function majProf(){
+      var defile = profL.scrollWidth > profL.clientWidth + 2;
+      if (defile) profL.setAttribute('tabindex', '0');
+      else profL.removeAttribute('tabindex');
+      if (!defile || profIt.length < 2) return;
+      var pasP = profIt[1].offsetLeft - profIt[0].offsetLeft;
+      var fin = profL.scrollLeft >= profL.scrollWidth - profL.clientWidth - 2;
+      var k = fin ? profIt.length - 1 : Math.round(profL.scrollLeft / pasP);
+      profDots.forEach(function(d, n){ d.classList.toggle('on', n === k); });
+    }
+
+    profL.addEventListener('scroll', function(){
+      if (!profAtt){ profAtt = true; requestAnimationFrame(function(){ majProf(); profAtt = false; }); }
+    }, { passive: true });
+    window.addEventListener('resize', majProf);
+    majProf();
   }
 
   /* ---------- lien de navigation actif ---------- */
