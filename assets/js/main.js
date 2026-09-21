@@ -7,20 +7,77 @@
   /* ---------- mise en scène à l'ouverture ---------- */
   requestAnimationFrame(function(){ document.body.classList.add('loaded'); });
 
-  /* ---------- menu mobile ---------- */
+  /* ---------- menu mobile ----------
+     Le panneau, le voile et le bouton sont pilotés par deux classes
+     seulement : .open sur le panneau, .on sur le voile. Toute
+     l'animation vit dans la feuille de style. On verrouille le
+     défilement de la page pendant l'ouverture pour que le geste
+     reste dans le panneau.
+     ------------------------------------------------------------ */
   var burger = document.getElementById('burger');
   var mmenu  = document.getElementById('mmenu');
-  function fermer(){
-    mmenu.classList.remove('open');
-    burger.setAttribute('aria-expanded','false');
-    burger.setAttribute('aria-label','Ouvrir le menu');
+  var mveil  = document.getElementById('mveil');
+  var mlinks = Array.prototype.slice.call(mmenu.querySelectorAll('.mlink'));
+  var etiquettes = {
+    ouvrir: burger.getAttribute('aria-label'),
+    fermer: document.documentElement.lang === 'en' ? 'Close the menu' : 'Fermer le menu'
+  };
+
+  function ouvert(){ return mmenu.classList.contains('open'); }
+
+  function bloquerPage(actif){
+    var d = document.documentElement;
+    d.classList.toggle('menu-ouvert', actif);
+    if (actif){
+      d.style.overflow = 'hidden';
+      /* compense la disparition de l'ascenseur pour que l'en-tête
+         ne se décale pas d'un ou deux pixels */
+      var laize = window.innerWidth - d.clientWidth;
+      if (laize > 0) d.style.paddingRight = laize + 'px';
+    } else {
+      d.style.overflow = '';
+      d.style.paddingRight = '';
+    }
   }
-  burger.addEventListener('click', function(){
-    var o = mmenu.classList.toggle('open');
+
+  function basculer(o){
+    mmenu.classList.toggle('open', o);
+    mveil.classList.toggle('on', o);
     burger.setAttribute('aria-expanded', String(o));
-    burger.setAttribute('aria-label', o ? 'Fermer le menu' : 'Ouvrir le menu');
+    burger.setAttribute('aria-label', o ? etiquettes.fermer : etiquettes.ouvrir);
+    bloquerPage(o);
+  }
+
+  function fermer(retour){
+    if (!ouvert()) return;
+    basculer(false);
+    if (retour) burger.focus();
+  }
+
+  burger.addEventListener('click', function(){
+    if (ouvert()){ fermer(false); return; }
+    mmenu.scrollTop = 0;
+    basculer(true);
   });
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') fermer(); });
+
+  mveil.addEventListener('click', function(){ fermer(false); });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') fermer(true);
+  });
+
+  /* un appui hors de l'en-tête ferme aussi : le voile ne couvre pas
+     la bande supérieure, où le logo reste cliquable */
+  document.addEventListener('pointerdown', function(e){
+    if (!ouvert()) return;
+    if (mmenu.contains(e.target) || burger.contains(e.target)) return;
+    fermer(false);
+  });
+
+  /* de retour en pleine largeur, la barre reprend la main */
+  window.addEventListener('resize', function(){
+    if (ouvert() && window.innerWidth > 1150) fermer(false);
+  });
 
   /* ---------- navigation interne ---------- */
   function hauteurEntete(){ return document.getElementById('header').offsetHeight; }
@@ -201,6 +258,7 @@
       entrees.forEach(function(en){
         if (!en.isIntersecting) return;
         liens.forEach(function(b){ b.classList.toggle('active', b.dataset.go === en.target.id); });
+        mlinks.forEach(function(b){ b.classList.toggle('active', b.dataset.go === en.target.id); });
       });
     }, { rootMargin: '-46% 0px -50% 0px' });
     sections.forEach(function(s){ spy.observe(s); });

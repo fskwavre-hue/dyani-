@@ -20,7 +20,6 @@
   /* accents */
   --terre:#A8823F;          /* laiton — filets, numéros, survols */
   --terre-clair:#C9A96B;
-  --pierre:#7E8189;
 
   /* textes */
   --texte:#22242A;
@@ -160,21 +159,6 @@ button{font-family:inherit;color:inherit;}
 .navlink.active{color:var(--ink);}
 
 .nav__act{display:flex;align-items:center;gap:14px;}
-.burger{display:none;width:44px;height:44px;align-items:center;justify-content:center;background:none;border:1px solid var(--border);cursor:pointer;color:var(--ink);}
-.burger span{display:block;width:18px;height:1px;background:currentColor;position:relative;transition:background 200ms;}
-.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1px;background:currentColor;transition:transform 300ms var(--e);}
-.burger span::before{top:-6px;} .burger span::after{top:6px;}
-.burger[aria-expanded="true"] span{background:transparent;}
-.burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg);}
-.burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg);}
-
-.mmenu{display:grid;grid-template-rows:0fr;overflow:hidden;background:var(--chaux);border-top:1px solid transparent;transition:grid-template-rows 420ms var(--e),border-color 300ms;}
-.mmenu.open{grid-template-rows:1fr;border-top-color:var(--border);}
-.mmenu__in{min-height:0;padding:0 var(--gutter);}
-.mmenu.open .mmenu__in{padding-bottom:30px;}
-.mlink{display:block;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--border);padding:18px 0;font-size:17px;color:var(--texte);cursor:pointer;}
-.mmenu .btn{margin-top:26px;}
-@media (max-width:1160px){.nav__links{display:none;} .nav__act .btn{display:none;} .burger{display:inline-flex;}}
 
 /* ============================================================
    4. HERO
@@ -663,7 +647,6 @@ textarea.bin{min-height:96px;resize:vertical;line-height:1.7;}
 .lang-sw a:hover{color:var(--ink);}
 .lang-sw a[aria-current="true"]{background:var(--navy);color:var(--on-navy);}
 
-.mmenu .lang-sw{margin:0 0 20px;}
 
 
 /* ------------------------------------------------------------
@@ -945,8 +928,6 @@ body.lbox-on{overflow:hidden;}
 .u-nar-62{max-width:62ch;}
 .u-h-reco{font-size:clamp(26px,3.1vw,40px);}
 
-/* cadence de la méthode : portée par le CSS, plus par le HTML */
-#meth{--steps:7;--per:40vh;}
 /* ============================================================
    COUCHE MODERNE
    Surcharge la base : typographie, motif d'image, boutons,
@@ -1441,92 +1422,208 @@ body{font-family:var(--sans);font-weight:400;}
 }
 .nav__ind.on{opacity:1;}
 
-/* ---------- bouton menu ---------- */
+/* ---------- bouton menu ----------
+   Le libellé bascule Menu / Fermer dans une fenêtre masquée :
+   aucun texte n'est remplacé en JavaScript, la transition suffit.
+   ------------------------------------------------------------ */
 .menu-btn{
+  position:relative;overflow:hidden;isolation:isolate;
   display:none;align-items:center;gap:10px;
   height:42px;padding:0 8px 0 16px;
   border:1px solid var(--border-fort);border-radius:100px;
   background:transparent;color:var(--ink);cursor:pointer;
   font-family:var(--sans);font-size:13px;font-weight:600;
   letter-spacing:.04em;
-  transition:background 300ms var(--e),border-color 300ms var(--e),color 300ms var(--e);
+  transition:border-color 340ms var(--e),color 300ms var(--e);
 }
-.menu-btn:hover{background:var(--ink);border-color:var(--ink);color:var(--chaux);}
+/* remplissage qui monte depuis le bas, comme sur les boutons du site */
+.menu-btn::before{
+  content:"";position:absolute;inset:0;z-index:-1;background:var(--ink);
+  transform:translateY(101%);
+  transition:transform 460ms var(--e-out);
+}
+.menu-btn:hover::before,
+.menu-btn[aria-expanded="true"]::before{transform:none;}
+.menu-btn:hover,
+.menu-btn[aria-expanded="true"]{color:var(--chaux);border-color:var(--ink);}
 .menu-btn:focus-visible{outline:2px solid var(--terre);outline-offset:3px;}
+
+.menu-btn__l{display:block;height:16px;overflow:hidden;}
+.menu-btn__w{
+  display:flex;flex-direction:column;
+  transition:transform 480ms var(--e-out);
+}
+.menu-btn__w i{display:block;height:16px;line-height:16px;font-style:normal;}
+.menu-btn[aria-expanded="true"] .menu-btn__w{transform:translateY(-16px);}
+
 .menu-btn__i{
   display:flex;flex-direction:column;justify-content:center;gap:4px;
   width:26px;height:26px;border-radius:50%;
   background:color-mix(in srgb,var(--ink) 8%,transparent);
   align-items:center;
-  transition:background 300ms var(--e);
+  transition:background 320ms var(--e),transform 560ms var(--e-out);
 }
-.menu-btn:hover .menu-btn__i{background:rgba(246,245,242,.16);}
+.menu-btn:hover .menu-btn__i,
+.menu-btn[aria-expanded="true"] .menu-btn__i{background:rgba(246,245,242,.18);}
+.menu-btn[aria-expanded="true"] .menu-btn__i{transform:rotate(180deg);}
 .menu-btn__i i{
-  display:block;width:11px;height:1.5px;border-radius:2px;
+  display:block;width:12px;height:1.5px;border-radius:2px;
   background:currentColor;
-  transition:transform 380ms var(--e-out),opacity 220ms var(--e);
+  transition:transform 420ms var(--e-out);
 }
 .menu-btn[aria-expanded="true"] .menu-btn__i i:first-child{transform:translateY(2.75px) rotate(45deg);}
 .menu-btn[aria-expanded="true"] .menu-btn__i i:last-child{transform:translateY(-2.75px) rotate(-45deg);}
 
-/* ---------- panneau déroulant ---------- */
-.mmenu{
-  display:block;position:absolute;left:0;right:0;top:100%;
-  /* Fond plein, sans backdrop-filter ni color-mix.
-     Un panneau translucide dépend du compositing du navigateur :
-     en rendu logiciel ou sur machine sans GPU, le contenu de la page
-     transparaît et le menu devient illisible. Une couleur pleine ne
-     peut pas échouer. */
-  background:var(--chaux);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  box-shadow:0 26px 48px -24px rgba(20,21,26,.3);
+/* ---------- voile ----------
+   Assombrit la page sous l'en-tête quand le panneau est ouvert :
+   la navigation passe au premier plan, un appui n'importe où ferme.
+   ------------------------------------------------------------ */
+/* la barre d'action basse s'efface, elle passerait par-dessus le voile */
+.menu-ouvert .dock{transform:translateY(105%);}
+.mveil{
+  position:fixed;inset:0;z-index:70;          /* l'en-tête reste à 80 */
+  background:rgba(18,19,24,.44);
   opacity:0;visibility:hidden;
-  transform:translateY(-10px);
-  transition:opacity 340ms var(--e),transform 420ms var(--e-out),visibility 340ms;
-  max-height:none;overflow:visible;
-  grid-template-rows:none;
+  transition:opacity 460ms var(--e),visibility 0s 460ms;
 }
-.mmenu.open{opacity:1;visibility:visible;transform:none;}
-.mmenu__in{
-  display:flex;flex-direction:column;
-  gap:2px;
-  padding:clamp(18px,4vw,26px) var(--gutter) clamp(24px,5vw,32px);
-  max-width:var(--wrap);margin:0 auto;
+.mveil.on{
+  opacity:1;visibility:visible;
+  transition:opacity 420ms var(--e),visibility 0s;
 }
-.mlink{
-  display:flex;align-items:center;justify-content:space-between;
-  background:none;border:0;cursor:pointer;text-align:left;
-  font-family:var(--serif);font-weight:500;letter-spacing:-.025em;
-  font-size:clamp(21px,5vw,27px);color:var(--ink);
-  padding:13px 4px;
-  border-bottom:1px solid var(--border);
-  opacity:0;transform:translateY(8px);
-  transition:opacity 420ms var(--e-out),transform 420ms var(--e-out),color 240ms var(--e);
-}
-.mmenu.open .mlink{opacity:1;transform:none;}
-.mlink:hover{color:var(--terre);}
-.mlink::after{
-  content:"";width:7px;height:7px;
-  border-right:1.4px solid currentColor;border-bottom:1.4px solid currentColor;
-  transform:rotate(-45deg);opacity:.32;
-  transition:transform 300ms var(--e-out),opacity 240ms;
-}
-.mlink:hover::after{transform:rotate(-45deg) translate(2px,2px);opacity:1;}
-/* Le sélecteur de langue est déjà dans l'en-tête, visible à toute
-   largeur : inutile de le répéter dans le panneau. */
-.mmenu .lang-sw{display:none;}
-.mmenu .btn{margin-top:2px;}
 
-/* entrée décalée des liens */
-.mmenu.open .mlink:nth-child(1){transition-delay:40ms;}
-.mmenu.open .mlink:nth-child(2){transition-delay:80ms;}
-.mmenu.open .mlink:nth-child(3){transition-delay:120ms;}
-.mmenu.open .mlink:nth-child(4){transition-delay:160ms;}
-.mmenu.open .mlink:nth-child(5){transition-delay:200ms;}
-.mmenu.open .mlink:nth-child(6){transition-delay:240ms;}
-.mmenu.open .mlink:nth-child(7){transition-delay:280ms;}
-.mmenu.open .mlink:nth-child(8){transition-delay:320ms;}
+/* ---------- panneau déroulant ----------
+   Une carte flottante alignée sous le bouton, qui se déroule par le
+   haut (clip-path) au lieu de simplement apparaître.
+   Fond plein, sans backdrop-filter ni transparence : un panneau
+   translucide dépend du compositing du navigateur et devient
+   illisible en rendu logiciel. Une couleur pleine ne peut pas
+   échouer, et si clip-path n'est pas supporté il reste l'opacité
+   et le déplacement.
+   ------------------------------------------------------------ */
+.mmenu{
+  position:absolute;top:calc(100% + 12px);
+  left:var(--gutter);right:var(--gutter);
+  max-width:460px;margin-left:auto;
+  background:var(--chaux);
+  border:1px solid var(--border);
+  border-radius:22px;
+  box-shadow:
+    0 1px 2px rgba(20,21,26,.05),
+    0 20px 40px -20px rgba(20,21,26,.34),
+    0 48px 90px -50px rgba(20,21,26,.5);
+  max-height:calc(100vh - 120px);
+  max-height:calc(100dvh - 120px);
+  overflow-y:auto;overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+  opacity:0;visibility:hidden;
+  transform:translateY(-14px) scale(.97);
+  transform-origin:100% 0;
+  clip-path:inset(0 0 100% 0 round 22px);
+  transition:
+    opacity 260ms var(--e),
+    transform 560ms var(--e-out),
+    clip-path 560ms var(--e-out),
+    visibility 0s 560ms;
+  will-change:transform,clip-path;
+}
+.mmenu.open{
+  opacity:1;visibility:visible;
+  transform:none;
+  clip-path:inset(0 0 0 0 round 22px);
+  transition:
+    opacity 220ms var(--e),
+    transform 640ms var(--e-out),
+    clip-path 640ms var(--e-out),
+    visibility 0s;
+}
+.mmenu__in{display:flex;flex-direction:column;padding:8px 10px 14px;}
+
+/* les lignes montent l'une après l'autre à l'ouverture, et repartent
+   ensemble à la fermeture : le délai n'existe que sur la classe
+   .open, il disparaît dès qu'elle est retirée */
+.mmenu__in > *{
+  opacity:0;transform:translateY(12px);
+  transition:opacity 480ms var(--e-out),transform 520ms var(--e-out);
+}
+.mmenu.open .mmenu__in > *{opacity:1;transform:none;}
+.mmenu.open .mmenu__in > :nth-child(1){transition-delay:70ms;}
+.mmenu.open .mmenu__in > :nth-child(2){transition-delay:110ms;}
+.mmenu.open .mmenu__in > :nth-child(3){transition-delay:150ms;}
+.mmenu.open .mmenu__in > :nth-child(4){transition-delay:190ms;}
+.mmenu.open .mmenu__in > :nth-child(5){transition-delay:230ms;}
+.mmenu.open .mmenu__in > :nth-child(6){transition-delay:270ms;}
+.mmenu.open .mmenu__in > :nth-child(7){transition-delay:310ms;}
+.mmenu.open .mmenu__in > :nth-child(8){transition-delay:350ms;}
+.mmenu.open .mmenu__in > :nth-child(9){transition-delay:390ms;}
+.mmenu.open .mmenu__in > :nth-child(10){transition-delay:430ms;}
+.mmenu.open .mmenu__in > :nth-child(11){transition-delay:470ms;}
+
+.mmenu__cap{
+  margin:6px 14px 8px;
+  font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted-l);
+}
+
+.mlink{
+  position:relative;
+  display:flex;align-items:center;gap:14px;
+  width:100%;background:none;border:0;cursor:pointer;text-align:left;
+  padding:13px 14px;border-radius:14px;
+  font-family:var(--serif);font-weight:500;letter-spacing:-.025em;
+  font-size:clamp(19px,4.6vw,24px);color:var(--ink);
+  /* l'entrée vient de .mmenu__in > * ; on ajoute ici ce qui répond
+     au doigt et au curseur */
+  transition:
+    opacity 480ms var(--e-out),transform 520ms var(--e-out),
+    background 300ms var(--e),color 260ms var(--e);
+}
+/* filet de séparation, effacé sous la pastille de survol */
+.mlink::before{
+  content:"";position:absolute;left:14px;right:14px;bottom:0;height:1px;
+  background:var(--border);
+  transition:opacity 260ms var(--e);
+}
+.mlink:last-of-type::before{opacity:0;}
+
+.mlink__n{
+  flex:none;width:20px;
+  font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;
+  font-variant-numeric:tabular-nums;
+  color:var(--terre);opacity:.7;
+  transition:opacity 280ms var(--e),transform 420ms var(--e-out);
+}
+.mlink__t{flex:1 1 auto;min-width:0;}
+.mlink__a{
+  flex:none;display:grid;place-items:center;
+  width:28px;height:28px;border-radius:50%;
+  background:color-mix(in srgb,var(--ink) 6%,transparent);
+  color:var(--ink);
+  transition:background 300ms var(--e),color 260ms var(--e),transform 460ms var(--e-out);
+}
+.mlink__a::after{
+  content:"";width:6px;height:6px;
+  border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
+  transform:rotate(-45deg) translate(-1px,-1px);
+}
+
+@media (hover:hover){
+  .mlink:hover{background:var(--sable);}
+  .mlink:hover::before{opacity:0;}
+  .mlink:hover .mlink__n{opacity:1;transform:translateX(2px);}
+  .mlink:hover .mlink__a{background:var(--ink);color:var(--chaux);transform:translateX(3px);}
+}
+.mlink:focus-visible{outline:2px solid var(--terre);outline-offset:-2px;}
+/* retour tactile : la ligne s'enfonce légèrement sous le doigt */
+.mmenu.open .mlink:active{transform:scale(.982);transition-duration:120ms;}
+
+/* section en cours de lecture, posée par main.js */
+.mlink.active{background:var(--sable);}
+.mlink.active::before{opacity:0;}
+.mlink.active .mlink__n{opacity:1;}
+.mlink.active .mlink__a{background:var(--terre);color:var(--chaux);}
+
+.mmenu__cta{padding:14px 4px 2px;}
+
 
 /* ---------- bascule ---------- */
 @media (max-width:1150px){
@@ -1535,6 +1632,17 @@ body{font-family:var(--sans);font-weight:400;}
 }
 @media (max-width:620px){
   .nav__act .btn--sm{display:none;}     /* l'appel à l'action passe dans le menu */
+  .mmenu{max-width:none;}
+  /* la barre se resserre : logo, langues et bouton doivent tenir
+     dans la largeur sans déborder de la marge */
+  .nav{gap:14px;}
+  .nav__act{gap:10px;}
+}
+@media (max-width:440px){
+  /* sous cette largeur le libellé ne tient plus : le bouton se
+     réduit à sa pastille, l'intitulé reste lu par aria-label */
+  .menu-btn{width:42px;padding:0;justify-content:center;gap:0;}
+  .menu-btn__l{display:none;}
 }
 
 /* ---------- pied : logo ---------- */
@@ -1543,7 +1651,8 @@ body{font-family:var(--sans);font-weight:400;}
 
 @media (prefers-reduced-motion:reduce){
   .nav__ind{transition:opacity 200ms;}
-  .mmenu,.mlink{transition-duration:1ms!important;transition-delay:0ms!important;}
+  .mveil,.mmenu,.mmenu__in > *,.menu-btn__w,.menu-btn__i{transition-duration:1ms!important;transition-delay:0ms!important;}
+  .mmenu{clip-path:none!important;transform:none!important;}
 }
 
 

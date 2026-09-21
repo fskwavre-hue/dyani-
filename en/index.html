@@ -49,7 +49,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="../assets/img/hero-dressage.webp" type="image/webp">
-<link rel="stylesheet" href="../assets/css/style.css?v=20260921">
+<link rel="stylesheet" href="../assets/css/style.css?v=20260921b">
 
 <!-- ---------- Données structurées ---------- -->
 <script type="application/ld+json">
@@ -75,6 +75,7 @@
 <body>
 <div class="progress" id="prog" aria-hidden="true"></div>
 <button class="skip" type="button" data-go="main">Skip to main content</button>
+<div class="mveil" id="mveil" aria-hidden="true"></div>
 <header class="site-header" id="header">
   <nav class="nav" aria-label="Main navigation">
     <button class="brand stage st1" type="button" data-go="top" aria-label="Dyani Hospitality — retour en haut"><picture><source srcset="../assets/img/logo.webp" type="image/webp"><img src="../assets/img/logo.png" alt="Dyani Hospitality" width="880" height="231"></picture></button>
@@ -95,23 +96,25 @@
     <div class="nav__act stage st1">
       <div class="lang-sw"><a href="/" hreflang="fr" lang="fr">FR</a><a href="/en/" hreflang="en" lang="en" aria-current="true">EN</a></div>
       <button class="btn btn--dark btn--sm" type="button" data-go="contact">Get in touch</button>
-      <button class="menu-btn" type="button" id="burger" aria-label="Open the menu" aria-expanded="false" aria-controls="mmenu"><span class="menu-btn__l">Menu</span><span class="menu-btn__i" aria-hidden="true"><i></i><i></i></span></button>
+      <button class="menu-btn" type="button" id="burger" aria-label="Open the menu" aria-expanded="false" aria-controls="mmenu"><span class="menu-btn__l" aria-hidden="true"><span class="menu-btn__w"><i>Menu</i><i>Close</i></span></span><span class="menu-btn__i" aria-hidden="true"><i></i><i></i></span></button>
     </div>
   </nav>
 
   <div class="mmenu" id="mmenu">
     <div class="mmenu__in">
-      <button class="mlink" type="button" data-go="interventions">Services</button>
-      <button class="mlink" type="button" data-go="methode">Method</button>
-      <button class="mlink" type="button" data-go="terrain">In the field</button>
-      <button class="mlink" type="button" data-go="formations">Programmes</button>
-      <button class="mlink" type="button" data-go="etablissements">Establishments</button>
-      <button class="mlink" type="button" data-go="constantin">Le Constantin</button>
-      <button class="mlink" type="button" data-go="fondateur">The founder</button>
-      <button class="mlink" type="button" data-go="avis">Recommendation</button>
-      <button class="mlink" type="button" data-go="contact">Contact</button>
-      <div class="lang-sw"><a href="/" hreflang="fr" lang="fr">FR</a><a href="/en/" hreflang="en" lang="en" aria-current="true">EN</a></div>
-      <button class="btn btn--dark btn--block" type="button" data-go="contact">Get in touch</button>
+      <p class="mmenu__cap">Navigation</p>
+      <button class="mlink" type="button" data-go="interventions"><span class="mlink__n" aria-hidden="true">01</span><span class="mlink__t">Services</span><span class="mlink__a" aria-hidden="true"></span></button>
+      <button class="mlink" type="button" data-go="methode"><span class="mlink__n" aria-hidden="true">02</span><span class="mlink__t">Method</span><span class="mlink__a" aria-hidden="true"></span></button>
+      <button class="mlink" type="button" data-go="terrain"><span class="mlink__n" aria-hidden="true">03</span><span class="mlink__t">In the field</span><span class="mlink__a" aria-hidden="true"></span></button>
+      <button class="mlink" type="button" data-go="formations"><span class="mlink__n" aria-hidden="true">04</span><span class="mlink__t">Programmes</span><span class="mlink__a" aria-hidden="true"></span></button>
+      <button class="mlink" type="button" data-go="etablissements"><span class="mlink__n" aria-hidden="true">05</span><span class="mlink__t">Establishments</span><span class="mlink__a" aria-hidden="true"></span></button>
+      <button class="mlink" type="button" data-go="constantin"><span class="mlink__n" aria-hidden="true">06</span><span class="mlink__t">Le Constantin</span><span class="mlink__a" aria-hidden="true"></span></button>
+      <button class="mlink" type="button" data-go="fondateur"><span class="mlink__n" aria-hidden="true">07</span><span class="mlink__t">The founder</span><span class="mlink__a" aria-hidden="true"></span></button>
+      <button class="mlink" type="button" data-go="avis"><span class="mlink__n" aria-hidden="true">08</span><span class="mlink__t">Recommendation</span><span class="mlink__a" aria-hidden="true"></span></button>
+      <button class="mlink" type="button" data-go="contact"><span class="mlink__n" aria-hidden="true">09</span><span class="mlink__t">Contact</span><span class="mlink__a" aria-hidden="true"></span></button>
+      <div class="mmenu__cta">
+        <button class="btn btn--dark btn--block" type="button" data-go="contact">Get in touch<span class="arrow" aria-hidden="true">&rarr;</span></button>
+      </div>
     </div>
   </div>
 </header>
@@ -929,6 +932,6 @@
   </div>
 </footer>
 
-<script src="../assets/js/main.js?v=20260921" defer></script>
+<script src="../assets/js/main.js?v=20260921b" defer></script>
 </body>
 </html>
