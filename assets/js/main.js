@@ -16,7 +16,6 @@
      ------------------------------------------------------------ */
   var burger = document.getElementById('burger');
   var mmenu  = document.getElementById('mmenu');
-  var mveil  = document.getElementById('mveil');
   var mlinks = Array.prototype.slice.call(mmenu.querySelectorAll('.mlink'));
   var etiquettes = {
     ouvrir: burger.getAttribute('aria-label'),
@@ -40,13 +39,64 @@
     }
   }
 
+  /* le panneau démarre sous l'en-tête : sa hauteur réelle est
+     publiée au CSS, elle change entre l'état déployé et .stuck */
+  function poserHauteurNav(){
+    var h = document.getElementById('header').offsetHeight;
+    document.documentElement.style.setProperty('--h-nav', h + 'px');
+  }
+  poserHauteurNav();
+  window.addEventListener('resize', poserHauteurNav);
+
   function basculer(o){
     mmenu.classList.toggle('open', o);
-    mveil.classList.toggle('on', o);
     burger.setAttribute('aria-expanded', String(o));
     burger.setAttribute('aria-label', o ? etiquettes.fermer : etiquettes.ouvrir);
+    mmenu.setAttribute('aria-hidden', String(!o));
     bloquerPage(o);
+    if (o){
+      poserHauteurNav();
+      /* le premier lien prend le focus : au clavier, on entre dans
+         le menu sans avoir à retraverser l'en-tête */
+      var p = mmenu.querySelector('.mlink');
+      if (p) p.focus({ preventScroll: true });
+    }
   }
+
+  /* Tabulation captive : tant que le panneau est ouvert, le focus
+     tourne entre le bouton et les éléments du panneau. */
+  function focusables(){
+    return [burger].concat(
+      Array.prototype.slice.call(
+        mmenu.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])')
+      ).filter(function(el){ return el.offsetParent !== null; })
+    );
+  }
+  mmenu.addEventListener('keydown', function(e){
+    if (e.key !== 'Tab' || !ouvert()) return;
+    var f = focusables();
+    if (!f.length) return;
+    var premier = f[0], dernier = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === premier){
+      e.preventDefault(); dernier.focus();
+    } else if (!e.shiftKey && document.activeElement === dernier){
+      e.preventDefault(); premier.focus();
+    }
+  });
+
+  /* Fermeture au glissé vers le haut, geste attendu sur un panneau
+     plein écran. Seuil volontairement haut pour ne pas déclencher
+     pendant un simple défilement de la liste. */
+  var yDepart = null;
+  mmenu.addEventListener('touchstart', function(e){
+    yDepart = e.touches[0].clientY;
+  }, { passive: true });
+  mmenu.addEventListener('touchend', function(e){
+    if (yDepart === null) return;
+    var d = yDepart - e.changedTouches[0].clientY;
+    yDepart = null;
+    if (d > 90 && mmenu.scrollTop <= 0) fermer(false);
+  }, { passive: true });
 
   function fermer(retour){
     if (!ouvert()) return;
@@ -59,8 +109,6 @@
     mmenu.scrollTop = 0;
     basculer(true);
   });
-
-  mveil.addEventListener('click', function(){ fermer(false); });
 
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape') fermer(true);
@@ -377,6 +425,12 @@
         el.textContent = txt;
       }
     });
+    /* data-wa : on ne remplace rien, on arme seulement le lien */
+    if (CONTACT.whatsapp){
+      document.querySelectorAll('[data-wa]').forEach(function(a){
+        a.href = 'https://wa.me/' + CONTACT.whatsapp;
+      });
+    }
   }
   poserCoordonnees();
 

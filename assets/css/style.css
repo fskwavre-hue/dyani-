@@ -1576,152 +1576,137 @@ body{font-family:var(--sans);font-weight:400;}
    Assombrit la page sous l'en-tête quand le panneau est ouvert :
    la navigation passe au premier plan, un appui n'importe où ferme.
    ------------------------------------------------------------ */
-/* la barre d'action basse s'efface, elle passerait par-dessus le voile */
+/* la barre d'action basse s'efface sous le panneau */
 .menu-ouvert .dock{transform:translateY(105%);}
-.mveil{
-  position:fixed;inset:0;z-index:70;          /* l'en-tête reste à 80 */
-  background:rgba(18,19,24,.44);
-  opacity:0;visibility:hidden;
-  transition:opacity 460ms var(--e),visibility 0s 460ms;
-}
-.mveil.on{
-  opacity:1;visibility:visible;
-  transition:opacity 420ms var(--e),visibility 0s;
-}
 
-/* ---------- panneau déroulant ----------
-   Une carte flottante alignée sous le bouton, qui se déroule par le
-   haut (clip-path) au lieu de simplement apparaître.
-   Fond plein, sans backdrop-filter ni transparence : un panneau
-   translucide dépend du compositing du navigateur et devient
-   illisible en rendu logiciel. Une couleur pleine ne peut pas
-   échouer, et si clip-path n'est pas supporté il reste l'opacité
-   et le déplacement.
+/* ---------- panneau plein écran ----------
+   Le panneau couvre l'écran et floute la page derrière lui. Le
+   flou est un agrément : sous @supports, faute de backdrop-filter,
+   le fond retombe sur une couleur pleine, jamais sur un panneau
+   translucide illisible.
    ------------------------------------------------------------ */
 .mmenu{
-  position:absolute;top:calc(100% + 12px);
-  left:var(--gutter);right:var(--gutter);
-  max-width:460px;margin-left:auto;
+  position:fixed;inset:0;z-index:75;       /* l'en-tête reste à 80 */
+  display:flex;flex-direction:column;
   background:var(--chaux);
-  border:1px solid var(--border);
-  border-radius:22px;
-  box-shadow:
-    0 1px 2px rgba(20,21,26,.05),
-    0 20px 40px -20px rgba(20,21,26,.34),
-    0 48px 90px -50px rgba(20,21,26,.5);
-  max-height:calc(100vh - 120px);
-  max-height:calc(100dvh - 120px);
-  overflow-y:auto;overscroll-behavior:contain;
-  -webkit-overflow-scrolling:touch;
   opacity:0;visibility:hidden;
-  transform:translateY(-14px) scale(.97);
-  transform-origin:100% 0;
-  clip-path:inset(0 0 100% 0 round 22px);
-  transition:
-    opacity 260ms var(--e),
-    transform 560ms var(--e-out),
-    clip-path 560ms var(--e-out),
-    visibility 0s 560ms;
-  will-change:transform,clip-path;
+  transition:opacity 340ms var(--e),visibility 0s 340ms;
+}
+@supports (backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px)){
+  .mmenu{
+    background:color-mix(in srgb,var(--chaux) 92%,transparent);
+    -webkit-backdrop-filter:saturate(1.3) blur(22px);
+    backdrop-filter:saturate(1.3) blur(22px);
+  }
 }
 .mmenu.open{
   opacity:1;visibility:visible;
-  transform:none;
-  clip-path:inset(0 0 0 0 round 22px);
+  transition:opacity 300ms var(--e),visibility 0s;
+}
+
+.mmenu__in{
+  display:flex;flex-direction:column;
+  height:100%;
+  padding:calc(var(--h-nav,76px) + 18px) var(--gutter) max(22px,env(safe-area-inset-bottom));
+  overflow-y:auto;overscroll-behavior:contain;
+}
+.mmenu__nav{display:flex;flex-direction:column;flex:1 1 auto;}
+
+/* les lignes montent en cascade ; le délai ne vit que sur .open,
+   la fermeture est donc immédiate et groupée */
+.mmenu__nav .mlink,
+.mmenu__foot > *{
+  opacity:0;transform:translateY(14px);
+  transition:opacity 420ms var(--e-out),transform 460ms var(--e-out);
+}
+.mmenu.open .mmenu__nav .mlink,
+.mmenu.open .mmenu__foot > *{opacity:1;transform:none;}
+.mmenu.open .mlink:nth-child(1){transition-delay:60ms;}
+.mmenu.open .mlink:nth-child(2){transition-delay:100ms;}
+.mmenu.open .mlink:nth-child(3){transition-delay:140ms;}
+.mmenu.open .mlink:nth-child(4){transition-delay:180ms;}
+.mmenu.open .mlink:nth-child(5){transition-delay:220ms;}
+.mmenu.open .mlink:nth-child(6){transition-delay:260ms;}
+.mmenu.open .mlink:nth-child(7){transition-delay:300ms;}
+.mmenu.open .mlink:nth-child(8){transition-delay:340ms;}
+.mmenu.open .mlink:nth-child(9){transition-delay:380ms;}
+.mmenu.open .mmenu__foot > :nth-child(1){transition-delay:420ms;}
+.mmenu.open .mmenu__foot > :nth-child(2){transition-delay:450ms;}
+.mmenu.open .mmenu__foot > :nth-child(3){transition-delay:480ms;}
+
+/* ---------- les liens : grande typo, icône discrète ---------- */
+.mlink{
+  position:relative;
+  display:flex;align-items:center;gap:16px;
+  width:100%;background:none;border:0;cursor:pointer;text-align:left;
+  padding:14px 0;
+  font-family:var(--serif);font-weight:500;letter-spacing:-.03em;
+  font-size:clamp(26px,7vw,38px);line-height:1.12;color:var(--ink);
   transition:
-    opacity 220ms var(--e),
-    transform 640ms var(--e-out),
-    clip-path 640ms var(--e-out),
-    visibility 0s;
+    opacity 420ms var(--e-out),transform 460ms var(--e-out),
+    color 260ms var(--e);
 }
-.mmenu__in{display:flex;flex-direction:column;padding:8px 10px 14px;}
-
-/* les lignes montent l'une après l'autre à l'ouverture, et repartent
-   ensemble à la fermeture : le délai n'existe que sur la classe
-   .open, il disparaît dès qu'elle est retirée */
-.mmenu__in > *{
-  opacity:0;transform:translateY(12px);
-  transition:opacity 480ms var(--e-out),transform 520ms var(--e-out);
+.mlink__ic{
+  flex:none;width:22px;height:22px;
+  color:var(--muted-l);
+  transition:color 300ms var(--e),transform 420ms var(--e-out);
 }
-.mmenu.open .mmenu__in > *{opacity:1;transform:none;}
-.mmenu.open .mmenu__in > :nth-child(1){transition-delay:70ms;}
-.mmenu.open .mmenu__in > :nth-child(2){transition-delay:110ms;}
-.mmenu.open .mmenu__in > :nth-child(3){transition-delay:150ms;}
-.mmenu.open .mmenu__in > :nth-child(4){transition-delay:190ms;}
-.mmenu.open .mmenu__in > :nth-child(5){transition-delay:230ms;}
-.mmenu.open .mmenu__in > :nth-child(6){transition-delay:270ms;}
-.mmenu.open .mmenu__in > :nth-child(7){transition-delay:310ms;}
-.mmenu.open .mmenu__in > :nth-child(8){transition-delay:350ms;}
-.mmenu.open .mmenu__in > :nth-child(9){transition-delay:390ms;}
-.mmenu.open .mmenu__in > :nth-child(10){transition-delay:430ms;}
-.mmenu.open .mmenu__in > :nth-child(11){transition-delay:470ms;}
+.mlink__t{flex:1 1 auto;min-width:0;}
 
-.mmenu__cap{
-  margin:6px 14px 8px;
+/* le filet d'accent qui se déploie sous la section lue */
+.mlink::after{
+  content:"";position:absolute;left:0;bottom:6px;height:1px;width:100%;
+  background:var(--terre);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 460ms var(--e-out);
+}
+.mlink.active{color:var(--terre);}
+.mlink.active .mlink__ic{color:var(--terre);}
+.mlink.active::after{transform:scaleX(1);}
+
+@media (hover:hover){
+  .mlink:hover{color:var(--terre);}
+  .mlink:hover .mlink__ic{color:var(--terre);transform:translateX(3px);}
+}
+.mlink:focus-visible{outline:2px solid var(--terre);outline-offset:4px;border-radius:6px;}
+.mmenu.open .mlink:active{transform:scale(.985);transition-duration:120ms;}
+
+/* ---------- actions basses ---------- */
+.mmenu__foot{
+  flex:none;display:flex;flex-direction:column;gap:12px;
+  padding-top:22px;margin-top:18px;
+  border-top:1px solid var(--border);
+}
+.mact{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:16px 22px;border-radius:999px;
+  font-family:var(--sans);font-size:15px;font-weight:500;
+  border:1px solid transparent;cursor:pointer;
+  text-decoration:none;
+  transition:background 320ms var(--e),color 320ms var(--e),border-color 320ms var(--e);
+}
+.mact__ic{flex:none;width:20px;height:20px;}
+.mact--wa{background:transparent;color:var(--ink);border-color:var(--border-fort);}
+.mact--cta{background:var(--ink);color:var(--chaux);}
+@media (hover:hover){
+  .mact--wa:hover{border-color:var(--ink);background:var(--sable);}
+  .mact--cta:hover{background:var(--navy);}
+}
+.mact:focus-visible{outline:2px solid var(--terre);outline-offset:3px;}
+
+.mmenu__lang{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:6px;
+}
+/* le sélecteur de l'en-tête s'efface pendant l'ouverture :
+   celui du panneau prend le relais, sans doublon à l'écran */
+.menu-ouvert .nav__act .lang-sw{opacity:0;pointer-events:none;}
+.nav__act .lang-sw{transition:opacity 260ms var(--e);}
+
+.mmenu__langlab{
   font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
   color:var(--muted-l);
 }
-
-.mlink{
-  position:relative;
-  display:flex;align-items:center;gap:14px;
-  width:100%;background:none;border:0;cursor:pointer;text-align:left;
-  padding:13px 14px;border-radius:14px;
-  font-family:var(--serif);font-weight:500;letter-spacing:-.025em;
-  font-size:clamp(19px,4.6vw,24px);color:var(--ink);
-  /* l'entrée vient de .mmenu__in > * ; on ajoute ici ce qui répond
-     au doigt et au curseur */
-  transition:
-    opacity 480ms var(--e-out),transform 520ms var(--e-out),
-    background 300ms var(--e),color 260ms var(--e);
-}
-/* filet de séparation, effacé sous la pastille de survol */
-.mlink::before{
-  content:"";position:absolute;left:14px;right:14px;bottom:0;height:1px;
-  background:var(--border);
-  transition:opacity 260ms var(--e);
-}
-.mlink:last-of-type::before{opacity:0;}
-
-.mlink__n{
-  flex:none;width:20px;
-  font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;
-  font-variant-numeric:tabular-nums;
-  color:var(--terre);opacity:.7;
-  transition:opacity 280ms var(--e),transform 420ms var(--e-out);
-}
-.mlink__t{flex:1 1 auto;min-width:0;}
-.mlink__a{
-  flex:none;display:grid;place-items:center;
-  width:28px;height:28px;border-radius:50%;
-  background:color-mix(in srgb,var(--ink) 6%,transparent);
-  color:var(--ink);
-  transition:background 300ms var(--e),color 260ms var(--e),transform 460ms var(--e-out);
-}
-.mlink__a::after{
-  content:"";width:6px;height:6px;
-  border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
-  transform:rotate(-45deg) translate(-1px,-1px);
-}
-
-@media (hover:hover){
-  .mlink:hover{background:var(--sable);}
-  .mlink:hover::before{opacity:0;}
-  .mlink:hover .mlink__n{opacity:1;transform:translateX(2px);}
-  .mlink:hover .mlink__a{background:var(--ink);color:var(--chaux);transform:translateX(3px);}
-}
-.mlink:focus-visible{outline:2px solid var(--terre);outline-offset:-2px;}
-/* retour tactile : la ligne s'enfonce légèrement sous le doigt */
-.mmenu.open .mlink:active{transform:scale(.982);transition-duration:120ms;}
-
-/* section en cours de lecture, posée par main.js */
-.mlink.active{background:var(--sable);}
-.mlink.active::before{opacity:0;}
-.mlink.active .mlink__n{opacity:1;}
-.mlink.active .mlink__a{background:var(--terre);color:var(--chaux);}
-
-.mmenu__cta{padding:14px 4px 2px;}
-
 
 /* ---------- bascule ---------- */
 @media (max-width:1150px){
@@ -1749,8 +1734,8 @@ body{font-family:var(--sans);font-weight:400;}
 
 @media (prefers-reduced-motion:reduce){
   .nav__ind{transition:opacity 200ms;}
-  .mveil,.mmenu,.mmenu__in > *,.menu-btn__w,.menu-btn__i{transition-duration:1ms!important;transition-delay:0ms!important;}
-  .mmenu{clip-path:none!important;transform:none!important;}
+  .mmenu,.mlink,.mmenu__foot > *,.menu-btn__w,.menu-btn__i{transition-duration:1ms!important;transition-delay:0ms!important;}
+  .mlink::after{transition-duration:1ms!important;}
 }
 
 

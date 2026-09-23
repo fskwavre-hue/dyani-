@@ -50,7 +50,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="../assets/img/hero-dressage.webp" type="image/webp">
-<link rel="stylesheet" href="../assets/css/style.css?v=20260923c">
+<link rel="stylesheet" href="../assets/css/style.css?v=20260923d">
 
 <!-- ---------- Données structurées ---------- -->
 <script type="application/ld+json">
@@ -76,7 +76,6 @@
 <body>
 <div class="progress" id="prog" aria-hidden="true"></div>
 <button class="skip" type="button" data-go="main">Skip to main content</button>
-<div class="mveil" id="mveil" aria-hidden="true"></div>
 <header class="site-header" id="header">
   <nav class="nav" aria-label="Main navigation">
     <button class="brand stage st1" type="button" data-go="top" aria-label="Dyani Hospitality — back to top"><picture><source srcset="../assets/img/logo.webp" type="image/webp"><img src="../assets/img/logo.png" alt="Dyani Hospitality" width="880" height="231"></picture></button>
@@ -89,7 +88,7 @@
       <li><button class="navlink" type="button" data-go="terrain">In the field</button></li>
       <li><button class="navlink" type="button" data-go="formations">Programmes</button></li>
       <li><button class="navlink" type="button" data-go="etablissements">Establishments</button></li>
-      <li><button class="navlink" type="button" data-go="constantin">Testimonial</button></li>
+      <li><button class="navlink" type="button" data-go="constantin">Case study</button></li>
       <li><button class="navlink" type="button" data-go="fondateur">The founder</button></li>
     </ul>
     </div>
@@ -100,25 +99,58 @@
       <button class="menu-btn" type="button" id="burger" aria-label="Open the menu" aria-expanded="false" aria-controls="mmenu"><span class="menu-btn__l" aria-hidden="true"><span class="menu-btn__w"><i>Menu</i><i>Close</i></span></span><span class="menu-btn__i" aria-hidden="true"><i></i><i></i></span></button>
     </div>
   </nav>
-
-  <div class="mmenu" id="mmenu">
-    <div class="mmenu__in">
-      <p class="mmenu__cap">Navigation</p>
-      <button class="mlink" type="button" data-go="interventions"><span class="mlink__n" aria-hidden="true">01</span><span class="mlink__t">Services</span><span class="mlink__a" aria-hidden="true"></span></button>
-      <button class="mlink" type="button" data-go="methode"><span class="mlink__n" aria-hidden="true">02</span><span class="mlink__t">Method</span><span class="mlink__a" aria-hidden="true"></span></button>
-      <button class="mlink" type="button" data-go="terrain"><span class="mlink__n" aria-hidden="true">03</span><span class="mlink__t">In the field</span><span class="mlink__a" aria-hidden="true"></span></button>
-      <button class="mlink" type="button" data-go="formations"><span class="mlink__n" aria-hidden="true">04</span><span class="mlink__t">Programmes</span><span class="mlink__a" aria-hidden="true"></span></button>
-      <button class="mlink" type="button" data-go="etablissements"><span class="mlink__n" aria-hidden="true">05</span><span class="mlink__t">Establishments</span><span class="mlink__a" aria-hidden="true"></span></button>
-      <button class="mlink" type="button" data-go="constantin"><span class="mlink__n" aria-hidden="true">06</span><span class="mlink__t">Testimonial</span><span class="mlink__a" aria-hidden="true"></span></button>
-      <button class="mlink" type="button" data-go="fondateur"><span class="mlink__n" aria-hidden="true">07</span><span class="mlink__t">The founder</span><span class="mlink__a" aria-hidden="true"></span></button>
-      <button class="mlink" type="button" data-go="avis"><span class="mlink__n" aria-hidden="true">08</span><span class="mlink__t">Recommendation</span><span class="mlink__a" aria-hidden="true"></span></button>
-      <button class="mlink" type="button" data-go="contact"><span class="mlink__n" aria-hidden="true">09</span><span class="mlink__t">Contact</span><span class="mlink__a" aria-hidden="true"></span></button>
-      <div class="mmenu__cta">
-        <button class="btn btn--dark btn--block" type="button" data-go="contact">Get in touch<span class="arrow" aria-hidden="true">&rarr;</span></button>
+</header>
+<div class="mmenu" id="mmenu" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="mmenu__in">
+    <nav class="mmenu__nav" aria-label="Navigation">
+      <button class="mlink" type="button" data-go="interventions">
+        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.4 7.5h17M3.4 12h17M3.4 16.5h11"/><circle cx="18.6" cy="16.5" r="2.1"/></svg>
+        <span class="mlink__t">Services</span>
+      </button>
+      <button class="mlink" type="button" data-go="methode">
+        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="5.5" cy="7" r="2.1"/><circle cx="5.5" cy="17" r="2.1"/><path d="M10.4 7h10.2M10.4 17h6.4"/></svg>
+        <span class="mlink__t">Method</span>
+      </button>
+      <button class="mlink" type="button" data-go="terrain">
+        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.6" y="5.4" width="14" height="13.2" rx="2.2"/><path d="m16.6 13.2 4.8 3V7.8l-4.8 3Z"/></svg>
+        <span class="mlink__t">In the field</span>
+      </button>
+      <button class="mlink" type="button" data-go="formations">
+        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.3 2.9h7.4l4.4 4.4v13.8H6.3Z"/><path d="M13.5 2.9v4.5h4.5"/><path d="M9.3 12.4h5.6M9.3 16.1h4"/></svg>
+        <span class="mlink__t">Programmes</span>
+      </button>
+      <button class="mlink" type="button" data-go="etablissements">
+        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.6 20.6h18.8"/><path d="M4.2 20.6V11h4.3v9.6"/><path d="M8.5 20.6V6.6h6.5v14"/><path d="M15 20.6v-6.4h4.7v6.4"/></svg>
+        <span class="mlink__t">Establishments</span>
+      </button>
+      <button class="mlink" type="button" data-go="constantin">
+        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7.8h18v11.4a1.6 1.6 0 0 1-1.6 1.6H4.6A1.6 1.6 0 0 1 3 19.2Z"/><path d="M9 7.8V5.6a1.6 1.6 0 0 1 1.6-1.6h2.8A1.6 1.6 0 0 1 15 5.6v2.2"/><path d="M3 12.6h18"/></svg>
+        <span class="mlink__t">Case study</span>
+      </button>
+      <button class="mlink" type="button" data-go="fondateur">
+        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8.4" r="3.5"/><path d="M5.3 20.4a6.7 6.7 0 0 1 13.4 0"/></svg>
+        <span class="mlink__t">The founder</span>
+      </button>
+      <button class="mlink" type="button" data-go="avis">
+        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="9.4" r="5.4"/><path d="M12 6.9v2.6l1.8 1.1"/><path d="m8.4 14.4-1.1 6 4.7-2.4 4.7 2.4-1.1-6"/></svg>
+        <span class="mlink__t">Recommendation</span>
+      </button>
+      <button class="mlink" type="button" data-go="contact">
+        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.7" y="4.9" width="18.6" height="14.2" rx="2.2"/><path d="m3.4 6.6 8.6 6 8.6-6"/></svg>
+        <span class="mlink__t">Contact</span>
+      </button>
+    </nav>
+    <div class="mmenu__foot">
+      <a class="mact mact--wa" data-wa href="#" target="_blank" rel="noopener noreferrer"><svg class="mact__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.4 20.6 4.8 16a8.2 8.2 0 1 1 3.2 3.2Z"/><path d="M8.9 9.1c.4 2.9 3.1 5.6 6 6l1-1.7 2 1-.6 1.9a5.6 5.6 0 0 1-5.1-1.5 5.6 5.6 0 0 1-1.5-5.1l1.9-.6 1 2Z"/></svg><span>WhatsApp</span></a>
+      <button class="mact mact--cta" type="button" data-go="contact"><span>Get in touch</span></button>
+      <div class="mmenu__lang">
+        <span class="mmenu__langlab">Language</span>
+        <div class="lang-sw"><a href="/en/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/" hreflang="fr" lang="fr">FR</a></div>
       </div>
     </div>
   </div>
-</header>
+</div>
+
 
 <main id="main">
 <span id="top"></span>
@@ -988,7 +1020,7 @@
           <li><button class="lbtn" type="button" data-go="terrain">In the field</button></li>
           <li><button class="lbtn" type="button" data-go="formations">Programmes</button></li>
           <li><button class="lbtn" type="button" data-go="etablissements">Establishments</button></li>
-          <li><button class="lbtn" type="button" data-go="constantin">Testimonial</button></li>
+          <li><button class="lbtn" type="button" data-go="constantin">Case study</button></li>
           <li><button class="lbtn" type="button" data-go="fondateur">The founder</button></li>
         </ul>
       </nav>
@@ -1011,6 +1043,6 @@
   </div>
 </footer>
 
-<script src="../assets/js/main.js?v=20260923c" defer></script>
+<script src="../assets/js/main.js?v=20260923d" defer></script>
 </body>
 </html>
