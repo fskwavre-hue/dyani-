@@ -135,3 +135,27 @@ par le client pour préserver la cohérence chromatique.
 anis, lavande — face à une palette entièrement chaude. Elle a été
 désaturée à 28 %, rebasculée vers le laiton, et recadrée pour écarter un
 panneau de sortie en vietnamien et un scooter rouge.
+
+**Retiré le 24/09/2026.** Les deux fonds ont finalement été déposés : le
+site revient à des aplats francs. Sont partis avec eux le balisage
+`.hero__bg` / `.sect__bg` des deux pages, les règles correspondantes de
+`style.css` (56 lignes) et les six images (`accueil-sonnette-*`,
+`lobby-escalier-*`). L'en-tête reste transparent en haut de page : sans
+photo derrière, il se confond avec l'aplat, et la pastille de navigation
+porte son propre fond — la lisibilité est intacte, vérifiée au rendu.
+
+Pour les rétablir : `git revert` du commit correspondant.
+
+---
+
+## Piste parallèle — refonte v2
+
+Une refonte complète, d'une autre facture (« éditorial palace » :
+Cormorant Garamond + Manrope, fonds sombres, défilement horizontal
+épinglé), a été livrée séparément et installée sous `/v2/` (FR) et
+`/v2/en/` (EN). Elle ne remplace rien : le site actuel reste servi à la
+racine.
+
+Les deux pistes sont pour l'instant concurrentes — il faudra trancher.
+Voir `v2/LISEZMOI.md` pour l'état, les corrections apportées à la
+livraison d'origine et la marche à suivre pour la mise en production.

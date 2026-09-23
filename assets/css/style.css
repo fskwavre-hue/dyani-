@@ -212,62 +212,8 @@ button{font-family:inherit;color:inherit;}
 /* ============================================================
    4. HERO
    ============================================================ */
-/* ------------------------------------------------------------
-   FONDS PHOTOGRAPHIQUES
-   Deux images d'ambiance, très voilées : elles donnent de la
-   profondeur sans jamais disputer la lisibilité au texte. Le
-   voile est un dégradé, pas un aplat — l'image respire au centre
-   et se referme sous la barre de navigation, là où le contraste
-   compte le plus.
-   ------------------------------------------------------------ */
 .hero{position:relative;isolation:isolate;}
-.hero__bg,.sect__bg{
-  position:absolute;z-index:-1;overflow:hidden;
-  left:0;right:0;bottom:0;
-  pointer-events:none;
-}
-/* le fond du hero remonte sous l'en-tête, qui est transparent */
-.hero__bg{top:calc(-1 * var(--h-nav,85px));}
-.sect__bg{top:0;}
-.hero__bg img,.sect__bg img{
-  width:100%;height:100%;object-fit:cover;
-  object-position:64% 42%;
-}
-.hero__bg::after,.sect__bg::after{
-  content:"";position:absolute;inset:0;
-}
-/* fond clair : on ne laisse passer qu'un voile chaud */
-.hero__bg::after{
-  background:linear-gradient(
-    180deg,
-    color-mix(in srgb,var(--chaux) 95%,transparent) 0%,
-    color-mix(in srgb,var(--chaux) 88%,transparent) 34%,
-    color-mix(in srgb,var(--chaux) 91%,transparent) 72%,
-    var(--chaux) 100%);
-}
-/* Bande lin : le fond ne couvre que le haut de la section — la
-   titraille et la ligne des jalons. Il s'éteint bien avant les
-   cartes des profils, qui doivent rester posées sur un aplat.
-   L'image n'apporte qu'une profondeur, jamais un motif lisible. */
-.sect__bg{height:min(62%,660px);bottom:auto;}
-.sect__bg img{object-position:50% 26%;opacity:.55;}
-.sect__bg::after{
-  background:linear-gradient(
-    180deg,
-    var(--sable) 0%,
-    color-mix(in srgb,var(--sable) 88%,transparent) 26%,
-    color-mix(in srgb,var(--sable) 92%,transparent) 62%,
-    var(--sable) 100%);
-}
 .s-sable{position:relative;isolation:isolate;}
-
-@media (max-width:760px){
-  /* en petite largeur le texte occupe toute la colonne : le fond
-     se retire encore un peu pour ne rien gêner */
-  .hero__bg img{object-position:66% 38%;}
-  .sect__bg{height:min(52%,460px);}
-  .sect__bg img{opacity:.4;}
-}
 
 .hero{padding-block:clamp(52px,7vw,96px) clamp(40px,5vw,72px);}
 .hero__grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(40px,6vw,90px);align-items:center;}
