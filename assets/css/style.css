@@ -821,7 +821,7 @@ html:not(.js) .stage{opacity:1;transform:none;}
 .vplay{
   width:66px;height:66px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  background:rgba(245,242,236,.94);
+  background:rgba(245,242,236,.94);color:var(--ink);
   transition:transform 420ms var(--e-out),background 300ms var(--e);
 }
 .vframe__ov:hover .vplay{transform:scale(1.08);background:#fff;}
@@ -899,7 +899,7 @@ html:not(.js) .stage{opacity:1;transform:none;}
   position:absolute;right:12px;bottom:12px;
   width:34px;height:34px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  background:rgba(245,242,236,.92);
+  background:rgba(245,242,236,.92);color:var(--ink);
   opacity:0;transform:translateY(6px);
   transition:opacity 340ms var(--e),transform 340ms var(--e-out);
 }
