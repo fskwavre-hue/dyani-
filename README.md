@@ -122,31 +122,34 @@ quitte pas la page et voit une confirmation sous les boutons.
 
 ```js
 var W3F = {
-  cle: 'c2899e1d-f84a-48d1-9825-bbd1d207f7ec',
+  cle: 'dfe45568-2244-4601-9270-ad50d3cbe411',
   url: 'https://api.web3forms.com/submit'
 };
 ```
 
-**État actuel — adresse affichée et boîte de réception sont
-volontairement dissociées :**
+**État actuel — adresse affichée et boîte de réception coïncident :**
 
 | | |
 | --- | --- |
 | Adresse **affichée** sur le site | `contact@dyanihospitality.com` (objet `_c._e`) |
-| Boîte qui **reçoit** les demandes | la boîte personnelle liée à la clé Web3Forms |
+| Boîte qui **reçoit** les demandes | `contact@dyanihospitality.com` (Zoho) |
 
-C'est l'intérêt du procédé : le visiteur ne voit que l'adresse
-professionnelle, et les demandes arrivent où l'on veut, sans attendre que
-la messagerie du domaine soit en service. Envoi vérifié en conditions
-réelles (réponse `success: true` de l'API).
+Depuis le 24/09/2026, les demandes arrivent directement chez le client.
+Auparavant, la clé relayait vers une adresse personnelle, le temps que
+la messagerie du domaine soit en service — c'est l'intérêt du procédé :
+le visiteur ne voit que l'adresse professionnelle, et les demandes
+arrivent où l'on veut.
 
-Pour faire arriver les demandes sur `contact@dyanihospitality.com` le
-jour où cette boîte fonctionnera, créer une clé avec cette adresse et la
-remplacer ci-dessus. Rien d'autre à toucher.
+La refonte v2 porte la même clé, dans `v2/v2.js`
+(`CONFIG.web3formsKey`). **Un changement de boîte doit être répercuté
+aux deux endroits.** Envoi vérifié en conditions réelles depuis les
+trois pages (réponse `success: true` de l'API).
 
-Pour changer de boîte plus tard (passage à
-`contact@dyanihospitality.com`), refaire l'opération avec la nouvelle
-adresse et remplacer la clé : rien d'autre à toucher.
+> **Tester le formulaire avec un navigateur automatisé :** Web3Forms
+> bloque les agents à signature « headless ». Un script Playwright doit
+> passer un `user_agent` de Chrome ordinaire, sans quoi la réponse
+> revient sans en-tête CORS et l'échec ressemble à tort à une clé
+> invalide. L'origine `localhost` est acceptée.
 
 Cette clé est **publique par nature** — elle figure dans le JavaScript,
 comme sur tous les sites qui utilisent ce service. Elle n'autorise que le

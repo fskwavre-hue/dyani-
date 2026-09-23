@@ -374,8 +374,7 @@
      logiciel de messagerie.
 
      POUR CHANGER DE BOÎTE DE RÉCEPTION
-       1. créer un accès sur web3forms.com avec l'adresse voulue
-          (plus tard : contact@dyanihospitality.com) ;
+       1. créer un accès sur web3forms.com avec l'adresse voulue ;
        2. coller la clé reçue (« Access Key ») dans W3F.cle.
      Cette clé est publique par nature : elle n'autorise que le
      dépôt d'un message, jamais la lecture de la boîte.
@@ -383,9 +382,14 @@
      Tant que W3F.cle reste vide, le bouton retombe sur l'ancien
      comportement (ouverture du logiciel de messagerie) : le site
      reste donc fonctionnel même sans clé.
+
+     24/09/2026 — bascule vers la boîte du client. L'ancienne clé
+     (c2899e1d-…) relayait vers une adresse personnelle, le temps
+     que la messagerie professionnelle soit en place.
      ============================================================ */
   var W3F = {
-    cle: 'c2899e1d-f84a-48d1-9825-bbd1d207f7ec',
+    /* boîte contact@dyanihospitality.com (Zoho) */
+    cle: 'dfe45568-2244-4601-9270-ad50d3cbe411',
     url: 'https://api.web3forms.com/submit'
   };
 
