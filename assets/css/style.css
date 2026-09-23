@@ -345,17 +345,6 @@ button{font-family:inherit;color:inherit;}
   .fond{grid-template-columns:1fr;}
 }
 
-/* parcours */
-.cv{margin-top:clamp(44px,5vw,70px);border-top:1px solid var(--border);}
-.cv__i{
-  display:grid;grid-template-columns:150px 1fr;gap:28px;
-  padding:24px 0;border-bottom:1px solid var(--border);
-}
-.cv__y{font-size:13px;color:var(--terre);letter-spacing:.04em;padding-top:3px;}
-.cv__r{font-size:16px;color:var(--ink);margin-bottom:7px;}
-.cv__d{font-size:14px;color:var(--muted);line-height:1.75;}
-@media (max-width:640px){.cv__i{grid-template-columns:1fr;gap:6px;}}
-
 /* ------------------------------------------------------------
    profils formés — médaillons
    Six cartes, chacune portant un médaillon numéroté. Le filet
