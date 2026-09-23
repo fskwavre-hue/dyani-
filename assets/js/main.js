@@ -148,6 +148,26 @@
     cibles.forEach(function(el){ io.observe(el); });
   }
 
+  /* ---------- formations : dépliage du détail complet ----------
+     Le panneau est ouvert dans le HTML pour rester lisible sans
+     JavaScript ; on le replie ici, au chargement.               */
+  document.querySelectorAll('.fold__b').forEach(function(b){
+    var pan = document.getElementById(b.getAttribute('aria-controls'));
+    if (!pan) return;
+    var lbl = b.querySelector('.fold__lbl');
+
+    var poser = function(ouvert){
+      b.setAttribute('aria-expanded', String(ouvert));
+      pan.classList.toggle('open', ouvert);
+      if (lbl) lbl.textContent = ouvert ? b.dataset.close : b.dataset.open;
+    };
+
+    poser(false);                    /* replié à l'arrivée */
+    b.addEventListener('click', function(){
+      poser(b.getAttribute('aria-expanded') !== 'true');
+    });
+  });
+
   /* ---------- formations : accordéon ---------- */
   document.querySelectorAll('.fam__h').forEach(function(h){
     h.addEventListener('click', function(){

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.className+=" js";</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dyani Hospitality — Hospitality team training and service standards in Morocco</title>
 <meta name="description" content="Team training, written standards and operational structure for hotels, riads, restaurants and caterers in Morocco. On-site observation, diagnostic, training and follow-up.">
@@ -49,7 +50,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="../assets/img/hero-dressage.webp" type="image/webp">
-<link rel="stylesheet" href="../assets/css/style.css?v=20260923a">
+<link rel="stylesheet" href="../assets/css/style.css?v=20260923c">
 
 <!-- ---------- Données structurées ---------- -->
 <script type="application/ld+json">
@@ -394,62 +395,98 @@
       <div>
         <p class="eyebrow">Programmes</p>
         <h2 class="display h-1 head">Twelve programmes, adjusted to your establishment</h2>
-        <p class="lead u-mt-l">Durations are indicative and adjusted to your organisation. Open a family to see the detail.</p>
+        <p class="lead u-mt-l">Durations are indicative and adjusted to your organisation. Four families, twelve programmes.</p>
       </div>
       <button class="btn btn--line btn--sm" type="button" data-go="contact">Request the catalogue</button>
     </div>
 
-    <div class="fam" data-rv="up">
-      <!-- Famille 1 -->
-      <button class="fam__h" type="button" aria-expanded="true" aria-controls="f1">
-        <span class="fam__t">Dining room and service</span>
-        <span class="fam__r"><span class="fam__c">4 programmes</span><span class="fam__i" aria-hidden="true"></span></span>
+    <ul class="fams" data-rv="up">
+      <li class="fams__i">
+        <span class="fams__ic" aria-hidden="true"><svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.1 3.5v4.4a1.95 1.95 0 0 0 3.9 0V3.5"/><path d="M9.05 9.85V20.5"/><path d="M16.9 3.5c1.65 2.45 1.65 6.4 0 8.5"/><path d="M16.9 12V20.5"/></svg></span>
+        <span class="fams__t">Dining room and service</span>
+        <span class="fams__c">4 programmes</span>
+      </li>
+      <li class="fams__i">
+        <span class="fams__ic" aria-hidden="true"><svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.25 18.3h15.5"/><path d="M6.4 18.3a5.6 5.6 0 0 1 11.2 0"/><path d="M12 12.7v-2.1"/><circle cx="12" cy="9.5" r="1.05"/></svg></span>
+        <span class="fams__t">Welcome and guest relations</span>
+        <span class="fams__c">3 programmes</span>
+      </li>
+      <li class="fams__i">
+        <span class="fams__ic" aria-hidden="true"><svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="9.4" r="3.15"/><path d="M6.4 20.6a5.6 5.6 0 0 1 11.2 0"/><circle cx="4.9" cy="8.8" r="2.05"/><circle cx="19.1" cy="8.8" r="2.05"/><path d="M1.9 16.6a3.55 3.55 0 0 1 2.95-3.45"/><path d="M22.1 16.6a3.55 3.55 0 0 0-2.95-3.45"/></svg></span>
+        <span class="fams__t">Middle management</span>
+        <span class="fams__c">3 programmes</span>
+      </li>
+      <li class="fams__i">
+        <span class="fams__ic" aria-hidden="true"><svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.4" y="3.4" width="7.6" height="7.6" rx="1.5"/><rect x="13" y="3.4" width="7.6" height="7.6" rx="1.5"/><rect x="3.4" y="13" width="7.6" height="7.6" rx="1.5"/><path d="M16.8 13.6v6.4M13.6 16.8h6.4"/></svg></span>
+        <span class="fams__t">Specific formats</span>
+        <span class="fams__c">2 programmes</span>
+      </li>
+    </ul>
+
+    <div class="fold" data-rv="up">
+      <button class="btn btn--line btn--sm fold__b" type="button"
+              aria-expanded="true" aria-controls="formations-detail"
+              data-open="See the detail of all 12 programmes" data-close="Hide the detail">
+        <span class="fold__lbl">Hide the detail</span>
+        <span class="fold__i" aria-hidden="true"></span>
       </button>
-      <div class="fam__p open" id="f1">
-        <div class="fam__in">
-          <div class="prog"><div><div class="prog__n">Fundamentals of dining-room service</div><div class="prog__w">Commis, waiters, chefs de rang</div></div><div class="prog__d">2 days</div></div>
-          <div class="prog"><div><div class="prog__n">The craft of the Maître d'Hôtel</div><div class="prog__w">Maîtres d'hôtel, floor managers</div></div><div class="prog__d">3 days</div></div>
-          <div class="prog"><div><div class="prog__n">Upselling and advising the guest</div><div class="prog__w">Dining room, bar, front desk</div></div><div class="prog__d">1 day</div></div>
-          <div class="prog"><div><div class="prog__n">Holding the standard under heavy load</div><div class="prog__w">Full teams, before the season</div></div><div class="prog__d">1 day</div></div>
+    </div>
+
+    <div class="fold__p open" id="formations-detail">
+      <div class="fold__in">
+      <div class="fam">
+        <!-- Famille 1 -->
+        <button class="fam__h" type="button" aria-expanded="true" aria-controls="f1">
+          <span class="fam__t">Dining room and service</span>
+          <span class="fam__r"><span class="fam__c">4 programmes</span><span class="fam__i" aria-hidden="true"></span></span>
+        </button>
+        <div class="fam__p open" id="f1">
+          <div class="fam__in">
+            <div class="prog"><div><div class="prog__n">Fundamentals of dining-room service</div><div class="prog__w">Commis, waiters, chefs de rang</div></div><div class="prog__d">2 days</div></div>
+            <div class="prog"><div><div class="prog__n">The craft of the Maître d'Hôtel</div><div class="prog__w">Maîtres d'hôtel, floor managers</div></div><div class="prog__d">3 days</div></div>
+            <div class="prog"><div><div class="prog__n">Upselling and advising the guest</div><div class="prog__w">Dining room, bar, front desk</div></div><div class="prog__d">1 day</div></div>
+            <div class="prog"><div><div class="prog__n">Holding the standard under heavy load</div><div class="prog__w">Full teams, before the season</div></div><div class="prog__d">1 day</div></div>
+          </div>
+        </div>
+
+        <!-- Famille 2 -->
+        <button class="fam__h" type="button" aria-expanded="false" aria-controls="f2">
+          <span class="fam__t">Welcome and guest relations</span>
+          <span class="fam__r"><span class="fam__c">3 programmes</span><span class="fam__i" aria-hidden="true"></span></span>
+        </button>
+        <div class="fam__p" id="f2">
+          <div class="fam__in">
+            <div class="prog"><div><div class="prog__n">The welcome and the first seconds</div><div class="prog__w">Front desk, greeters, valets</div></div><div class="prog__d">1 day</div></div>
+            <div class="prog"><div><div class="prog__n">Complaint handling and service recovery</div><div class="prog__w">All guest-facing staff</div></div><div class="prog__d">1 day</div></div>
+            <div class="prog"><div><div class="prog__n">Professional bearing and the codes of hospitality</div><div class="prog__w">All guest-facing staff</div></div><div class="prog__d">1 day</div></div>
+          </div>
+        </div>
+
+        <!-- Famille 3 -->
+        <button class="fam__h" type="button" aria-expanded="false" aria-controls="f3">
+          <span class="fam__t">Middle management</span>
+          <span class="fam__r"><span class="fam__c">3 programmes</span><span class="fam__i" aria-hidden="true"></span></span>
+        </button>
+        <div class="fam__p" id="f3">
+          <div class="fam__in">
+            <div class="prog"><div><div class="prog__n">Brief, check, correct: the floor manager</div><div class="prog__w">Middle management</div></div><div class="prog__d">2 days</div></div>
+            <div class="prog"><div><div class="prog__n">Onboarding a new team member in fifteen days</div><div class="prog__w">Supervisors and human resources</div></div><div class="prog__d">1 day</div></div>
+            <div class="prog"><div><div class="prog__n">Coordination between floor, kitchen and front desk</div><div class="prog__w">Heads of department and supervisors</div></div><div class="prog__d">1 day</div></div>
+          </div>
+        </div>
+
+        <!-- Famille 4 -->
+        <button class="fam__h" type="button" aria-expanded="false" aria-controls="f4">
+          <span class="fam__t">Specific formats</span>
+          <span class="fam__r"><span class="fam__c">2 programmes</span><span class="fam__i" aria-hidden="true"></span></span>
+        </button>
+        <div class="fam__p" id="f4">
+          <div class="fam__in">
+            <div class="prog"><div><div class="prog__n">Banquet and event service</div><div class="prog__w">Caterers, agency staff, reception venues</div></div><div class="prog__d">1 to 2 days</div></div>
+            <div class="prog"><div><div class="prog__n">Breakfast and welcome in guest houses</div><div class="prog__w">Riads, guest houses, villas</div></div><div class="prog__d">1 day</div></div>
+          </div>
         </div>
       </div>
-
-      <!-- Famille 2 -->
-      <button class="fam__h" type="button" aria-expanded="false" aria-controls="f2">
-        <span class="fam__t">Welcome and guest relations</span>
-        <span class="fam__r"><span class="fam__c">3 programmes</span><span class="fam__i" aria-hidden="true"></span></span>
-      </button>
-      <div class="fam__p" id="f2">
-        <div class="fam__in">
-          <div class="prog"><div><div class="prog__n">The welcome and the first seconds</div><div class="prog__w">Front desk, greeters, valets</div></div><div class="prog__d">1 day</div></div>
-          <div class="prog"><div><div class="prog__n">Complaint handling and service recovery</div><div class="prog__w">All guest-facing staff</div></div><div class="prog__d">1 day</div></div>
-          <div class="prog"><div><div class="prog__n">Professional bearing and the codes of hospitality</div><div class="prog__w">All guest-facing staff</div></div><div class="prog__d">1 day</div></div>
-        </div>
-      </div>
-
-      <!-- Famille 3 -->
-      <button class="fam__h" type="button" aria-expanded="false" aria-controls="f3">
-        <span class="fam__t">Middle management</span>
-        <span class="fam__r"><span class="fam__c">3 programmes</span><span class="fam__i" aria-hidden="true"></span></span>
-      </button>
-      <div class="fam__p" id="f3">
-        <div class="fam__in">
-          <div class="prog"><div><div class="prog__n">Brief, check, correct: the floor manager</div><div class="prog__w">Middle management</div></div><div class="prog__d">2 days</div></div>
-          <div class="prog"><div><div class="prog__n">Onboarding a new team member in fifteen days</div><div class="prog__w">Supervisors and human resources</div></div><div class="prog__d">1 day</div></div>
-          <div class="prog"><div><div class="prog__n">Coordination between floor, kitchen and front desk</div><div class="prog__w">Heads of department and supervisors</div></div><div class="prog__d">1 day</div></div>
-        </div>
-      </div>
-
-      <!-- Famille 4 -->
-      <button class="fam__h" type="button" aria-expanded="false" aria-controls="f4">
-        <span class="fam__t">Specific formats</span>
-        <span class="fam__r"><span class="fam__c">2 programmes</span><span class="fam__i" aria-hidden="true"></span></span>
-      </button>
-      <div class="fam__p" id="f4">
-        <div class="fam__in">
-          <div class="prog"><div><div class="prog__n">Banquet and event service</div><div class="prog__w">Caterers, agency staff, reception venues</div></div><div class="prog__d">1 to 2 days</div></div>
-          <div class="prog"><div><div class="prog__n">Breakfast and welcome in guest houses</div><div class="prog__w">Riads, guest houses, villas</div></div><div class="prog__d">1 day</div></div>
-        </div>
       </div>
     </div>
 
@@ -974,6 +1011,6 @@
   </div>
 </footer>
 
-<script src="../assets/js/main.js?v=20260923a" defer></script>
+<script src="../assets/js/main.js?v=20260923c" defer></script>
 </body>
 </html>

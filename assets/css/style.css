@@ -252,6 +252,59 @@ button{font-family:inherit;color:inherit;}
 /* ============================================================
    7. FORMATIONS
    ============================================================ */
+/* Quatre cartes de famille : le résumé toujours visible.
+   Le détail complet vit dans .fold__p, replié par défaut — mais
+   seulement quand le script tourne (html.js), pour que la page
+   reste entièrement lisible sans JavaScript. */
+.fams{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:clamp(14px,1.6vw,22px);
+}
+.fams__i{
+  display:flex;flex-direction:column;align-items:flex-start;
+  padding:clamp(20px,2vw,26px) clamp(18px,1.8vw,24px);
+  border:1px solid var(--border);border-radius:var(--r);
+  background:var(--chaux);
+  transition:border-color 400ms var(--e);
+}
+.fams__i:hover{border-color:color-mix(in srgb,var(--terre) 38%,var(--border));}
+.fams__ic{display:block;margin-bottom:14px;}
+.fams__ic .steps__ic{color:var(--terre);}
+.fams__t{
+  font-family:var(--serif);font-size:clamp(15px,1.2vw,17px);
+  line-height:1.3;color:var(--ink);margin-bottom:6px;
+}
+.fams__c{font-size:12px;color:var(--muted-l);letter-spacing:.04em;}
+
+/* le bouton de dépliage */
+.fold{margin-top:clamp(26px,3vw,38px);}
+.fold__b{display:inline-flex;align-items:center;gap:12px;}
+.fold__i{position:relative;width:13px;height:13px;flex:0 0 auto;}
+.fold__i::before,.fold__i::after{
+  content:"";position:absolute;background:currentColor;
+  transition:transform 420ms var(--e),opacity 300ms;
+}
+.fold__i::before{left:0;top:6px;width:13px;height:1.3px;}
+.fold__i::after{left:6px;top:0;width:1.3px;height:13px;}
+.fold__b[aria-expanded="true"] .fold__i::after{transform:scaleY(0);opacity:0;}
+
+/* le panneau : ouvert par défaut, replié seulement si le script tourne */
+.fold__p{display:grid;grid-template-rows:1fr;}
+.fold__in{min-height:0;overflow:hidden;}
+.js .fold__p{
+  grid-template-rows:0fr;
+  transition:grid-template-rows 560ms var(--e);
+}
+.js .fold__p.open{grid-template-rows:1fr;}
+.fold__p .fam{margin-top:clamp(24px,2.6vw,34px);}
+
+@media (max-width:940px){.fams{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:520px){.fams{grid-template-columns:1fr;}}
+
+@media (prefers-reduced-motion:reduce){
+  .js .fold__p{transition-duration:.001ms;}
+}
+
 .fam{border-top:1px solid var(--border);}
 .fam__h{
   width:100%;background:none;border:0;border-bottom:1px solid var(--border);
@@ -270,17 +323,20 @@ button{font-family:inherit;color:inherit;}
 .fam__i::before{left:0;top:7.5px;width:16px;height:1.4px;}
 .fam__i::after{left:7.5px;top:0;width:1.4px;height:16px;}
 .fam__h[aria-expanded="true"] .fam__i::after{transform:scaleY(0);opacity:0;}
-.fam__p{display:grid;grid-template-rows:0fr;transition:grid-template-rows 520ms var(--e);}
-.fam__p.open{grid-template-rows:1fr;}
+.fam__p{display:grid;grid-template-rows:1fr;}
+.js .fam__p{grid-template-rows:0fr;transition:grid-template-rows 520ms var(--e);}
+.js .fam__p.open{grid-template-rows:1fr;}
 .fam__in{min-height:0;overflow:hidden;}
 
 .prog{
   display:grid;grid-template-columns:1fr auto;gap:20px;align-items:baseline;
   padding:20px 0 20px 0;border-bottom:1px solid var(--border);
+}
+.js .prog{
   opacity:0;transform:translateY(10px);
   transition:opacity 520ms var(--e),transform 520ms var(--e);
 }
-.fam__p.open .prog{opacity:1;transform:none;}
+.js .fam__p.open .prog{opacity:1;transform:none;}
 .prog > *{transition:transform 460ms var(--e-out);}
 .prog:hover > *{transform:translateX(10px);}
 .prog:last-child{border-bottom:0;}
@@ -675,6 +731,11 @@ textarea.bin{min-height:96px;resize:vertical;line-height:1.7;}
 .loaded .st3{transition-delay:360ms;}
 .loaded .st4{transition-delay:500ms;}
 .loaded .st5{transition-delay:300ms;}
+
+/* Sans JavaScript, ni .is-in ni .loaded n'arrivent jamais : on rend
+   tout visible d'emblée plutôt que de laisser la page vide. */
+html:not(.js) [data-rv],
+html:not(.js) .stage{opacity:1;transform:none;}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;}
