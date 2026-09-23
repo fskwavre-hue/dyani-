@@ -397,9 +397,15 @@ button{font-family:inherit;color:inherit;}
 .prof__i:hover .prof__med::before{transform:scale(1);}
 .prof__i:hover .prof__k{color:var(--chaux);}
 
+/* icône + titre : même icône au trait que la section Méthode (.steps__ic),
+   alignée sur la première ligne du titre quand celui-ci passe sur deux lignes */
+.prof__h{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;}
+.prof__h .steps__ic{margin-top:2px;}
+.prof__i:hover .steps__ic{color:var(--ink);}
+
 .prof__n{
   font-family:var(--serif);font-size:clamp(18px,1.5vw,21px);
-  line-height:1.25;color:var(--ink);margin-bottom:10px;
+  line-height:1.25;color:var(--ink);margin-bottom:0;
 }
 .prof__d{font-size:14px;color:var(--muted);line-height:1.7;}
 
