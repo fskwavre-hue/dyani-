@@ -86,3 +86,52 @@ section « Recommandation ».
 Sans JavaScript, la navigation mobile reste indisponible : le panneau ne
 s'ouvre pas et la barre desktop est masquée sous 1150 px. Condition
 préexistante, à traiter si elle doit l'être.
+
+---
+
+## 2. Polices hébergées sur le site
+
+Bricolage Grotesque et Manrope ne viennent plus de Google. Quatre fichiers
+variables (`latin` et `latin-ext` par famille, 144 Ko au total, dont 99 Ko
+réellement chargés en français) sont servis depuis `/assets/fonts` et
+préchargés.
+
+- Le premier rendu n'attend plus un DNS, un TLS et une feuille de style
+  tierce.
+- CSP resserrée : `style-src 'self'`, `font-src 'self'`.
+- `/assets/fonts/*` prend un an de cache immuable.
+- L'axe `opsz` de Bricolage est conservé (`font-optical-sizing:auto`).
+- **Conséquence juridique** : les mentions légales annonçaient la
+  transmission de l'adresse IP à Google. Plus aucune ressource extérieure
+  n'est appelée à la consultation — la clause est réécrite dans les deux
+  langues.
+
+---
+
+## 3. Fonds photographiques
+
+Deux images d'ambiance, très voilées, pour donner de la profondeur là où
+il n'y avait que des aplats.
+
+| Emplacement | Image | Traitement |
+|---|---|---|
+| Hero | Sonnette de réception en laiton | Voile dégradé sur `--chaux`, 88 → 95 % |
+| Établissements | Escalier hélicoïdal de lobby | Bande haute seulement, voile 88 → 100 % |
+
+- **L'en-tête devient transparent en haut de page** et flotte au-dessus de
+  la photo du hero ; son fond et son flou reviennent dès le premier
+  défilement, portés par `.stuck`.
+- Le fond des Établissements ne couvre que `min(62%, 660px)` de la section :
+  il s'éteint avant les cartes des profils, qui restent sur un aplat.
+- AVIF + WebP, deux largeurs, `loading="lazy"` sauf le hero.
+  Le plus lourd pèse 76 Ko en AVIF.
+- Contraste mesuré du titre sur le fond : **12:1 à 15:1** selon la largeur,
+  soit largement au-delà de AAA.
+
+**Écarté.** Une troisième photo (bagagiste en veste rouge) a été retirée
+par le client pour préserver la cohérence chromatique.
+
+**Retouché.** La photo de lobby était franchement froide — bleu-gris, vert
+anis, lavande — face à une palette entièrement chaude. Elle a été
+désaturée à 28 %, rebasculée vers le laiton, et recadrée pour écarter un
+panneau de sortie en vietnamien et un scooter rouge.
