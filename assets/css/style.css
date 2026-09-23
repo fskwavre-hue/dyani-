@@ -462,6 +462,11 @@ button{font-family:inherit;color:inherit;}
 /* la source est annoncée avant la citation : le ton formel
    de la lettre devient alors logique au lieu d'être étrange */
 .reco__src{padding-bottom:22px;border-bottom:1px solid var(--border-fort);margin-bottom:28px;}
+/* embleme de la recommandation — sobre, sans cadre ni ombre.
+   Variante monochrome : ajouter la classe reco__emblem--mono sur <picture>. */
+.reco__emblem{display:block;margin-bottom:16px;}
+.reco__emblem img{display:block;height:56px;width:auto;}
+.reco__emblem--mono img{filter:grayscale(1) contrast(1.04) opacity(.9);}
 .reco__who{font-size:16.5px;color:var(--ink);}
 .reco__role{font-size:14px;color:var(--muted);margin-top:6px;}
 .reco__from{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-l);margin-top:12px;line-height:1.7;}
@@ -483,7 +488,7 @@ button{font-family:inherit;color:inherit;}
   font-size:15px;color:var(--texte);line-height:1.65;
 }
 .reco__list li::before{content:"";flex:0 0 18px;height:1px;background:var(--terre);transform:translateY(-5px);}
-@media (max-width:880px){.reco{grid-template-columns:1fr;}}
+@media (max-width:880px){.reco{grid-template-columns:1fr;}.reco__emblem img{height:40px;}}
 
 /* ============================================================
    11. LANGUES
