@@ -12,7 +12,7 @@
 <link rel="alternate" hreflang="en" href="https://dyanihospitality.com/en/legal/">
 <link rel="alternate" hreflang="x-default" href="https://dyanihospitality.com/legal/">
 
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#1C1E24">
 
@@ -20,9 +20,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../assets/fonts/bricolage-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../assets/fonts/manrope-latin.woff2">
 <link rel="stylesheet" href="../assets/css/style.css?v=20260921b">
 </head>
 <body class="loaded">
@@ -129,9 +130,10 @@
          données du site.</p>
 
       <h3>Ressources externes</h3>
-      <p>Les polices de caractères sont chargées depuis Google Fonts. À cette
-         occasion, votre adresse IP est transmise à Google, qui en est seul
-         responsable. C’est la seule ressource extérieure appelée par ce site.</p>
+      <p><b>Aucune.</b> Les polices de caractères sont hébergées sur ce site&nbsp;:
+         consulter une page n’appelle aucun serveur tiers et ne transmet votre
+         adresse IP à personne. Seul l’envoi volontaire du formulaire sollicite
+         un prestataire extérieur, décrit plus haut.</p>
 
       <h3>Vos droits</h3>
       <p>Conformément à la loi 09-08 relative à la protection des personnes physiques

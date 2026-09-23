@@ -12,7 +12,7 @@
 <link rel="alternate" hreflang="en" href="https://dyanihospitality.com/en/legal/">
 <link rel="alternate" hreflang="x-default" href="https://dyanihospitality.com/legal/">
 
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#1C1E24">
 
@@ -20,9 +20,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../assets/fonts/bricolage-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../assets/fonts/manrope-latin.woff2">
 <link rel="stylesheet" href="../../assets/css/style.css?v=20260921b">
 </head>
 <body class="loaded">
@@ -124,9 +125,10 @@
          sent to us, and disappears if you clear the site's data.</p>
 
       <h3>External resources</h3>
-      <p>Typefaces are loaded from Google Fonts. In doing so, your IP address is sent
-         to Google, which is solely responsible for it. This is the only external
-         resource this site calls.</p>
+      <p><b>None.</b> Typefaces are hosted on this site: viewing a page calls no
+         third-party server and sends your IP address to no one. Only the
+         deliberate submission of the form involves an external provider,
+         described above.</p>
 
       <h3>Your rights</h3>
       <p>Under Moroccan law 09-08 on the protection of individuals with regard to the
