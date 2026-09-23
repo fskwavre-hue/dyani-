@@ -353,7 +353,7 @@
     envoi: 'Envoi en cours…',
     ok:    'Message envoyé. Vous recevrez une réponse sous 24 heures.',
     lent:  'Un instant…',
-    err:   'L’envoi a échoué. Utilisez WhatsApp, ou copiez le message et adressez-le nous par e-mail.'
+    err:   'L’envoi a échoué. Utilisez WhatsApp, ou copiez le message et adressez-le-nous par e-mail.'
   };
 
   /* Écriture des coordonnées dans la page, après chargement.
