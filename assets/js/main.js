@@ -137,7 +137,7 @@
     }, { threshold: 0.14, rootMargin: '0px 0px -10% 0px' });
 
     /* décalage automatique entre éléments frères d'un même groupe */
-    ['.marks__g','.dom','.refs','.prof'].forEach(function(sel){
+    ['.marks__g','.dom','.refs','.prof','.chain'].forEach(function(sel){
       var g = document.querySelector(sel);
       if (!g) return;
       Array.prototype.forEach.call(g.children, function(el, i){

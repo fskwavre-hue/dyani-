@@ -298,22 +298,85 @@ button{font-family:inherit;color:inherit;}
 /* ============================================================
    8. ÉTABLISSEMENTS
    ============================================================ */
-.etab{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,88px);align-items:center;}
-.etab__row{
-  position:relative;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;
-  padding:24px 0;border-bottom:1px solid var(--border);
+/* La ligne schématique : six jalons reliés par un filet continu.
+   Le filet est porté par chaque jalon (du centre du cercle au centre
+   du suivant), ce qui le rend valable quel que soit le nombre de
+   colonnes — six en desktop, trois en tablette, vertical en mobile. */
+.chain{
+  --dot:56px;
+  --cgap:clamp(16px,2vw,30px);
+  display:grid;grid-template-columns:repeat(6,1fr);
+  column-gap:var(--cgap);row-gap:clamp(30px,3.4vw,44px);
 }
-.etab__row:first-child{border-top:1px solid var(--border);}
-.etab__row::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:100%;background:var(--terre);transform:scaleX(0);transform-origin:left;transition:transform 560ms var(--e);}
-.etab__row:hover::after{transform:scaleX(1);}
-.etab__n{font-family:var(--serif);font-size:clamp(20px,2.1vw,26px);color:var(--ink);}
-.etab__d{font-size:13px;color:var(--muted);text-align:right;max-width:22ch;line-height:1.55;}
-.cap{margin-top:22px;padding-left:18px;border-left:2px solid var(--terre);font-size:13px;color:var(--muted);line-height:1.7;max-width:34ch;}
-@media (max-width:940px){
-  .etab{grid-template-columns:1fr;}
-  .etab .arch{max-width:460px;}
-  .etab__row{grid-template-columns:1fr;gap:6px;}
-  .etab__d{text-align:left;max-width:none;}
+.chain__i{position:relative;text-align:center;}
+.chain__i::after{               /* le segment vers le jalon suivant */
+  content:"";position:absolute;z-index:0;
+  top:calc(var(--dot) / 2 - .5px);height:1px;
+  left:calc(50% + var(--dot) / 2 + 8px);
+  width:calc(100% + var(--cgap) - var(--dot) - 16px);
+  background:var(--terre);opacity:.45;
+}
+.chain__i:last-child::after{display:none;}
+
+.chain__dot{
+  position:relative;z-index:1;
+  display:grid;place-items:center;
+  width:var(--dot);height:var(--dot);margin:0 auto 14px;
+  border:1px solid var(--terre);border-radius:50%;
+  background:var(--sable);
+  transition:background 420ms var(--e),border-color 420ms var(--e);
+}
+.chain__ic{width:24px;height:24px;color:var(--terre);transition:color 420ms var(--e);}
+.chain__i:hover .chain__dot{background:var(--navy);border-color:var(--navy);}
+.chain__i:hover .chain__ic{color:var(--chaux);}
+
+.chain__n{
+  display:block;font-family:var(--serif);
+  font-size:clamp(14.5px,1.15vw,16.5px);line-height:1.3;
+  color:var(--ink);margin-bottom:5px;
+  min-height:2.6em;              /* deux lignes réservées : les sous-titres s'alignent */
+}
+.chain__d{display:block;font-size:12px;color:var(--muted-l);line-height:1.5;}
+
+/* tablette : trois colonnes, le filet s'arrête en fin de rangée */
+@media (max-width:980px){
+  .chain{grid-template-columns:repeat(3,1fr);}
+  .chain__i:nth-child(3n)::after{display:none;}
+}
+
+/* mobile : le filet bascule à la verticale, cercles alignés à gauche */
+@media (max-width:620px){
+  .chain{grid-template-columns:1fr;row-gap:0;}
+  .chain__i{
+    display:grid;grid-template-columns:var(--dot) 1fr;
+    column-gap:16px;align-items:start;
+    text-align:left;padding-bottom:26px;
+  }
+  .chain__i::after,
+  .chain__i:nth-child(3n)::after{
+    display:block;
+    top:calc(var(--dot) + 6px);left:calc(var(--dot) / 2 - .5px);
+    width:1px;height:calc(100% - var(--dot) - 6px);
+  }
+  .chain__i:last-child::after{display:none;}
+  .chain__i:last-child{padding-bottom:0;}
+  .chain__dot{margin:0;grid-row:1 / span 2;}
+  .chain__n{align-self:center;min-height:0;}
+  .chain__d{grid-column:2;}
+}
+
+/* l'image et la citation passent sous la ligne */
+.etab__sous{
+  margin-top:clamp(54px,5.5vw,86px);
+  display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);
+  gap:clamp(28px,4vw,60px);align-items:center;
+}
+.etab__sous .arch{max-width:420px;}
+.etab__sous .cap{margin-top:0;}
+.cap{padding-left:18px;border-left:2px solid var(--terre);font-size:13px;color:var(--muted);line-height:1.7;max-width:34ch;}
+@media (max-width:820px){
+  .etab__sous{grid-template-columns:1fr;gap:clamp(24px,4vw,34px);}
+  .etab__sous .arch{max-width:460px;}
 }
 
 /* ============================================================
@@ -1092,17 +1155,11 @@ body{font-family:var(--sans);font-weight:400;}
 /* Survol des listes : le contenu glisse vers la droite, le filet reste
    en place. On anime transform, pas padding : aucun recalcul de mise en
    page, donc un mouvement fluide et un texte qui ne se reflue pas. */
-.etab__row > *,
-.cv__i > *,
 .cas__li > *{transition:transform 460ms var(--e-out);}
-.etab__row:hover > *{transform:translateX(12px);}
-.cv__i:hover > *,
 .cas__li:hover > *{transform:translateX(10px);}
 
-/* la date du parcours et le numero du perimetre prennent la couleur
-   d'accent pendant le survol */
-.cv__y,.cas__ln{transition:transform 460ms var(--e-out),color 320ms var(--e);}
-.cv__i:hover .cv__y{color:var(--ink);}
+/* le numero du perimetre prend la couleur d'accent pendant le survol */
+.cas__ln{transition:transform 460ms var(--e-out),color 320ms var(--e);}
 .cas__li:hover .cas__ln{color:var(--on-navy);}
 
 
