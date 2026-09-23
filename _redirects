@@ -10,3 +10,8 @@
 # avant que Netlify ne serve le fichier ; le « ! » force la règle même
 # lorsqu'un fichier existe à cette adresse.
 /README.md   /   301!
+
+# Même raison pour la notice d'installation de la v2 : document de
+# travail, versionné avec le site, mais qui n'a pas à être lisible
+# publiquement.
+/v2/LISEZMOI.md   /   301!

@@ -52,6 +52,21 @@
 /assets/fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Préversion v2 : mêmes règles que la racine. Les polices sont
+# figées, la feuille de style et le script sont revalidés à chaque
+# visite le temps que la refonte soit mise au point.
+/v2/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/v2/v2.css
+  Cache-Control: public, max-age=0, must-revalidate
+
+/v2/v2.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/v2/v2-boot.js
+  Cache-Control: public, max-age=0, must-revalidate
+
 /assets/css/*
   Cache-Control: public, max-age=0, must-revalidate
 

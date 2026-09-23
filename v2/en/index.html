@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="../v2-boot.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dyani Hospitality — Hospitality team training and service standards in Morocco</title>
+<meta name="description" content="Team training, written standards and operational structure for hotels, riads, restaurants and catering companies in Morocco. On-site observation, diagnostic, training and follow-up.">
+<meta name="author" content="Dyani Hospitality">
+<!-- ---------- Indexation ----------
+     PRÉVERSION : tant que la v2 vit sous /v2/en/, elle reprend mot
+     pour mot le contenu de /en/. Laissée indexable, elle ferait
+     doublon et les deux se pénaliseraient. D'où le noindex
+     ci-dessous, doublé du canonical vers /en/.
+
+     LE JOUR DE LA BASCULE (v2/en remplace /en/) :
+     remplacer la ligne « noindex, nofollow » par
+       <meta name="robots" content="index, follow, max-image-preview:large">
+     et garder le canonical tel quel, il pointe déjà au bon endroit.
+-->
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://dyanihospitality.com/en/">
+<link rel="alternate" hreflang="fr" href="https://dyanihospitality.com/">
+<link rel="alternate" hreflang="en" href="https://dyanihospitality.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://dyanihospitality.com/">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://api.web3forms.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_MA">
+<meta property="og:site_name" content="Dyani Hospitality">
+<meta property="og:title" content="Dyani Hospitality — Service is not improvised. It is organised.">
+<meta property="og:description" content="Team training and service standards for hospitality businesses in Morocco.">
+<meta property="og:url" content="https://dyanihospitality.com/en/">
+<meta property="og:image" content="https://dyanihospitality.com/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dyani Hospitality — Service is not improvised.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#14151A">
+<link rel="icon" href="../../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon-16.png">
+<link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
+<link rel="preload" as="image" href="../../assets/img/hero-dressage.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../fonts/cormorant-garamond-latin-500-normal.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../fonts/manrope-latin-400-normal.woff2">
+<link rel="stylesheet" href="../v2.css?v=1">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Dyani Hospitality","description":"Team training, service standards and operational structure for hotels and restaurants in Morocco.","url":"https://dyanihospitality.com/en/","image":"https://dyanihospitality.com/assets/img/og-image.jpg","areaServed":{"@type":"Country","name":"Morocco"},"address":{"@type":"PostalAddress","addressLocality":"Tangier","addressCountry":"MA"},"availableLanguage":["fr","ar"],"founder":{"@type":"Person","name":"Ibrahim Dyani","jobTitle":"Maître d’Hôtel, trainer and consultant in operational structure"}}
+</script>
+</head>
+<body>
+
+<!-- ========== INTRO (once per session) ========== -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__in">
+    <span class="intro__mono">D</span>
+    <span class="intro__line"></span>
+    <span class="intro__txt">Dyani Hospitality</span>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"><span class="cursor__lbl">View</span></span></div>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<!-- ========== HEADER ========== -->
+<!-- PRÉVERSION : liens internes à /v2/. À la bascule, remettre "/" et "/en/". -->
+<header class="hd" id="hd">
+  <a class="hd__brand" href="#top" aria-label="Dyani Hospitality — back to top">
+    <picture><source srcset="../../assets/img/logo-light.webp" type="image/webp"><img src="../../assets/img/logo-light.png" alt="Dyani Hospitality" width="880" height="231"></picture>
+  </a>
+  <nav class="hd__nav" aria-label="Main navigation">
+    <a href="#methode">Method</a>
+    <a href="#terrain">In the field</a>
+    <a href="#constantin">Case study</a>
+    <a href="#formations">Programmes</a>
+    <a href="#fondateur">The founder</a>
+  </nav>
+  <div class="hd__act">
+    <div class="lang"><a href="/v2/" hreflang="fr">FR</a><a href="/v2/en/" aria-current="true" hreflang="en">EN</a></div>
+    <a class="btn btn--brass btn--sm magnet" href="#contact"><span>Request a diagnostic</span></a>
+    <button class="burger" id="burger" type="button" aria-label="Open the menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<!-- ========== MOBILE MENU ========== -->
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="menu__bg" aria-hidden="true">
+    <img data-menu-img="methode"    src="../../assets/img/terrain-standards.jpg" alt="" loading="lazy">
+    <img data-menu-img="terrain"    src="../../assets/img/terrain-posture.jpg" alt="" loading="lazy">
+    <img data-menu-img="constantin" src="../../assets/img/constantin-02.jpg" alt="" loading="lazy">
+    <img data-menu-img="formations" src="../../assets/img/reception-jardin.jpg" alt="" loading="lazy">
+    <img data-menu-img="fondateur"  src="../../assets/img/terrain-prestation.jpg" alt="" loading="lazy">
+    <img data-menu-img="contact"    src="../../assets/img/hero-dressage.jpg" alt="" loading="lazy">
+  </div>
+  <nav class="menu__nav" aria-label="Menu">
+    <a href="#methode" data-k="methode">Method</a>
+    <a href="#terrain" data-k="terrain">In the field</a>
+    <a href="#constantin" data-k="constantin">Case study</a>
+    <a href="#formations" data-k="formations">Programmes</a>
+    <a href="#fondateur" data-k="fondateur">The founder</a>
+    <a href="#contact" data-k="contact">Contact</a>
+  </nav>
+  <div class="menu__foot">
+    <a class="btn btn--brass" href="#contact">Request a diagnostic</a>
+    <a class="btn btn--ghost" data-wa href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <div class="lang lang--lg"><a href="/v2/" hreflang="fr">FR</a><a href="/v2/en/" aria-current="true" hreflang="en">EN</a></div>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- =====================================================
+     1. HERO — plein écran
+     ===================================================== -->
+<section class="hero" id="top">
+  <div class="hero__media" data-parallax="0.18">
+    <picture><source srcset="../../assets/img/hero-dressage.webp" type="image/webp"><img src="../../assets/img/hero-dressage.jpg" alt="Chef de rang dressant les couverts avant un service" width="900" height="1125" fetchpriority="high" decoding="async"></picture>
+  </div>
+  <div class="hero__veil" aria-hidden="true"></div>
+
+  <div class="hero__body wrap">
+    <p class="hero__kicker rv" data-d="1"><span class="rule"></span>Training &amp; service standards — Morocco</p>
+    <h1 class="hero__t split">Service is not&nbsp;improvised. <em>It is organised.</em></h1>
+    <p class="hero__lead rv" data-d="6">Hotels, riads, restaurants and caterers. In the field, during service, with your teams.</p>
+    <div class="hero__cta rv" data-d="7">
+      <a class="btn btn--brass magnet" href="#contact"><span>Request a diagnostic</span><svg class="arr" viewBox="0 0 16 10" aria-hidden="true"><path d="M11 1l4 4-4 4M15 5H0"/></svg></a>
+      <a class="btn btn--ghost" href="#formations"><span>See the programmes</span></a>
+    </div>
+    <p class="hero__offer rv" data-d="8">First observation visit free of charge</p>
+  </div>
+
+  <ul class="hero__marks wrap" aria-label="Key facts">
+    <li class="rv" data-d="8"><b>Since 2010</b><span>on the floor, up to State protocol</span></li>
+    <li class="rv" data-d="9"><b>Since <span class="count" data-to="2020">2020</span></b><span>training teams and their supervisors</span></li>
+    <li class="rv" data-d="10"><b>FR · AR</b><span>training delivered in either language</span></li>
+    <li class="rv" data-d="11"><b>Across Morocco</b><span>Tangier, Casablanca, Marrakech, Agadir</span></li>
+  </ul>
+  <a class="hero__scroll" href="#preuve" aria-label="Scroll to continue"><span></span></a>
+</section>
+
+<!-- =====================================================
+     2. PREUVE — maisons servies (juste après le hero)
+     ===================================================== -->
+<section class="proof" id="preuve" aria-label="Houses and institutions served">
+  <p class="proof__lbl wrap">Houses and institutions served</p>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Royal Palace of Belgium</span><i>✦</i><span>European Parliament</span><i>✦</i><span>European Commission</span><i>✦</i><span>Louis Vuitton</span><i>✦</i><span>Chanel</span><i>✦</i><span>Hermès</span><i>✦</i><span>Tiffany &amp; Co.</span><i>✦</i>
+      <span>Royal Palace of Belgium</span><i>✦</i><span>European Parliament</span><i>✦</i><span>European Commission</span><i>✦</i><span>Louis Vuitton</span><i>✦</i><span>Chanel</span><i>✦</i><span>Hermès</span><i>✦</i><span>Tiffany &amp; Co.</span><i>✦</i>
+    </div>
+  </div>
+  <p class="sr-only">Royal Palace of Belgium, European Parliament, European Commission, Louis Vuitton, Chanel, Hermès, Tiffany &amp; Co. — institutions and houses for which service assignments have been carried out.</p>
+</section>
+
+<!-- =====================================================
+     3. CONSTAT → INTERVENTION → RÉSULTAT
+     ===================================================== -->
+<section class="sec sec--os" id="constat">
+  <div class="wrap">
+    <!-- The label announces the sequence without repeating "The problem",
+         which already titles the first step just below. -->
+    <p class="eyebrow rv">The starting point</p>
+    <h2 class="statement split-words">An establishment can be refurbished, well marketed, beautifully designed&nbsp;— <em>and still deliver an inconsistent experience.</em></h2>
+
+    <ol class="flow">
+      <li class="flow__i rv" data-d="1">
+        <span class="flow__n">01</span>
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 21 19.5H3Z"/><path d="M12 10v4.2M12 16.8v.2"/></svg>
+        <h3>The problem</h3>
+        <p>No written standard, supervisors never trained to manage, and new staff who learn by watching the person next to them.</p>
+      </li>
+      <li class="flow__i rv" data-d="2">
+        <span class="flow__n">02</span>
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.75" cy="10.75" r="6.5"/><path d="m15.6 15.6 4.9 4.9"/></svg>
+        <h3>The work</h3>
+        <p>Observing your services, writing the standards that are missing, training the teams to hold them.</p>
+      </li>
+      <li class="flow__i rv" data-d="3">
+        <span class="flow__n">03</span>
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
+        <h3>The result</h3>
+        <p>A system that works without us — and still holds three months later.</p>
+      </li>
+    </ol>
+
+    <details class="more rv">
+      <summary><span>Read more</span><i aria-hidden="true"></i></summary>
+      <div class="more__in">
+        <p>Inconsistency almost never comes from a lack of goodwill. It comes from the absence of a written standard, from middle managers promoted without ever being trained to manage, and from new staff who learn the job by watching the person next to them.</p>
+        <p>Dyani Hospitality does not simply come in to train. We observe your services, identify where the experience breaks down, write the standards that are missing, train your teams to hold them, then verify on site that they still hold three months later.</p>
+        <p><b>The aim is not to make you dependent on a consultant. It is to leave behind a system that works without us.</b></p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- =====================================================
+     4. INTERVENTIONS
+     ===================================================== -->
+<section class="sec sec--ink" id="interventions">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <p class="eyebrow rv">Services</p>
+        <h2 class="h2 split-words">Four areas of work, <em>a single objective.</em></h2>
+      </div>
+      <p class="sec__aside rv">Every assignment combines these registers according to what the diagnostic reveals. They rarely work in isolation.</p>
+    </div>
+
+    <div class="doms">
+      <article class="dom tilt rv" data-d="1">
+        <span class="dom__n">01</span>
+        <svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.25 18.3h15.5"/><path d="M6.4 18.3a5.6 5.6 0 0 1 11.2 0"/><path d="M12 12.7v-2.1"/><circle cx="12" cy="9.5" r="1.05"/></svg>
+        <h3>Service and guest experience</h3>
+        <p>Welcome · guest relations · complaints · consistency at every point of contact</p>
+      </article>
+      <article class="dom tilt rv" data-d="2">
+        <span class="dom__n">02</span>
+        <svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9.4" r="3.15"/><path d="M6.4 20.6a5.6 5.6 0 0 1 11.2 0"/><circle cx="4.9" cy="8.8" r="2.05"/><circle cx="19.1" cy="8.8" r="2.05"/><path d="M1.9 16.6a3.55 3.55 0 0 1 2.95-3.45"/><path d="M22.1 16.6a3.55 3.55 0 0 0-2.95-3.45"/></svg>
+        <h3>Supervision and management</h3>
+        <p>Chefs de rang · maîtres d’hôtel · housekeeping supervisors · front-office managers</p>
+      </article>
+      <article class="dom tilt rv" data-d="3">
+        <span class="dom__n">03</span>
+        <svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.1 3.5v4.4a1.95 1.95 0 0 0 3.9 0V3.5"/><path d="M9.05 9.85V20.5"/><path d="M16.9 3.5c1.65 2.45 1.65 6.4 0 8.5"/><path d="M16.9 12V20.5"/></svg>
+        <h3>Team training</h3>
+        <p>Practical craft · dining room · bar · front desk · housekeeping</p>
+      </article>
+      <article class="dom tilt rv" data-d="4">
+        <span class="dom__n">04</span>
+        <svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.25 2.75h7.5l4.5 4.5v14h-12Z"/><path d="M13.5 2.75v4.75h4.75"/><path d="M9.25 12.5h6M9.25 16.25h4.25"/></svg>
+        <h3>Standards and structure</h3>
+        <p>Procedures · checklists · role descriptions · verifying they are applied</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     5. MÉTHODE — défilement horizontal épinglé (desktop),
+        swipe (mobile)
+     ===================================================== -->
+<section class="method" id="methode">
+  <div class="method__pin">
+    <div class="method__head wrap">
+      <p class="eyebrow">Method</p>
+      <h2 class="h2">Seven stages. <em>None optional.</em></h2>
+      <p class="method__sub">Each stage produces a deliverable. It is their sequence that makes the result last.</p>
+      <div class="method__prog" aria-hidden="true"><span id="mprog"></span></div>
+    </div>
+    <ol class="method__track" id="mtrack">
+      <li class="step"><span class="step__n">01</span><svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M1.75 12S5.4 5.75 12 5.75 22.25 12 22.25 12 18.6 18.25 12 18.25 1.75 12 1.75 12Z"/><circle cx="12" cy="12" r="3.1"/></svg><h3>Observe</h3><p>Several services followed in real conditions, without intervening. What you see on a Friday night is in no document.</p></li>
+      <li class="step"><span class="step__n">02</span><svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.75" cy="10.75" r="6.5"/><path d="m15.6 15.6 4.9 4.9"/></svg><h3>Diagnose</h3><p>Where the experience breaks down, and why: a question of skill, or of structure.</p></li>
+      <li class="step"><span class="step__n">03</span><svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.25 2.75h7.5l4.5 4.5v14h-12Z"/><path d="M13.5 2.75v4.75h4.75"/><path d="M9.25 12.5h6M9.25 16.25h4.25"/></svg><h3>Structure</h3><p>Standards, procedures, checklists and role descriptions, in a format your teams will actually use.</p></li>
+      <li class="step"><span class="step__n">04</span><svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.25" cy="8" r="3.1"/><path d="M3.25 19.5a6 6 0 0 1 12 0"/><path d="M16.4 5.3a3.1 3.1 0 0 1 0 5.4"/><path d="M17.9 14.4a6 6 0 0 1 2.85 5.1"/></svg><h3>Train</h3><p>On site, in real situations, in the working language of the teams.</p></li>
+      <li class="step"><span class="step__n">05</span><svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.75 19.25 19.25 4.75"/><path d="M10.5 4.75h8.75V13.5"/></svg><h3>Deploy</h3><p>Supervisors supported through the first services, where standards are usually lost.</p></li>
+      <li class="step"><span class="step__n">06</span><svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.25h17"/><path d="M7.25 20.25v-5.5M12 20.25V7.75M16.75 20.25v-8.5"/></svg><h3>Measure</h3><p>Mystery visits, a gap-to-standard grid, indicators agreed with management.</p></li>
+      <li class="step"><span class="step__n">07</span><svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.25 12A8.25 8.25 0 0 1 5.6 17.2"/><path d="M3.75 12A8.25 8.25 0 0 1 18.4 6.8"/><path d="M18.9 3.5v3.6h-3.6"/><path d="M5.1 20.5v-3.6h3.6"/></svg><h3>Refine</h3><p>Correcting what did not hold, adjusting procedures to the reality of the operation.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- =====================================================
+     6. SUR LE TERRAIN
+     ===================================================== -->
+<section class="sec sec--ink" id="terrain">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <p class="eyebrow rv">In the field</p>
+        <h2 class="h2 split-words">Where service takes place. <em>Not in a seminar room.</em></h2>
+      </div>
+      <p class="sec__aside rv">With the teams who deliver it, on the equipment they actually use.</p>
+    </div>
+
+    <div class="field">
+      <figure class="video rv" data-cursor="Play">
+        <video preload="none" playsinline width="480" height="848" poster="../../assets/img/terrain-standards.jpg">
+          <source src="../../assets/video/formation-terrain.mp4" type="video/mp4">
+        </video>
+        <button class="video__play" type="button" aria-label="Play the video of the training session"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M16 10 1 19V1l15 9Z"/></svg></button>
+        <figcaption><span>Waiter training — at RLM Service</span><span>0:34</span></figcaption>
+      </figure>
+
+      <div class="cards" id="tcards" aria-label="Photographs from the field">
+        <button class="card rv" data-d="1" type="button" data-cursor="View" data-lb="0">
+          <span class="card__img reveal"><picture><source srcset="../../assets/img/terrain-standards.webp" type="image/webp"><img src="../../assets/img/terrain-standards.jpg" alt="A service procedure grid presented to a team gathered around a laid table" width="1200" height="1600" loading="lazy" decoding="async"></picture></span>
+          <span class="card__n">01</span>
+          <span class="card__t">A standard is written before it is taught</span>
+          <span class="card__d">Until a procedure is written down, everyone applies it their own way.</span>
+        </button>
+        <button class="card rv" data-d="2" type="button" data-cursor="View" data-lb="1">
+          <span class="card__img reveal"><picture><source srcset="../../assets/img/terrain-posture.webp" type="image/webp"><img src="../../assets/img/terrain-posture.jpg" alt="A team member in service uniform demonstrates the welcoming posture in front of the rest of the team" width="1200" height="1600" loading="lazy" decoding="async"></picture></span>
+          <span class="card__n">02</span>
+          <span class="card__t">Posture is corrected standing up</span>
+          <span class="card__d">It is performed, corrected, and performed again.</span>
+        </button>
+        <button class="card rv" data-d="3" type="button" data-cursor="View" data-lb="2">
+          <span class="card__img reveal"><picture><source srcset="../../assets/img/terrain-prestation.webp" type="image/webp"><img src="../../assets/img/terrain-prestation.jpg" alt="Ibrahim Dyani in service uniform, working at a private exhibition venue" width="1400" height="1867" loading="lazy" decoding="async"></picture></span>
+          <span class="card__n">03</span>
+          <span class="card__t">The level taught is the level practised</span>
+          <span class="card__d">I never left the floor in order to teach.</span>
+        </button>
+      </div>
+    </div>
+
+    <details class="more more--dark rv">
+      <summary><span>Read more</span><i aria-hidden="true"></i></summary>
+      <div class="more__in">
+        <p>A team does not learn a standard by listening to it. It learns by performing it, corrected on the spot, until the gesture holds without having to think about it. This is why every assignment begins with several services observed in real conditions, not with a slide deck.</p>
+        <p>The documents handed over — procedures, checklists, role descriptions — are not end-of-assignment deliverables. They are the tools the teams work with during the training, and after we leave.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- citation plein écran -->
+<section class="pull" aria-label="Quotation">
+  <div class="pull__media" data-parallax="0.12"><picture><source srcset="../../assets/img/terrain-posture.webp" type="image/webp"><img src="../../assets/img/terrain-posture.jpg" alt="" width="1200" height="1600" loading="lazy" decoding="async"></picture></div>
+  <blockquote class="pull__q wrap">
+    <p class="split-words">What has not been performed in front of me <em>has not been trained.</em></p>
+    <cite>Ibrahim Dyani</cite>
+  </blockquote>
+</section>
+
+<!-- =====================================================
+     7. ÉTUDE DE CAS — LE CONSTANTIN
+     ===================================================== -->
+<section class="sec sec--os" id="constantin">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <!-- No year: the v2 draft announced "2024", a date that appears
+             nowhere on the current site and that nothing verifies.
+             To be restored if the client confirms it. -->
+        <p class="eyebrow rv">Case study · Knokke-Heist</p>
+        <h2 class="h2 split-words">Le Constantin. <em>From building site to first service.</em></h2>
+      </div>
+      <p class="sec__aside rv">In the heart of the Carré d’Or, a house to be built entirely: no menu, no team, no procedures.</p>
+    </div>
+
+    <div class="ba rv" id="ba" data-cursor="Drag">
+      <div class="ba__img ba__after"><picture><source srcset="../../assets/img/constantin-02.webp" type="image/webp"><img src="../../assets/img/constantin-02.jpg" alt="After: the dining room of Le Constantin set, the evening before the first service" width="900" height="1200" loading="lazy" decoding="async"></picture></div>
+      <div class="ba__img ba__before"><picture><source srcset="../../assets/img/constantin-06.webp" type="image/webp"><img src="../../assets/img/constantin-06.jpg" alt="Before: the building site, furniture still under sheeting" width="900" height="1200" loading="lazy" decoding="async"></picture></div>
+      <span class="ba__tag ba__tag--l">Before</span><span class="ba__tag ba__tag--r">After</span>
+      <span class="ba__bar" aria-hidden="true"><span class="ba__knob"><svg viewBox="0 0 24 24"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
+      <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Compare before and after">
+    </div>
+
+    <div class="case">
+      <div class="case__scope">
+        <h3 class="h3 rv">The scope</h3>
+        <div class="acc">
+          <details class="acc__i rv" open><summary><b>01</b>Menu and pricing<i aria-hidden="true"></i></summary><p>Designing the menus and building the pricing structure.</p></details>
+          <details class="acc__i rv"><summary><b>02</b>Suppliers and tableware<i aria-hidden="true"></i></summary><p>Selecting the partners, the china, the linen and the glassware.</p></details>
+          <details class="acc__i rv"><summary><b>03</b>Point-of-sale system<i aria-hidden="true"></i></summary><p>Full configuration, from the product record through to payment.</p></details>
+          <details class="acc__i rv"><summary><b>04</b>Recruitment and training<i aria-hidden="true"></i></summary><p>Building the floor team, from a group with no shared experience through to the first service.</p></details>
+          <details class="acc__i rv"><summary><b>05</b>Procedures and organisation<i aria-hidden="true"></i></summary><p>Specifications, role descriptions, service sequence and checks.</p></details>
+        </div>
+      </div>
+      <blockquote class="case__q rv">
+        <p>A successful opening is not measured on the day the doors open, but by the ability of the house to hold the same standard once the project has been handed over.</p>
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="gal" aria-label="Gallery of Le Constantin">
+    <div class="gal__track">
+      <figure class="gal__f" data-cursor="View"><span class="reveal"><picture><source srcset="../../assets/img/constantin-04.webp" type="image/webp"><img src="../../assets/img/constantin-04.jpg" alt="The shopfront of Le Constantin, Carré d’Or, Knokke-Heist" width="738" height="985" loading="lazy" decoding="async"></picture></span><figcaption>The shopfront, Carré d’Or</figcaption></figure>
+      <figure class="gal__f" data-cursor="View"><span class="reveal"><picture><source srcset="../../assets/img/constantin-03.webp" type="image/webp"><img src="../../assets/img/constantin-03.jpg" alt="Plating a dish at the pass, in the kitchen" width="900" height="1200" loading="lazy" decoding="async"></picture></span><figcaption>The pass, at the first service</figcaption></figure>
+      <figure class="gal__f" data-cursor="View"><span class="reveal"><picture><source srcset="../../assets/img/constantin-05.webp" type="image/webp"><img src="../../assets/img/constantin-05.jpg" alt="The menu laid on a set table" width="900" height="1200" loading="lazy" decoding="async"></picture></span><figcaption>The menu, printed and laid</figcaption></figure>
+      <figure class="gal__f" data-cursor="View"><span class="reveal"><picture><source srcset="../../assets/img/constantin-07.webp" type="image/webp"><img src="../../assets/img/constantin-07.jpg" alt="The dining room in service, seen from the street at dusk" width="900" height="1200" loading="lazy" decoding="async"></picture></span><figcaption>The room, at dusk</figcaption></figure>
+      <figure class="gal__f" data-cursor="View"><span class="reveal"><picture><source srcset="../../assets/img/constantin-01.webp" type="image/webp"><img src="../../assets/img/constantin-01.jpg" alt="Ibrahim Dyani arranging the flowers before service" width="659" height="1200" loading="lazy" decoding="async"></picture></span><figcaption>The final details</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     8. RECOMMANDATION
+     ===================================================== -->
+<section class="sec sec--ink reco" id="avis">
+  <div class="wrap reco__g">
+    <div class="reco__src rv">
+      <picture class="reco__emblem"><source srcset="../../assets/img/emblem-be.webp" type="image/webp"><img src="../../assets/img/emblem-be.png" alt="Coat of arms of the Kingdom of Belgium" width="102" height="128" loading="lazy" decoding="async"></picture>
+      <p class="eyebrow">Recommendation</p>
+      <p class="reco__who">Morgan Picot</p>
+      <p class="reco__role">Head Maître d’Hôtel — JML Concept<br><span>Official caterer to the Belgian Royal Family · Brussels</span></p>
+    </div>
+    <div class="reco__body">
+      <blockquote class="reco__q split-words">“I recommend him most warmly and without the slightest reservation […] for any role involving exacting standards, discretion, protocol rigour and <em>service of the very highest level.</em>”</blockquote>
+      <ul class="reco__tags">
+        <li class="rv" data-d="1">Leading and harmonising service teams</li>
+        <li class="rv" data-d="2">Anticipating guests’ expectations</li>
+        <li class="rv" data-d="3">Preserving calm under heavy pressure</li>
+        <li class="rv" data-d="4">A constant level of excellence</li>
+      </ul>
+      <details class="more more--dark rv">
+        <summary><span>Read the full extract</span><i aria-hidden="true"></i></summary>
+        <div class="more__in">
+          <p>“Ibrahim worked alongside me on assignments demanding impeccable precision, before taking on the role of Maître d’Hôtel independently.”</p>
+          <p>The qualities noted in the letter: leading and harmonising service teams; anticipating guests’ expectations with remarkable accuracy; preserving the fluidity and calm of an event, even under heavy pressure; sustaining a constant level of excellence, from the first briefing to the end of service.</p>
+          <p class="muted">The full letter of recommendation is available on request.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     9. FORMATIONS — 4 familles, détail dans un panneau
+     ===================================================== -->
+<section class="sec sec--os" id="formations">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <p class="eyebrow rv">Programmes</p>
+        <h2 class="h2 split-words">Twelve programmes, <em>adjusted to your house.</em></h2>
+      </div>
+      <p class="sec__aside rv">Four families. Durations are indicative, adjusted to your organisation.</p>
+    </div>
+
+    <div class="fams">
+      <button class="fam tilt rv" data-d="1" type="button" data-drawer="d1" aria-haspopup="dialog">
+        <svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.1 3.5v4.4a1.95 1.95 0 0 0 3.9 0V3.5"/><path d="M9.05 9.85V20.5"/><path d="M16.9 3.5c1.65 2.45 1.65 6.4 0 8.5"/><path d="M16.9 12V20.5"/></svg>
+        <span class="fam__c">4 programmes</span><span class="fam__t">Dining room and service</span><span class="fam__go">See the detail <svg class="arr" viewBox="0 0 16 10" aria-hidden="true"><path d="M11 1l4 4-4 4M15 5H0"/></svg></span>
+      </button>
+      <button class="fam tilt rv" data-d="2" type="button" data-drawer="d2" aria-haspopup="dialog">
+        <svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.25 18.3h15.5"/><path d="M6.4 18.3a5.6 5.6 0 0 1 11.2 0"/><path d="M12 12.7v-2.1"/><circle cx="12" cy="9.5" r="1.05"/></svg>
+        <span class="fam__c">3 programmes</span><span class="fam__t">Welcome and guest relations</span><span class="fam__go">See the detail <svg class="arr" viewBox="0 0 16 10" aria-hidden="true"><path d="M11 1l4 4-4 4M15 5H0"/></svg></span>
+      </button>
+      <button class="fam tilt rv" data-d="3" type="button" data-drawer="d3" aria-haspopup="dialog">
+        <svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9.4" r="3.15"/><path d="M6.4 20.6a5.6 5.6 0 0 1 11.2 0"/><circle cx="4.9" cy="8.8" r="2.05"/><circle cx="19.1" cy="8.8" r="2.05"/><path d="M1.9 16.6a3.55 3.55 0 0 1 2.95-3.45"/><path d="M22.1 16.6a3.55 3.55 0 0 0-2.95-3.45"/></svg>
+        <span class="fam__c">3 programmes</span><span class="fam__t">Middle management</span><span class="fam__go">See the detail <svg class="arr" viewBox="0 0 16 10" aria-hidden="true"><path d="M11 1l4 4-4 4M15 5H0"/></svg></span>
+      </button>
+      <button class="fam tilt rv" data-d="4" type="button" data-drawer="d4" aria-haspopup="dialog">
+        <svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.4" y="3.4" width="7.6" height="7.6" rx="1.5"/><rect x="13" y="3.4" width="7.6" height="7.6" rx="1.5"/><rect x="3.4" y="13" width="7.6" height="7.6" rx="1.5"/><path d="M16.8 13.6v6.4M13.6 16.8h6.4"/></svg>
+        <span class="fam__c">2 programmes</span><span class="fam__t">Specific formats</span><span class="fam__go">See the detail <svg class="arr" viewBox="0 0 16 10" aria-hidden="true"><path d="M11 1l4 4-4 4M15 5H0"/></svg></span>
+      </button>
+    </div>
+
+    <div class="price rv">
+      <p><b>The fee depends on what you need to correct.</b> A conversation, an on-site observation, then a costed proposal.</p>
+      <p class="price__offer">The first observation visit is free of charge.</p>
+      <a class="btn btn--ink magnet" href="#contact"><span>Request the catalogue</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- detail panels (readable without JS: shown at the end of the section) -->
+<div class="drawers">
+  <aside class="drawer" id="d1" role="dialog" aria-modal="true" aria-labelledby="d1t">
+    <div class="drawer__in">
+      <button class="drawer__x" type="button" aria-label="Close"><i></i><i></i></button>
+      <p class="eyebrow">Programmes · 4</p>
+      <h3 class="h3" id="d1t">Dining room and service</h3>
+      <ul class="progs">
+        <li><div><b>Fundamentals of dining-room service</b><span>Commis, waiters, chefs de rang</span></div><em>2 days</em></li>
+        <li><div><b>The craft of the Maître d’Hôtel</b><span>Maîtres d’hôtel, floor managers</span></div><em>3 days</em></li>
+        <li><div><b>Upselling and advising the guest</b><span>Dining room, bar, front desk</span></div><em>1 day</em></li>
+        <li><div><b>Holding the standard under heavy load</b><span>Full teams, before the season</span></div><em>1 day</em></li>
+      </ul>
+      <a class="btn btn--brass" href="#contact" data-close>Request this programme</a>
+    </div>
+  </aside>
+  <aside class="drawer" id="d2" role="dialog" aria-modal="true" aria-labelledby="d2t">
+    <div class="drawer__in">
+      <button class="drawer__x" type="button" aria-label="Close"><i></i><i></i></button>
+      <p class="eyebrow">Programmes · 3</p>
+      <h3 class="h3" id="d2t">Welcome and guest relations</h3>
+      <ul class="progs">
+        <li><div><b>The welcome and the first seconds</b><span>Front desk, greeters, valets</span></div><em>1 day</em></li>
+        <li><div><b>Complaint handling and service recovery</b><span>All guest-facing staff</span></div><em>1 day</em></li>
+        <li><div><b>Professional bearing and the codes of hospitality</b><span>All guest-facing staff</span></div><em>1 day</em></li>
+      </ul>
+      <a class="btn btn--brass" href="#contact" data-close>Request this programme</a>
+    </div>
+  </aside>
+  <aside class="drawer" id="d3" role="dialog" aria-modal="true" aria-labelledby="d3t">
+    <div class="drawer__in">
+      <button class="drawer__x" type="button" aria-label="Close"><i></i><i></i></button>
+      <p class="eyebrow">Programmes · 3</p>
+      <h3 class="h3" id="d3t">Middle management</h3>
+      <ul class="progs">
+        <li><div><b>Brief, check, correct: the floor manager</b><span>Middle management</span></div><em>2 days</em></li>
+        <li><div><b>Onboarding a new team member in fifteen days</b><span>Supervisors and human resources</span></div><em>1 day</em></li>
+        <li><div><b>Coordination between floor, kitchen and front desk</b><span>Heads of department and supervisors</span></div><em>1 day</em></li>
+      </ul>
+      <a class="btn btn--brass" href="#contact" data-close>Request this programme</a>
+    </div>
+  </aside>
+  <aside class="drawer" id="d4" role="dialog" aria-modal="true" aria-labelledby="d4t">
+    <div class="drawer__in">
+      <button class="drawer__x" type="button" aria-label="Close"><i></i><i></i></button>
+      <p class="eyebrow">Programmes · 2</p>
+      <h3 class="h3" id="d4t">Specific formats</h3>
+      <ul class="progs">
+        <li><div><b>Banquet and event service</b><span>Caterers, agency staff, reception venues</span></div><em>1 to 2 days</em></li>
+        <li><div><b>Breakfast and welcome in guest houses</b><span>Riads, guest houses, villas</span></div><em>1 day</em></li>
+      </ul>
+      <a class="btn btn--brass" href="#contact" data-close>Request this programme</a>
+    </div>
+  </aside>
+  <div class="drawer__veil" aria-hidden="true"></div>
+</div>
+
+<!-- =====================================================
+     10. POUR QUI — établissements + profils
+     ===================================================== -->
+<section class="sec sec--lin" id="etablissements">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <p class="eyebrow rv">Who it is for</p>
+        <h2 class="h2 split-words">Houses where service <em>makes the difference.</em></h2>
+      </div>
+      <p class="sec__aside rv">An exceptional room never compensates for approximate service — it makes it visible.</p>
+    </div>
+
+    <ol class="chain" id="chain">
+      <li class="rv" data-d="1"><span class="chain__dot"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 20.75h19"/><path d="M4.4 20.75V5.65a1.4 1.4 0 0 1 1.4-1.4h12.4a1.4 1.4 0 0 1 1.4 1.4v15.1"/><path d="M7.9 8.1h2.2M13.9 8.1h2.2M7.9 11.9h2.2M13.9 11.9h2.2"/><path d="M10 20.75v-3.9a2 2 0 0 1 4 0v3.9"/></svg></span><b>Hotels and resorts</b><span>3 to 5 star, boutique hotels</span></li>
+      <li class="rv" data-d="2"><span class="chain__dot"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.75 20.75h18.5"/><path d="M4.9 20.75V10.9a7.1 7.1 0 0 1 14.2 0v9.85"/><path d="M9.6 20.75v-4.6a2.4 2.4 0 0 1 4.8 0v4.6"/></svg></span><b>Riads and guest houses</b><span>Multi-skilled teams</span></li>
+      <li class="rv" data-d="3"><span class="chain__dot"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12.4" r="4.6"/><path d="M3.15 3.75v3.6a1.55 1.55 0 0 0 3.1 0V3.75"/><path d="M4.7 7.35V20.25"/><path d="M19.4 3.75c1.3 1.95 1.3 5.1 0 6.8"/><path d="M19.4 10.55V20.25"/></svg></span><b>Restaurants</b><span>Fine dining, premium</span></li>
+      <li class="rv" data-d="4"><span class="chain__dot"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 8.4h12.1v5.3a4.6 4.6 0 0 1-4.6 4.6H8.2a4.6 4.6 0 0 1-4.6-4.6Z"/><path d="M15.7 9.85h1.5a2.55 2.55 0 0 1 0 5.1h-1.5"/><path d="M3.35 21h12.6"/></svg></span><b>Cafés and concepts</b><span>Rooftops, beach clubs</span></li>
+      <li class="rv" data-d="5"><span class="chain__dot"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.9h5.8l-1.5 4.4a1.4 1.4 0 0 1-2.8 0Z"/><path d="M7.9 9.9v5.4M6.1 16h3.6"/><path d="M13.2 4.9H19l-1.5 4.4a1.4 1.4 0 0 1-2.8 0Z"/><path d="M16.1 9.9v5.4M14.3 16h3.6"/></svg></span><b>Caterers and events</b><span>Banquets, weddings, receptions</span></li>
+      <li class="rv" data-d="6"><span class="chain__dot"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 20.75h19"/><path d="M4.15 20.75V11.1h4.4v9.65"/><path d="M8.55 20.75V6.55h6.6v14.2"/><path d="M15.15 20.75v-6.4h4.7v6.4"/></svg></span><b>Groups and chains</b><span>Standards across multiple sites</span></li>
+    </ol>
+
+    <!-- =====================================================
+         THE PROFILES — list on the left, portrait at the centre of
+         a progress ring on the right. The ring advances on its own
+         to the next profile; hovering, clicking or tabbing takes
+         over. Without JavaScript, the six profiles remain readable
+         one below the other.
+         ===================================================== -->
+    <div class="swap u-mt" id="swap">
+      <div class="swap__head">
+        <h3 class="h3 rv">The profiles I train</h3>
+        <p class="swap__sub rv">Six levels, six sets of expectations. The content of a training session is not set by a job title, but by what the person has to hold during service.</p>
+      </div>
+
+      <div class="swap__g">
+        <ol class="swap__list" role="tablist" aria-label="Profiles trained">
+          <li class="rv" data-d="1"><button class="swap__b" type="button" role="tab" id="pt0" aria-controls="pp0" aria-selected="true" data-i="0">
+            <span class="swap__k">01</span><span class="swap__n">Commis and waiters</span>
+            <span class="swap__fill" aria-hidden="true"></span>
+          </button></li>
+          <li class="rv" data-d="2"><button class="swap__b" type="button" role="tab" id="pt1" aria-controls="pp1" aria-selected="false" tabindex="-1" data-i="1">
+            <span class="swap__k">02</span><span class="swap__n">Chefs de rang</span>
+            <span class="swap__fill" aria-hidden="true"></span>
+          </button></li>
+          <li class="rv" data-d="3"><button class="swap__b" type="button" role="tab" id="pt2" aria-controls="pp2" aria-selected="false" tabindex="-1" data-i="2">
+            <span class="swap__k">03</span><span class="swap__n">Maîtres d’hôtel</span>
+            <span class="swap__fill" aria-hidden="true"></span>
+          </button></li>
+          <li class="rv" data-d="4"><button class="swap__b" type="button" role="tab" id="pt3" aria-controls="pp3" aria-selected="false" tabindex="-1" data-i="3">
+            <span class="swap__k">04</span><span class="swap__n">Floor managers</span>
+            <span class="swap__fill" aria-hidden="true"></span>
+          </button></li>
+          <li class="rv" data-d="5"><button class="swap__b" type="button" role="tab" id="pt4" aria-controls="pp4" aria-selected="false" tabindex="-1" data-i="4">
+            <span class="swap__k">05</span><span class="swap__n">Front of house and reception</span>
+            <span class="swap__fill" aria-hidden="true"></span>
+          </button></li>
+          <li class="rv" data-d="6"><button class="swap__b" type="button" role="tab" id="pt5" aria-controls="pp5" aria-selected="false" tabindex="-1" data-i="5">
+            <span class="swap__k">06</span><span class="swap__n">Agency and event staff</span>
+            <span class="swap__fill" aria-hidden="true"></span>
+          </button></li>
+        </ol>
+
+        <div class="swap__stage rv" data-d="2">
+          <div class="swap__ring" id="swapring">
+            <svg class="swap__prog" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="swap__trk" cx="60" cy="60" r="58"/>
+              <circle class="swap__arc" cx="60" cy="60" r="58" pathLength="100"/>
+            </svg>
+            <div class="swap__ph" aria-hidden="true">
+              <picture class="is-on"><source srcset="../../assets/img/terrain-posture.webp" type="image/webp"><img src="../../assets/img/terrain-posture.jpg" alt="" width="1200" height="1600" loading="lazy" decoding="async"></picture>
+              <picture><source srcset="../../assets/img/hero-dressage.webp" type="image/webp"><img src="../../assets/img/hero-dressage.jpg" alt="" width="900" height="1125" loading="lazy" decoding="async"></picture>
+              <picture><source srcset="../../assets/img/terrain-prestation.webp" type="image/webp"><img src="../../assets/img/terrain-prestation.jpg" alt="" width="1400" height="1867" loading="lazy" decoding="async"></picture>
+              <picture><source srcset="../../assets/img/terrain-standards.webp" type="image/webp"><img src="../../assets/img/terrain-standards.jpg" alt="" width="1200" height="1600" loading="lazy" decoding="async"></picture>
+              <picture><source srcset="../../assets/img/reception-jardin.webp" type="image/webp"><img src="../../assets/img/reception-jardin.jpg" alt="" width="1000" height="1250" loading="lazy" decoding="async"></picture>
+              <picture><source srcset="../../assets/img/constantin-02.webp" type="image/webp"><img src="../../assets/img/constantin-02.jpg" alt="" width="900" height="1200" loading="lazy" decoding="async"></picture>
+            </div>
+            <span class="swap__badge" aria-hidden="true"><i>01</i><b>/ 06</b></span>
+          </div>
+
+          <div class="swap__panels">
+            <div class="swap__p is-on" role="tabpanel" id="pp0" aria-labelledby="pt0" tabindex="0">
+              <p class="swap__pt">Commis and waiters</p>
+              <p class="swap__pd">Practical technique, service sequence, pace. The foundation: what has to be right before it can be fast.</p>
+            </div>
+            <div class="swap__p" role="tabpanel" id="pp1" aria-labelledby="pt1" tabindex="0" hidden>
+              <p class="swap__pt">Chefs de rang</p>
+              <p class="swap__pd">Running a station, advising the guest, upselling. Selling without selling: informing well enough that the guest chooses better.</p>
+            </div>
+            <div class="swap__p" role="tabpanel" id="pp2" aria-labelledby="pt2" tabindex="0" hidden>
+              <p class="swap__pt">Maîtres d’hôtel</p>
+              <p class="swap__pd">Directing service, coordinating with the kitchen, handling incidents. Holding the room when nothing goes to plan.</p>
+            </div>
+            <div class="swap__p" role="tabpanel" id="pp3" aria-labelledby="pt3" tabindex="0" hidden>
+              <p class="swap__pt">Floor managers</p>
+              <p class="swap__pd">Briefing, checking, correcting, onboarding. This is often where everything is decided: training the supervisor improves every service that follows.</p>
+            </div>
+            <div class="swap__p" role="tabpanel" id="pp4" aria-labelledby="pt4" tabindex="0" hidden>
+              <p class="swap__pt">Front of house and reception</p>
+              <p class="swap__pd">First seconds, bearing, complaint handling. The moment the impression is formed — and the moment it can be recovered.</p>
+            </div>
+            <div class="swap__p" role="tabpanel" id="pp5" aria-labelledby="pt5" tabindex="0" hidden>
+              <p class="swap__pt">Agency and event staff</p>
+              <p class="swap__pd">Rapid levelling-up before an assignment, consistency of service. A team assembled for one evening has to hold the level of permanent staff.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     11. LE FONDATEUR + LANGUES
+     ===================================================== -->
+<section class="sec sec--os" id="fondateur">
+  <div class="wrap founder">
+    <div class="founder__img rv" data-cursor="">
+      <span class="reveal"><picture><source srcset="../../assets/img/terrain-prestation.webp" type="image/webp"><img src="../../assets/img/terrain-prestation.jpg" alt="Ibrahim Dyani in service uniform" width="1400" height="1867" loading="lazy" decoding="async"></picture></span>
+    </div>
+    <div class="founder__txt">
+      <p class="eyebrow rv">The founder</p>
+      <h2 class="h2 split-words">I train teams <em>without having left the floor.</em></h2>
+      <p class="founder__id rv"><b>Ibrahim Dyani</b> — Maître d’Hôtel, trainer and consultant in operational structure.</p>
+      <blockquote class="founder__q rv">Setting a team’s level against the standard your establishment wants to reach.</blockquote>
+      <p class="rv">Training a waiter improves one service; <b>training their supervisor improves every service that follows.</b></p>
+
+      <details class="more rv">
+        <summary><span>His background</span><i aria-hidden="true"></i></summary>
+        <div class="more__in">
+          <p>Training is not a career change; it has been part of my work since 2020. At JML Concept, official caterer to the Royal Palace of Belgium, I trained service teams to the requirements of protocol — including agency teams assembled for a single event who had to hold the same level as permanent staff.</p>
+          <p>I also train the managers, and that is often where everything is decided. A chef de rang promoted to maître d’hôtel knows how to serve, but no one has taught them to brief, to correct without humiliating, or to hold a standard through a full Saturday night.</p>
+        </div>
+      </details>
+
+      <div class="langs rv">
+        <p class="langs__t">Your teams are trained in their own language.</p>
+        <div class="langs__g">
+          <div><b>French</b><span>Native language</span></div>
+          <div><b lang="ar" dir="rtl">العربية</b><span>Native language</span></div>
+        </div>
+        <p class="muted">Delivered in French or in Arabic. Materials handed over in French.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     12. CONTACT
+     ===================================================== -->
+<section class="sec sec--ink" id="contact">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <p class="eyebrow rv">Get in touch</p>
+        <h2 class="h2 split-words">Your enquiry <em>is already written.</em></h2>
+      </div>
+      <p class="sec__aside rv">Select, add detail if you wish, then send. Only your e-mail address is needed.</p>
+    </div>
+
+    <form class="builder rv" id="fContact" novalidate>
+      <div class="builder__f">
+        <div class="hp" aria-hidden="true"><label for="hp-site">Do not fill in this field</label><input type="text" id="hp-site" name="site" tabindex="-1" autocomplete="off"></div>
+
+        <fieldset class="bf"><legend>Area concerned</legend>
+          <div class="chips" data-group="dom">
+            <button class="chip" type="button" aria-pressed="false" data-v="service and the guest experience">Service and guest experience</button>
+            <button class="chip" type="button" aria-pressed="false" data-v="supervision and management">Supervision and management</button>
+            <button class="chip" type="button" aria-pressed="false" data-v="team training">Team training</button>
+            <button class="chip" type="button" aria-pressed="false" data-v="standards and structure">Standards and structure</button>
+            <button class="chip" type="button" aria-pressed="false" data-v="__flou">I am not sure yet</button>
+          </div>
+        </fieldset>
+        <fieldset class="bf"><legend>Your establishment</legend>
+          <div class="chips" data-group="etab" data-single>
+            <button class="chip" type="button" aria-pressed="false" data-v="a hotel">Hotel</button>
+            <button class="chip" type="button" aria-pressed="false" data-v="a riad">Riad</button>
+            <button class="chip" type="button" aria-pressed="false" data-v="a restaurant">Restaurant</button>
+            <button class="chip" type="button" aria-pressed="false" data-v="a café">Café</button>
+            <button class="chip" type="button" aria-pressed="false" data-v="a catering business">Caterer</button>
+            <button class="chip" type="button" aria-pressed="false" data-v="a multi-site group">Group</button>
+          </div>
+        </fieldset>
+        <div class="bgrid">
+          <label class="fl"><input type="text" name="nom" autocomplete="name" placeholder=" "><span>Your name</span></label>
+          <label class="fl"><input type="text" name="ville" autocomplete="address-level2" placeholder=" "><span>City</span></label>
+          <label class="fl"><input type="text" name="etablissement" autocomplete="organization" placeholder=" "><span>Name of the establishment</span></label>
+          <label class="fl"><input type="number" name="effectif" min="1" inputmode="numeric" placeholder=" "><span>People to train</span></label>
+        </div>
+        <label class="fl"><input type="email" name="email" autocomplete="email" required placeholder=" "><span>Your e-mail *</span></label>
+        <label class="fl"><textarea name="precision" rows="3" placeholder=" "></textarea><span>Anything to add?</span></label>
+      </div>
+
+      <div class="builder__p">
+        <!-- Enquiry reference: generated by the browser on load,
+             carried into the message sent and into the e-mail
+             received. It gives the visitor something to quote if
+             they follow up, and the recipient a way to tie a reply
+             back to its enquiry. -->
+        <div class="pvhead">
+          <p class="eyebrow">Message preview</p>
+          <p class="dref"><span>Reference</span><b data-ref>…</b></p>
+        </div>
+        <div class="letter" id="preview" aria-live="polite"></div>
+        <div class="send">
+          <button class="btn btn--brass magnet" type="submit" id="bMail"><span>Send by e-mail</span><svg class="arr" viewBox="0 0 16 10" aria-hidden="true"><path d="M11 1l4 4-4 4M15 5H0"/></svg></button>
+          <a class="btn btn--ghost" id="bWa" data-wa href="#" target="_blank" rel="noopener noreferrer"><span>Send on WhatsApp</span></a>
+          <button class="link" type="button" id="bCopy">Copy the message</button>
+        </div>
+        <p class="sstat" id="sendStat" role="status" aria-live="polite" hidden></p>
+      </div>
+    </form>
+
+    <dl class="coord">
+      <div><dt>E-mail</dt><dd data-coord="mail">—</dd></div>
+      <div><dt>WhatsApp</dt><dd data-coord="tel">—</dd></div>
+      <div><dt>Based in</dt><dd>Tangier, Morocco</dd></div>
+      <div><dt>Area</dt><dd>Across Morocco</dd></div>
+    </dl>
+  </div>
+</section>
+</main>
+
+<!-- Floating WhatsApp button (mobile) -->
+<a class="fab" data-wa href="#" target="_blank" rel="noopener noreferrer" aria-label="Message us on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.6 4.8 16a8.2 8.2 0 1 1 3.2 3.2Z"/><path d="M8.9 9.1c.4 2.9 3.1 5.6 6 6l1-1.7 2 1-.6 1.9a5.6 5.6 0 0 1-5.1-1.5 5.6 5.6 0 0 1-1.5-5.1l1.9-.6 1 2Z"/></svg></a>
+
+<!-- Lightbox -->
+<div class="lbox" id="lbox" role="dialog" aria-modal="true" aria-label="Enlarged photograph" hidden>
+  <button class="lbox__x" type="button" aria-label="Close"><i></i><i></i></button>
+  <button class="lbox__nav lbox__nav--p" type="button" aria-label="Previous">‹</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="lbox__nav lbox__nav--n" type="button" aria-label="Next">›</button>
+</div>
+
+<footer class="ft">
+  <div class="wrap">
+    <p class="ft__big split-words">Service is not improvised. <em>It is organised.</em></p>
+    <div class="ft__g">
+      <picture class="ft__logo"><source srcset="../../assets/img/logo-light.webp" type="image/webp"><img src="../../assets/img/logo-light.png" alt="Dyani Hospitality" width="880" height="231" loading="lazy"></picture>
+      <nav aria-label="Footer">
+        <a href="#methode">Method</a><a href="#terrain">In the field</a><a href="#constantin">Case study</a><a href="#formations">Programmes</a><a href="#fondateur">The founder</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="ft__c"><span data-coord="mail"></span><span data-coord="tel"></span><span>Tangier, Morocco</span></div>
+    </div>
+    <div class="ft__bt"><span>© <span id="year">2026</span> Dyani Hospitality</span><span>Hospitality training and consulting — Morocco</span></div>
+  </div>
+</footer>
+
+<script src="../v2.js?v=1" defer></script>
+</body>
+</html>

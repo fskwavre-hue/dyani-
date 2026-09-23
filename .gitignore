@@ -7,6 +7,11 @@
 # rien à faire en ligne (7,5 Mo, et des rushes non destinés au public).
 src vid et photo/
 
+# Archives de livraison. Le contenu du zip de la refonte v2 est
+# versionné, décompressé, dans v2/ : conserver l'archive en plus
+# ferait doublon et alourdirait le déploiement pour rien.
+*.zip
+
 # Résidus de système
 Thumbs.db
 desktop.ini
