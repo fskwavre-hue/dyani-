@@ -1163,78 +1163,58 @@ body{font-family:var(--sans);font-weight:400;}
 
 /* ------------------------------------------------------------
    9. MÉTHODE — les sept temps
-   Deux colonnes remplies en colonne d'abord (01→04, puis 05→07) :
-   l'ordre de lecture reste celui des numéros, et la section tient
-   en un écran au lieu de trois. Le filet est porté par chaque
-   étape ; les extrémités de chaque colonne s'estompent.
+   Sept cartes sur une grille de quatre colonnes (4 + 3). Chaque
+   carte tient en une phrase, sous une icône au trait et son
+   numéro ; un simple filet haut les sépare, sans cadre ni ombre.
+   Deux colonnes en tablette, une colonne compacte en mobile.
    ------------------------------------------------------------ */
 .steps{
-  --gut:clamp(46px,4.2vw,66px);
-  --pas:clamp(30px,2.7vw,36px);
-  display:grid;grid-template-columns:1fr 1fr;
-  grid-template-rows:repeat(4,auto);grid-auto-flow:column;
-  column-gap:clamp(28px,4vw,62px);
+  display:grid;grid-template-columns:repeat(4,1fr);
+  column-gap:clamp(18px,2.2vw,30px);row-gap:clamp(20px,2.2vw,28px);
 }
 
 .steps__i{
-  position:relative;
-  display:grid;grid-template-columns:var(--gut) 1fr;
-  align-items:start;gap:clamp(12px,1.4vw,22px);
-  padding:clamp(17px,1.8vw,23px) 0;
+  padding-top:clamp(13px,1.4vw,17px);
+  border-top:1px solid var(--border-fort);
 }
 
-/* le filet, derrière les pastilles */
-.steps__i::before{
-  content:"";position:absolute;z-index:0;
-  top:0;bottom:0;left:calc(var(--gut) / 2 - .5px);width:1px;
-  background:var(--border-fort);
-}
-/* haut de chaque colonne */
-.steps__i:first-child::before,
-.steps__i:nth-child(5)::before{
-  background:linear-gradient(to bottom,transparent 0,var(--border-fort) 34%);
-}
-/* bas de chaque colonne */
-.steps__i:nth-child(4)::before,
-.steps__i:nth-child(7)::before{
-  background:linear-gradient(to bottom,var(--border-fort) 0,transparent 100%);
-}
-
-.steps__i + .steps__i{border-top:1px solid var(--border);}
-/* la 5e ouvre la seconde colonne : pas de filet horizontal au-dessus */
-.steps__i:nth-child(5){border-top:0;}
-
-.steps__n{
-  position:relative;z-index:1;
-  display:flex;align-items:center;justify-content:center;
-  width:var(--pas);height:var(--pas);
-  margin-left:calc(var(--gut) / 2 - var(--pas) / 2);
-  border:1px solid var(--border-fort);border-radius:50%;
-  background:var(--sable);
-  font-family:var(--serif);font-size:12px;letter-spacing:.06em;
+/* icône et numéro sur une même ligne, au-dessus du titre */
+.steps__h{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.steps__ic{
+  flex:0 0 24px;width:24px;height:24px;
   color:var(--terre);
-  transition:border-color 400ms var(--e),background 400ms var(--e);
+  transition:color 400ms var(--e);
 }
-.steps__i:hover .steps__n{border-color:var(--terre);background:var(--chaux);}
+.steps__n{
+  margin-left:auto;
+  font-family:var(--serif);font-size:11px;letter-spacing:.14em;
+  color:var(--muted-l);
+  transition:color 400ms var(--e);
+}
+.steps__i:hover .steps__ic{color:var(--ink);}
+.steps__i:hover .steps__n{color:var(--terre);}
 
-.steps__c{padding-top:2px;}
-.steps__t{font-size:clamp(19px,1.6vw,23px);margin-bottom:8px;}
-.steps__d{font-size:14.5px;color:var(--muted);line-height:1.7;}
+.steps__t{font-size:clamp(16px,1.2vw,18.5px);margin-bottom:5px;}
+.steps__d{font-size:13.5px;color:var(--muted);line-height:1.6;}
 
-/* une seule colonne : le flux redevient continu, les fondus aussi */
-@media (max-width:860px){
-  .steps{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row;}
-  .steps__i:nth-child(5){border-top:1px solid var(--border);}
-  .steps__i:nth-child(4)::before,
-  .steps__i:nth-child(5)::before{background:var(--border-fort);}
-  .steps__i:last-child::before{
-    background:linear-gradient(to bottom,var(--border-fort) 0,transparent 100%);
+/* tablette : deux colonnes */
+@media (max-width:980px){
+  .steps{grid-template-columns:repeat(2,1fr);}
+}
+
+/* mobile : une colonne compacte, icône alignée avec le texte */
+@media (max-width:560px){
+  .steps{grid-template-columns:1fr;row-gap:0;}
+  .steps__i{
+    display:grid;grid-template-columns:24px 1fr;
+    column-gap:12px;align-items:start;
+    padding:13px 0;
   }
-}
-@media (max-width:620px){
-  .steps__i::before{display:none;}
-  .steps__i{grid-template-columns:1fr;gap:12px;}
-  .steps__n{margin-left:0;}
+  .steps__h{display:contents;}
+  .steps__ic{grid-row:1;grid-column:1;margin-top:2px;}
+  .steps__n{grid-row:1;grid-column:2;margin-left:0;justify-self:end;}
+  .steps__t{grid-row:1;grid-column:2;margin-bottom:0;}
+  .steps__d{grid-row:2;grid-column:2;margin-top:4px;}
 }
 
 
