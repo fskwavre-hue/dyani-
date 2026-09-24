@@ -29,9 +29,11 @@ bout en bout dans les deux langues, jusqu'à la réception de l'e-mail.
   JavaScript, les six profils restent lisibles à la suite.
   La durée d'un profil se règle par `--dwell` dans `v2.css`.
 - **Référence de demande** (`DH-AAMMJJ-XXXX`) engendrée à l'ouverture
-  de la page, affichée près de l'aperçu, reprise dans le message, dans
-  l'objet de l'e-mail et dans un champ dédié. Le suffixe évite les
-  caractères ambigus à l'oral (ni O/0, ni I/1, ni S/5, ni B/8).
+  de la page. **Elle n'est pas montrée au visiteur** : elle ne part que
+  dans l'objet de l'e-mail et dans un champ dédié, pour que le
+  destinataire relie une réponse à sa demande sans que le formulaire
+  s'alourdisse d'un numéro à l'écran. Le suffixe évite les caractères
+  ambigus à l'oral (ni O/0, ni I/1, ni S/5, ni B/8).
 - **Version anglaise** complète, reprenant les tournures déjà validées
   de `/en/`. Les libellés d'état, l'objet de l'e-mail et le message
   composé suivent la langue de la page.

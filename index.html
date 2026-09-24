@@ -717,15 +717,12 @@
       </div>
 
       <div class="builder__p">
-        <!-- Référence de la demande : engendrée par le navigateur à
-             l'ouverture, reprise dans le message envoyé et dans
-             l'e-mail reçu. Elle donne au visiteur quelque chose à
-             citer s'il relance, et au destinataire de quoi relier
-             une réponse à sa demande. -->
-        <div class="pvhead">
-          <p class="eyebrow">Aperçu du message</p>
-          <p class="dref"><span>Référence</span><b data-ref>…</b></p>
-        </div>
+        <!-- Une référence de demande est engendrée par le navigateur à
+             l'ouverture (voir REF dans v2.js). Elle n'est pas montrée
+             au visiteur : elle part seulement dans l'objet de l'e-mail
+             et dans un champ dédié, pour que le destinataire puisse
+             relier une réponse à sa demande. -->
+        <p class="eyebrow">Aperçu du message</p>
         <div class="letter" id="preview" aria-live="polite"></div>
         <div class="send">
           <button class="btn btn--brass magnet" type="submit" id="bMail"><span>Envoyer par e-mail</span><svg class="arr" viewBox="0 0 16 10" aria-hidden="true"><path d="M11 1l4 4-4 4M15 5H0"/></svg></button>

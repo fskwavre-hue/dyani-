@@ -593,14 +593,6 @@ html:not(.js) .swap__g{grid-template-columns:1fr}
 .fl input:focus + span,.fl input:not(:placeholder-shown) + span,.fl textarea:focus + span,.fl textarea:not(:placeholder-shown) + span{transform:translateY(-22px) scale(.72);color:var(--brass-l)}
 .fl input[type=number]{-moz-appearance:textfield}
 .builder__p{display:flex;flex-direction:column}
-.pvhead{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.pvhead .eyebrow{margin-bottom:22px}
-/* Référence de la demande : volontairement discrète, mais lisible
-   et sélectionnable — c'est ce que le visiteur recopiera. */
-.dref{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;padding:8px 14px;border:1px solid var(--line-d);border-radius:999px}
-.dref span{font:600 .6rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(246,245,242,.45)}
-.dref b{font:500 .82rem/1 var(--sans);letter-spacing:.12em;color:var(--brass-l);user-select:all}
-@media (max-width:420px){.pvhead{gap:0}.dref{margin-top:-8px}}
 .letter{position:relative;background:var(--os);color:var(--ink);padding:34px 32px;min-height:280px;font:italic 400 1.3rem/1.5 var(--serif);white-space:pre-line;box-shadow:0 40px 80px -40px rgba(0,0,0,.6);transform:rotate(-.6deg);transition:transform .8s var(--ease)}
 .letter::before{content:"";position:absolute;top:18px;right:20px;width:32px;height:32px;border:1px solid var(--brass);border-radius:50%;opacity:.6}
 .letter:hover{transform:rotate(0)}

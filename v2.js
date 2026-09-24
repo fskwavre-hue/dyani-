@@ -442,7 +442,6 @@ const CONFIG = {
       alea.forEach((n) => { suffixe += lettres[n % lettres.length]; });
       return `DH-${jour}-${suffixe}`;
     })();
-    $$('[data-ref]').forEach((el) => { el.textContent = REF; });
 
     $$('.chips', form).forEach((group) => {
       group.addEventListener('click', (e) => {
@@ -482,7 +481,6 @@ const CONFIG = {
         if (eff) m += '\nWe have around ' + eff + (+eff > 1 ? ' people' : ' person') + ' to train.';
         if (plus) m += '\n\n' + plus;
         m += '\n\nI would be interested in the free first observation visit.\n\nKind regards,' + (nom ? '\n' + nom : '');
-        m += '\n\n— Enquiry reference: ' + REF;
       } else {
         m = 'Bonjour,\n\n';
         s = 'Je souhaite échanger avec vous';
@@ -495,7 +493,6 @@ const CONFIG = {
         if (eff) m += '\nNous avons environ ' + eff + ' personne' + (+eff > 1 ? 's' : '') + ' à former.';
         if (plus) m += '\n\n' + plus;
         m += '\n\nJe serais intéressé(e) par la première visite d’observation.\n\nCordialement,' + (nom ? '\n' + nom : '');
-        m += '\n\n— Référence de la demande : ' + REF;
       }
 
       pv.textContent = m;
