@@ -22,10 +22,15 @@ CSS et JavaScript que l'on dépose tels quels chez n'importe quel hébergeur.
 ├── sitemap.xml             plan du site, avec les correspondances FR/EN
 ├── _headers                en-têtes de sécurité et de cache — Netlify
 ├── _redirects              masque ce README au public — Netlify
+├── v2.css                  feuille de styles du site
+├── v2.js                   script du site
+├── v2-boot.js              amorce, exécutée avant l'affichage
+├── fonts/                  Cormorant Garamond + Manrope (OFL)
+├── REFONTE-V2.md           notice de la refonte (masquée au public)
 ├── assets/
-│   ├── css/style.css       feuille de styles unique
-│   ├── js/main.js          script unique
+│   ├── css/style.css       ancienne feuille — sert encore aux pages légales
 │   ├── img/                photographies, icônes, image de partage
+│   ├── fonts/              anciennes polices — pages légales
 │   └── video/              séquence filmée
 └── src vid et photo/       ORIGINAUX fournis par le client (voir plus bas)
 ```
@@ -58,12 +63,12 @@ Netlify. Chez un autre hébergeur, reporter leurs règles dans son format
 
 | | |
 | --- | --- |
-| Titres | **Bricolage Grotesque** — 400 à 700, chasse serrée |
-| Textes | **Manrope** — 300 à 700 |
+| Titres | **Cormorant Garamond** — 500, et l'italique pour les accents |
+| Textes | **Manrope** — 400 à 600 |
 | Fond clair | `#F6F5F2` os, `#EBE8E1` lin |
-| Surfaces sombres | `#1C1E24` graphite, `#131419` graphite profond |
-| Accent | `#A8823F` laiton, `#C9A96B` laiton clair |
-| Motif | cadre à angles adoucis doublé d'un contour laiton décalé ; trame de points sur les sections sombres |
+| Surfaces sombres | `#14151A` encre, `#1C1E24` graphite |
+| Accent | `#A8823F` laiton, `#C9A566` laiton clair |
+| Motif | le cercle — portraits cerclés des profils et des deux lieux, pastilles de la chaîne ; grain léger sur toute la page |
 | Logo | `assets/img/logo.*` (fonds clairs) et `logo-light.*` (fonds sombres) ; favicons dans `favicon.ico` et `assets/img/favicon-*` |
 
 Le logo est fourni en un seul fichier horizontal. Les variantes claires,
@@ -72,7 +77,7 @@ pour les régénérer après un changement de logo, repartir de
 `src vid et photo/DYANI_logo_horizontal.png`.
 
 Tout est piloté par les variables du bloc `:root`, en tête de
-`assets/css/style.css`. **Changer une valeur là re-habille tout le site** —
+`v2.css`. **Changer une valeur là re-habille tout le site** —
 il n'y a pas de couleur ni de police écrite en dur ailleurs.
 
 ---
@@ -97,7 +102,7 @@ Pour les changer, ouvrir la console du navigateur (F12), exécuter :
 btoa('nouvelle-valeur')
 ```
 
-puis reporter le résultat dans `assets/js/main.js`, objet `_c` :
+puis reporter le résultat dans `v2.js`, objet `_c` :
 
 | Clé  | Contenu |
 | --- | --- |
@@ -118,12 +123,12 @@ quitte pas la page et voit une confirmation sous les boutons.
    doit recevoir les demandes, valider ;
 2. la clé d'accès (*Access Key*) arrive par e-mail — il faut confirmer
    ce premier message pour activer la boîte ;
-3. la coller dans `assets/js/main.js`, objet `W3F` :
+3. la coller dans `v2.js`, objet `CONFIG` :
 
 ```js
-var W3F = {
-  cle: 'dfe45568-2244-4601-9270-ad50d3cbe411',
-  url: 'https://api.web3forms.com/submit'
+const CONFIG = {
+  // …
+  web3formsKey: 'dfe45568-2244-4601-9270-ad50d3cbe411'
 };
 ```
 
@@ -140,10 +145,9 @@ la messagerie du domaine soit en service — c'est l'intérêt du procédé :
 le visiteur ne voit que l'adresse professionnelle, et les demandes
 arrivent où l'on veut.
 
-La refonte v2 porte la même clé, dans `v2/v2.js`
-(`CONFIG.web3formsKey`). **Un changement de boîte doit être répercuté
-aux deux endroits.** Envoi vérifié en conditions réelles depuis les
-trois pages (réponse `success: true` de l'API).
+Depuis la mise en ligne de la refonte, la clé ne vit plus qu'à un seul
+endroit : `v2.js`. Envoi vérifié en conditions réelles (réponse
+`success: true` de l'API) et réception confirmée.
 
 > **Tester le formulaire avec un navigateur automatisé :** Web3Forms
 > bloque les agents à signature « headless ». Un script Playwright doit
@@ -155,7 +159,7 @@ Cette clé est **publique par nature** — elle figure dans le JavaScript,
 comme sur tous les sites qui utilisent ce service. Elle n'autorise que le
 dépôt d'un message ; elle ne donne aucun accès à la boîte e-mail.
 
-**Tant que `cle` reste vide**, le bouton retombe sur l'ancien
+**Tant que `web3formsKey` reste vide**, le bouton retombe sur l'ancien
 comportement (ouverture du logiciel de messagerie du visiteur) : le site
 reste donc utilisable même sans clé.
 

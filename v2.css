@@ -473,6 +473,27 @@ ol,ul{list-style:none;padding:0}
   .chain span{align-self:start}
 }
 
+/* ---------- DEUX LIEUX — paire de photographies cerclées ----
+   Même cadre circulaire que les profils, en plus petit : le motif
+   se répond d'un bloc à l'autre au lieu d'apparaître une seule
+   fois. L'anneau est un simple trait, sans progression : rien ici
+   n'avance tout seul. */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);
+  margin-top:clamp(56px,7vw,96px);max-width:860px;margin-inline:auto}
+.duo__i{display:flex;flex-direction:column;align-items:center;text-align:center}
+.duo__ring{position:relative;display:block;width:min(100%,300px);aspect-ratio:1;border-radius:50%;
+  border:1px solid var(--line);padding:10px;margin-bottom:26px}
+.duo__ph{display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--lin)}
+.duo__ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--ease)}
+.duo__i:hover .duo__ring{border-color:var(--brass)}
+.duo__i:hover .duo__ph img{transform:scale(1.05)}
+.duo__t{font:500 clamp(1.3rem,2vw,1.7rem)/1.15 var(--serif);margin-bottom:10px}
+.duo__d{font-size:.9rem;color:var(--mute);max-width:30ch}
+@media (max-width:640px){
+  .duo{grid-template-columns:1fr;gap:44px}
+  .duo__ring{width:min(100%,240px)}
+}
+
 /* ---------- LES PROFILS — liste + portrait cerclé ----------
    La liste pilote un portrait circulaire entouré d'un anneau de
    progression. L'anneau se remplit puis passe au profil suivant ;

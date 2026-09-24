@@ -11,7 +11,12 @@
 # lorsqu'un fichier existe à cette adresse.
 /README.md   /   301!
 
-# Même raison pour la notice d'installation de la v2 : document de
-# travail, versionné avec le site, mais qui n'a pas à être lisible
-# publiquement.
-/v2/LISEZMOI.md   /   301!
+# Même raison pour la notice de la refonte v2 : document de travail,
+# versionné avec le site, mais qui n'a pas à être lisible publiquement.
+/REFONTE-V2.md   /   301!
+
+# L'ancienne préversion : tout /v2/... renvoie désormais vers la page
+# correspondante, la refonte ayant pris la racine. Évite les 404 sur
+# les liens déjà partagés.
+/v2/en/*   /en/   301!
+/v2/*      /      301!

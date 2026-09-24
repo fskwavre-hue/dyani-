@@ -1,16 +1,17 @@
-# Dyani Hospitality — v2
+# Dyani Hospitality — refonte v2
 
-Préversion de la refonte. Elle vit sous `/v2/` et **ne remplace rien** :
-le site actuel reste servi à la racine tant que la v2 n'est pas validée.
+**En ligne depuis le 24/09/2026.** Cette refonte est le site : elle a
+remplacé l'habillage précédent à la racine (`/` et `/en/`). Ce document
+garde la trace de ce qui a été corrigé, et de ce qui reste ouvert.
 
 ## État
 
 Installée et configurée le 23/09/2026. Rien à renseigner : les
 coordonnées et la clé Web3Forms sont déjà en place dans `v2.js`.
 
-Deux pages : `/v2/` (français) et `/v2/en/` (anglais). Elles partagent
-`v2.css`, `v2.js`, `v2-boot.js` et `fonts/`, qui restent à la racine
-de `v2/` ; le script détecte la langue par `<html lang>`.
+Deux pages : `/` (français) et `/en/` (anglais). Elles partagent
+`v2.css`, `v2.js`, `v2-boot.js` et `fonts/`, à la racine du site ; le
+script détecte la langue par `<html lang>`.
 
 Testées en local dans les deux langues, en 1440 px et en 390 px :
 aucune erreur JavaScript, aucune ressource manquante, aucune violation
@@ -34,6 +35,14 @@ bout en bout dans les deux langues, jusqu'à la réception de l'e-mail.
 - **Version anglaise** complète, reprenant les tournures déjà validées
   de `/en/`. Les libellés d'état, l'objet de l'e-mail et le message
   composé suivent la langue de la page.
+- **Deux photographies dans « Pour qui »** : la section n'était faite
+  que de pictogrammes. Une sonnette de réception en laiton pour les
+  hôtels, un lobby à l'escalier hélicoïdal pour les cafés et concepts,
+  toutes deux en cadre circulaire — le même motif que les profils, pour
+  qu'il se lise comme un parti pris et non comme un accident.
+  Le lobby reprend le traitement déjà validé pour la v1 (désaturé,
+  recadré pour écarter un panneau de sortie en vietnamien et un scooter
+  rouge) : sans cela, sa colorimétrie froide jurait avec la palette.
 - **Relecture orthotypographique** (voir plus bas).
 
 ## Corrections apportées à la livraison d'origine
@@ -91,7 +100,7 @@ points corrigés malgré tout :
 
 Avec un petit serveur, pas en double-cliquant sur le fichier :
 
-    npx serve .          # puis http://localhost:3000/v2/
+    npx serve .          # puis http://localhost:3000/
     # ou
     python -m http.server 8899
 
@@ -101,24 +110,23 @@ test automatisé (Playwright, Puppeteer) doit passer un `user_agent`
 de Chrome ordinaire, sans quoi la réponse revient sans en-tête CORS
 et l'échec ressemble à tort à une clé invalide.
 
-## Mise en production (quand la v2 est validée)
+## Ce que la mise en ligne a demandé (fait le 24/09/2026)
 
-1. Remplacer `index.html` par `v2/index.html`, et `en/index.html` par
-   `v2/en/index.html`.
-2. Déplacer `v2.css`, `v2.js`, `v2-boot.js` et `fonts/` à la racine.
-3. Reprendre les chemins : dans la page française, `../assets/` →
-   `assets/` et `../favicon.ico` → `favicon.ico` ; dans l'anglaise,
-   `../../assets/` → `../assets/`, `../v2.css` → `../v2.css` reste
-   juste, et `../fonts/` → `../fonts/` également.
-4. **Rétablir l'indexation** dans les deux pages : remplacer
-   `<meta name="robots" content="noindex, nofollow">` par
-   `<meta name="robots" content="index, follow, max-image-preview:large">`.
-   Les `canonical` pointent déjà au bon endroit, ils ne bougent pas.
-5. **Rétablir le sélecteur de langue** : `/v2/` → `/` et `/v2/en/` →
-   `/en/` (deux occurrences par page, repérées par un commentaire
-   « PRÉVERSION » juste avant l'en-tête).
-6. Reporter les règles de cache de `_headers` (`/v2/…` → racine) et
-   retirer la redirection `/v2/LISEZMOI.md` de `_redirects`.
+1. `v2/index.html` et `v2/en/index.html` sont devenus `index.html` et
+   `en/index.html` ; `v2.css`, `v2.js`, `v2-boot.js` et `fonts/` sont
+   remontés à la racine.
+2. Chemins repris : `../assets/` → `assets/` en français,
+   `../../assets/` → `../assets/` en anglais.
+3. Indexation rétablie : `noindex, nofollow` → `index, follow,
+   max-image-preview:large`. Les `canonical` pointaient déjà juste.
+4. Sélecteur de langue remis sur `/` et `/en/`.
+5. `_headers` : les règles de cache `/v2/…` sont devenues des règles
+   racine. `_redirects` : `/v2/*` et `/v2/en/*` redirigent en 301 vers
+   les pages correspondantes, pour que les liens déjà partagés ne
+   tombent pas en 404.
+6. `assets/js/main.js` retiré : plus aucune page ne le chargeait.
+   `assets/css/style.css` et `assets/fonts/` restent — les pages
+   légales s'en servent encore.
 
 ## Reste à faire
 
@@ -127,10 +135,9 @@ et l'échec ressemble à tort à une clé invalide.
 ## Messagerie
 
 Depuis le 24/09/2026, les demandes arrivent sur
-`contact@dyanihospitality.com` (Zoho). La clé Web3Forms est posée aux
-deux endroits — `v2/v2.js` (`CONFIG.web3formsKey`) et
-`assets/js/main.js` (objet `W3F`) — et l'envoi a été vérifié depuis la
-v2 française, la v2 anglaise et le site actuel.
+`contact@dyanihospitality.com` (Zoho). La clé Web3Forms vit dans
+`v2.js` (`CONFIG.web3formsKey`) et l'envoi a été vérifié, en français
+comme en anglais, jusqu'à la réception de l'e-mail.
 
 Une clé Web3Forms est publique par nature : elle n'autorise que le
 dépôt d'un message vers la boîte qui lui est rattachée, jamais la

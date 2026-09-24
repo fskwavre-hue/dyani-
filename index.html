@@ -2,29 +2,19 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<script>document.documentElement.className+=" js";</script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="v2-boot.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dyani Hospitality — Formation des équipes et standards de service au Maroc</title>
 <meta name="description" content="Formation des équipes, standards écrits et organisation opérationnelle pour les hôtels, riads, restaurants et traiteurs au Maroc. Observation sur site, diagnostic, formation et contrôle.">
 <meta name="author" content="Dyani Hospitality">
-
 <!-- ---------- Indexation ---------- -->
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://dyanihospitality.com/">
 <link rel="alternate" hreflang="fr" href="https://dyanihospitality.com/">
 <link rel="alternate" hreflang="en" href="https://dyanihospitality.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://dyanihospitality.com/">
-
-<!-- ---------- Sécurité ----------
-     Politique de sécurité du contenu : seules les ressources du site
-     et les polices Google sont autorisées. Tout script injecté par un
-     tiers est refusé par le navigateur. Le site ne peut pas non plus
-     être encadré dans une iframe étrangère (protection anti-clickjacking).
--->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://api.web3forms.com; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-
-<!-- ---------- Partage ---------- -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_MA">
 <meta property="og:locale:alternate" content="en_US">
@@ -37,908 +27,677 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Dyani Hospitality — Le service ne s’improvise pas.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#1C1E24">
-
-<!-- ---------- Icônes ---------- -->
+<meta name="theme-color" content="#14151A">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-
-<!-- ---------- Polices et styles ---------- -->
-<link rel="preload" as="image" href="assets/img/hero-dressage.webp" type="image/webp">
-<link rel="preload" as="font" type="font/woff2" crossorigin
-      href="assets/fonts/bricolage-latin.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin
-      href="assets/fonts/manrope-latin.woff2">
-<link rel="stylesheet" href="assets/css/style.css?v=20260924">
-
-<!-- ---------- Données structurées ---------- -->
+<link rel="preload" as="image" href="assets/img/hero-dressage.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/cormorant-garamond-latin-500-normal.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/manrope-latin-400-normal.woff2">
+<link rel="stylesheet" href="v2.css?v=20260924">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Dyani Hospitality",
-  "description": "Formation des équipes, standards de service et organisation opérationnelle pour l’hôtellerie et la restauration au Maroc.",
-  "url": "https://dyanihospitality.com/",
-  "image": "https://dyanihospitality.com/assets/img/og-image.jpg",
-  "areaServed": { "@type": "Country", "name": "Maroc" },
-  "address": { "@type": "PostalAddress", "addressLocality": "Tanger", "addressCountry": "MA" },
-  "availableLanguage": ["fr", "ar"],
-  "founder": {
-    "@type": "Person",
-    "name": "Ibrahim Dyani",
-    "jobTitle": "Maître d’Hôtel, formateur et consultant en organisation opérationnelle"
-  },
-  "knowsAbout": ["Formation hôtelière", "Standards de service", "Management de terrain", "Organisation opérationnelle"]
-}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Dyani Hospitality","description":"Formation des équipes, standards de service et organisation opérationnelle pour l’hôtellerie et la restauration au Maroc.","url":"https://dyanihospitality.com/","image":"https://dyanihospitality.com/assets/img/og-image.jpg","areaServed":{"@type":"Country","name":"Maroc"},"address":{"@type":"PostalAddress","addressLocality":"Tanger","addressCountry":"MA"},"availableLanguage":["fr","ar"],"founder":{"@type":"Person","name":"Ibrahim Dyani","jobTitle":"Maître d’Hôtel, formateur et consultant en organisation opérationnelle"}}
 </script>
 </head>
 <body>
-<div class="progress" id="prog" aria-hidden="true"></div>
-<button class="skip" type="button" data-go="main">Aller au contenu principal</button>
-<header class="site-header" id="header">
-  <nav class="nav" aria-label="Navigation principale">
-    <button class="brand stage st1" type="button" data-go="top" aria-label="Dyani Hospitality — retour en haut"><picture><source srcset="assets/img/logo.webp" type="image/webp"><img src="assets/img/logo.png" alt="Dyani Hospitality" width="880" height="231"></picture></button>
 
-    <div class="nav__pill stage st1">
-      <span class="nav__ind" aria-hidden="true"></span>
-      <ul class="nav__links" id="navlinks">
-      <li><button class="navlink" type="button" data-go="interventions">Interventions</button></li>
-      <li><button class="navlink" type="button" data-go="methode">Méthode</button></li>
-      <li><button class="navlink" type="button" data-go="terrain">Sur le terrain</button></li>
-      <li><button class="navlink" type="button" data-go="formations">Formations</button></li>
-      <li><button class="navlink" type="button" data-go="etablissements">Établissements</button></li>
-      <li><button class="navlink" type="button" data-go="constantin">Étude de cas</button></li>
-      <li><button class="navlink" type="button" data-go="fondateur">Le fondateur</button></li>
-    </ul>
-    </div>
-
-    <div class="nav__act stage st1">
-      <div class="lang-sw"><a href="/" hreflang="fr" lang="fr" aria-current="true">FR</a><a href="/en/" hreflang="en" lang="en">EN</a></div>
-      <button class="btn btn--dark btn--sm" type="button" data-go="contact">Prendre contact</button>
-      <button class="menu-btn" type="button" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mmenu"><span class="menu-btn__l" aria-hidden="true"><span class="menu-btn__w"><i>Menu</i><i>Fermer</i></span></span><span class="menu-btn__i" aria-hidden="true"><i></i><i></i></span></button>
-    </div>
-  </nav>
-</header>
-<div class="mmenu" id="mmenu" role="dialog" aria-modal="true" aria-label="Navigation">
-  <div class="mmenu__in">
-    <nav class="mmenu__nav" aria-label="Navigation">
-      <button class="mlink" type="button" data-go="interventions">
-        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.4 7.5h17M3.4 12h17M3.4 16.5h11"/><circle cx="18.6" cy="16.5" r="2.1"/></svg>
-        <span class="mlink__t">Interventions</span>
-      </button>
-      <button class="mlink" type="button" data-go="methode">
-        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="5.5" cy="7" r="2.1"/><circle cx="5.5" cy="17" r="2.1"/><path d="M10.4 7h10.2M10.4 17h6.4"/></svg>
-        <span class="mlink__t">Méthode</span>
-      </button>
-      <button class="mlink" type="button" data-go="terrain">
-        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.6" y="5.4" width="14" height="13.2" rx="2.2"/><path d="m16.6 13.2 4.8 3V7.8l-4.8 3Z"/></svg>
-        <span class="mlink__t">Sur le terrain</span>
-      </button>
-      <button class="mlink" type="button" data-go="formations">
-        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.3 2.9h7.4l4.4 4.4v13.8H6.3Z"/><path d="M13.5 2.9v4.5h4.5"/><path d="M9.3 12.4h5.6M9.3 16.1h4"/></svg>
-        <span class="mlink__t">Formations</span>
-      </button>
-      <button class="mlink" type="button" data-go="etablissements">
-        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.6 20.6h18.8"/><path d="M4.2 20.6V11h4.3v9.6"/><path d="M8.5 20.6V6.6h6.5v14"/><path d="M15 20.6v-6.4h4.7v6.4"/></svg>
-        <span class="mlink__t">Établissements</span>
-      </button>
-      <button class="mlink" type="button" data-go="constantin">
-        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7.8h18v11.4a1.6 1.6 0 0 1-1.6 1.6H4.6A1.6 1.6 0 0 1 3 19.2Z"/><path d="M9 7.8V5.6a1.6 1.6 0 0 1 1.6-1.6h2.8A1.6 1.6 0 0 1 15 5.6v2.2"/><path d="M3 12.6h18"/></svg>
-        <span class="mlink__t">Étude de cas</span>
-      </button>
-      <button class="mlink" type="button" data-go="fondateur">
-        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8.4" r="3.5"/><path d="M5.3 20.4a6.7 6.7 0 0 1 13.4 0"/></svg>
-        <span class="mlink__t">Le fondateur</span>
-      </button>
-      <button class="mlink" type="button" data-go="avis">
-        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="9.4" r="5.4"/><path d="M12 6.9v2.6l1.8 1.1"/><path d="m8.4 14.4-1.1 6 4.7-2.4 4.7 2.4-1.1-6"/></svg>
-        <span class="mlink__t">Recommandation</span>
-      </button>
-      <button class="mlink" type="button" data-go="contact">
-        <svg class="mlink__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.7" y="4.9" width="18.6" height="14.2" rx="2.2"/><path d="m3.4 6.6 8.6 6 8.6-6"/></svg>
-        <span class="mlink__t">Contact</span>
-      </button>
-    </nav>
-    <div class="mmenu__foot">
-      <a class="mact mact--wa" data-wa href="#" target="_blank" rel="noopener noreferrer"><svg class="mact__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.4 20.6 4.8 16a8.2 8.2 0 1 1 3.2 3.2Z"/><path d="M8.9 9.1c.4 2.9 3.1 5.6 6 6l1-1.7 2 1-.6 1.9a5.6 5.6 0 0 1-5.1-1.5 5.6 5.6 0 0 1-1.5-5.1l1.9-.6 1 2Z"/></svg><span>WhatsApp</span></a>
-      <button class="mact mact--cta" type="button" data-go="contact"><span>Prendre contact</span></button>
-      <div class="mmenu__lang">
-        <span class="mmenu__langlab">Langue</span>
-        <div class="lang-sw"><a href="/" hreflang="fr" lang="fr" aria-current="true">FR</a><a href="/en/" hreflang="en" lang="en">EN</a></div>
-      </div>
-    </div>
+<!-- ========== INTRO (une fois par session) ========== -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__in">
+    <span class="intro__mono">D</span>
+    <span class="intro__line"></span>
+    <span class="intro__txt">Dyani Hospitality</span>
   </div>
 </div>
 
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"><span class="cursor__lbl">Voir</span></span></div>
+
+<a class="skip" href="#main">Aller au contenu principal</a>
+
+<!-- ========== HEADER ========== -->
+<header class="hd" id="hd">
+  <a class="hd__brand" href="#top" aria-label="Dyani Hospitality — retour en haut">
+    <picture><source srcset="assets/img/logo-light.webp" type="image/webp"><img src="assets/img/logo-light.png" alt="Dyani Hospitality" width="880" height="231"></picture>
+  </a>
+  <nav class="hd__nav" aria-label="Navigation principale">
+    <a href="#methode">Méthode</a>
+    <a href="#terrain">Sur le terrain</a>
+    <a href="#constantin">Étude de cas</a>
+    <a href="#formations">Formations</a>
+    <a href="#fondateur">Le fondateur</a>
+  </nav>
+  <div class="hd__act">
+    <div class="lang"><a href="/" aria-current="true" hreflang="fr">FR</a><a href="/en/" hreflang="en">EN</a></div>
+    <a class="btn btn--brass btn--sm magnet" href="#contact"><span>Demander un diagnostic</span></a>
+    <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<!-- ========== MENU MOBILE ========== -->
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="menu__bg" aria-hidden="true">
+    <img data-menu-img="methode"    src="assets/img/terrain-standards.jpg" alt="" loading="lazy">
+    <img data-menu-img="terrain"    src="assets/img/terrain-posture.jpg" alt="" loading="lazy">
+    <img data-menu-img="constantin" src="assets/img/constantin-02.jpg" alt="" loading="lazy">
+    <img data-menu-img="formations" src="assets/img/reception-jardin.jpg" alt="" loading="lazy">
+    <img data-menu-img="fondateur"  src="assets/img/terrain-prestation.jpg" alt="" loading="lazy">
+    <img data-menu-img="contact"    src="assets/img/hero-dressage.jpg" alt="" loading="lazy">
+  </div>
+  <nav class="menu__nav" aria-label="Menu">
+    <a href="#methode" data-k="methode">Méthode</a>
+    <a href="#terrain" data-k="terrain">Sur le terrain</a>
+    <a href="#constantin" data-k="constantin">Étude de cas</a>
+    <a href="#formations" data-k="formations">Formations</a>
+    <a href="#fondateur" data-k="fondateur">Le fondateur</a>
+    <a href="#contact" data-k="contact">Contact</a>
+  </nav>
+  <div class="menu__foot">
+    <a class="btn btn--brass" href="#contact">Demander un diagnostic</a>
+    <a class="btn btn--ghost" data-wa href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <div class="lang lang--lg"><a href="/" aria-current="true" hreflang="fr">FR</a><a href="/en/" hreflang="en">EN</a></div>
+  </div>
+</div>
 
 <main id="main">
-<span id="top"></span>
 
-<!-- ==================== HERO ==================== -->
+<!-- =====================================================
+     1. HERO — plein écran
+     ===================================================== -->
+<section class="hero" id="top">
+  <div class="hero__media" data-parallax="0.18">
+    <picture><source srcset="assets/img/hero-dressage.webp" type="image/webp"><img src="assets/img/hero-dressage.jpg" alt="Chef de rang dressant les couverts avant un service" width="900" height="1125" fetchpriority="high" decoding="async"></picture>
+  </div>
+  <div class="hero__veil" aria-hidden="true"></div>
 
-<section class="hero">
+  <div class="hero__body wrap">
+    <p class="hero__kicker rv" data-d="1"><span class="rule"></span>Formation &amp; standards de service — Maroc</p>
+    <h1 class="hero__t split">Le service ne s’improvise&nbsp;pas. <em>Il s’organise.</em></h1>
+    <p class="hero__lead rv" data-d="6">Hôtels, riads, restaurants et traiteurs. Sur le terrain, pendant le service, avec vos équipes.</p>
+    <div class="hero__cta rv" data-d="7">
+      <a class="btn btn--brass magnet" href="#contact"><span>Demander un diagnostic</span><svg class="arr" viewBox="0 0 16 10" aria-hidden="true"><path d="M11 1l4 4-4 4M15 5H0"/></svg></a>
+      <a class="btn btn--ghost" href="#formations"><span>Voir les formations</span></a>
+    </div>
+    <p class="hero__offer rv" data-d="8">Première visite d’observation offerte</p>
+  </div>
+
+  <ul class="hero__marks wrap" aria-label="Repères">
+    <li class="rv" data-d="8"><b>Depuis 2010</b><span>en salle, jusqu’au protocole d’État</span></li>
+    <li class="rv" data-d="9"><b>Depuis <span class="count" data-to="2020">2020</span></b><span>formation d’équipes et d’encadrants</span></li>
+    <li class="rv" data-d="10"><b>FR · AR</b><span>formations en français et en arabe</span></li>
+    <li class="rv" data-d="11"><b>Tout le Maroc</b><span>Tanger, Casablanca, Marrakech, Agadir</span></li>
+  </ul>
+  <a class="hero__scroll" href="#preuve" aria-label="Défiler vers la suite"><span></span></a>
+</section>
+
+<!-- =====================================================
+     2. PREUVE — maisons servies (juste après le hero)
+     ===================================================== -->
+<section class="proof" id="preuve" aria-label="Maisons et institutions servies">
+  <p class="proof__lbl wrap">Maisons et institutions servies</p>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Palais Royal de Belgique</span><i>✦</i><span>Parlement européen</span><i>✦</i><span>Commission européenne</span><i>✦</i><span>Louis Vuitton</span><i>✦</i><span>Chanel</span><i>✦</i><span>Hermès</span><i>✦</i><span>Tiffany &amp; Co.</span><i>✦</i>
+      <span>Palais Royal de Belgique</span><i>✦</i><span>Parlement européen</span><i>✦</i><span>Commission européenne</span><i>✦</i><span>Louis Vuitton</span><i>✦</i><span>Chanel</span><i>✦</i><span>Hermès</span><i>✦</i><span>Tiffany &amp; Co.</span><i>✦</i>
+    </div>
+  </div>
+  <p class="sr-only">Palais Royal de Belgique, Parlement européen, Commission européenne, Louis Vuitton, Chanel, Hermès, Tiffany &amp; Co. — institutions et maisons pour lesquelles des prestations de service ont été assurées.</p>
+</section>
+
+<!-- =====================================================
+     3. CONSTAT → INTERVENTION → RÉSULTAT
+     ===================================================== -->
+<section class="sec sec--os" id="constat">
   <div class="wrap">
-    <div class="hero__grid">
+    <!-- L'intitulé annonce l'enchaînement sans répéter « Le constat »,
+         qui titre déjà la première étape juste en dessous. -->
+    <p class="eyebrow rv">Le point de départ</p>
+    <h2 class="statement split-words">Un établissement peut être rénové, bien commercialisé, parfaitement décoré&nbsp;— <em>et livrer une expérience irrégulière.</em></h2>
+
+    <ol class="flow">
+      <li class="flow__i rv" data-d="1">
+        <span class="flow__n">01</span>
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 21 19.5H3Z"/><path d="M12 10v4.2M12 16.8v.2"/></svg>
+        <h3>Le constat</h3>
+        <p>Pas de standard écrit, un encadrement jamais formé au management, des nouveaux qui apprennent en regardant leur voisin.</p>
+      </li>
+      <li class="flow__i rv" data-d="2">
+        <span class="flow__n">02</span>
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.75" cy="10.75" r="6.5"/><path d="m15.6 15.6 4.9 4.9"/></svg>
+        <h3>L’intervention</h3>
+        <p>Observer vos services, écrire les standards qui manquent, former les équipes à les tenir.</p>
+      </li>
+      <li class="flow__i rv" data-d="3">
+        <span class="flow__n">03</span>
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
+        <h3>Le résultat</h3>
+        <p>Un système qui fonctionne sans nous — et qui tient encore trois mois plus tard.</p>
+      </li>
+    </ol>
+
+    <details class="more rv">
+      <summary><span>En savoir plus</span><i aria-hidden="true"></i></summary>
+      <div class="more__in">
+        <p>L’irrégularité ne vient presque jamais du manque de bonne volonté. Elle vient de l’absence de standard écrit, d’un encadrement intermédiaire promu sans avoir été formé au management, et de nouveaux collaborateurs qui apprennent le métier en regardant faire leur voisin.</p>
+        <p>Dyani Hospitality n’intervient pas seulement pour former. Nous observons vos services, identifions où l’expérience se rompt, écrivons les standards qui manquent, formons les équipes à les tenir, puis vérifions sur le terrain qu’ils tiennent encore trois mois plus tard.</p>
+        <p><b>L’objectif n’est pas de vous rendre dépendant d’un consultant. C’est de laisser derrière nous un système qui fonctionne sans nous.</b></p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- =====================================================
+     4. INTERVENTIONS
+     ===================================================== -->
+<section class="sec sec--ink" id="interventions">
+  <div class="wrap">
+    <div class="sec__head">
       <div>
-        <h1 class="display h-hero hero__t stage st2">Le service ne s’improvise pas. <em>Il s’organise.</em></h1>
-        <p class="lead hero__lead stage st3">
-          Formation des équipes, standards écrits et organisation opérationnelle pour les
-          hôtels, riads, restaurants et traiteurs au Maroc. Sur le terrain, pendant le
-          service, avec vos équipes.
-        </p>
-        <div class="hero__cta stage st4">
-          <button class="btn btn--dark" type="button" data-go="contact">Demander un diagnostic
-            <svg class="arrow" width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true"><path d="M9.2 1 13 4.5 9.2 8M13 4.5H0" stroke="currentColor" stroke-width="1"/></svg>
-          </button>
-          <button class="btn btn--line" type="button" data-go="formations">Voir les formations</button>
-        </div>
+        <p class="eyebrow rv">Interventions</p>
+        <h2 class="h2 split-words">Quatre domaines, <em>un seul objectif.</em></h2>
       </div>
+      <p class="sec__aside rv">Chaque mission combine ces registres selon ce que révèle le diagnostic. Ils sont rarement isolés.</p>
+    </div>
 
-      <div class="arch stage st5" data-rv="scale">
-        <span class="arch__line" aria-hidden="true"></span>
-        <div class="arch__img">
-          <picture><source srcset="assets/img/hero-dressage.webp" type="image/webp"><img src="assets/img/hero-dressage.jpg" alt="Chef de rang dressant les couverts avant un service" width="900" height="1125" loading="eager" decoding="sync" fetchpriority="high"></picture>
-        </div>
-      </div>
+    <div class="doms">
+      <article class="dom tilt rv" data-d="1">
+        <span class="dom__n">01</span>
+        <svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.25 18.3h15.5"/><path d="M6.4 18.3a5.6 5.6 0 0 1 11.2 0"/><path d="M12 12.7v-2.1"/><circle cx="12" cy="9.5" r="1.05"/></svg>
+        <h3>Service et expérience client</h3>
+        <p>Accueil · relation client · réclamations · cohérence à chaque point de contact</p>
+      </article>
+      <article class="dom tilt rv" data-d="2">
+        <span class="dom__n">02</span>
+        <svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9.4" r="3.15"/><path d="M6.4 20.6a5.6 5.6 0 0 1 11.2 0"/><circle cx="4.9" cy="8.8" r="2.05"/><circle cx="19.1" cy="8.8" r="2.05"/><path d="M1.9 16.6a3.55 3.55 0 0 1 2.95-3.45"/><path d="M22.1 16.6a3.55 3.55 0 0 0-2.95-3.45"/></svg>
+        <h3>Encadrement et management</h3>
+        <p>Chefs de rang · maîtres d’hôtel · gouvernantes · chefs de réception</p>
+      </article>
+      <article class="dom tilt rv" data-d="3">
+        <span class="dom__n">03</span>
+        <svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.1 3.5v4.4a1.95 1.95 0 0 0 3.9 0V3.5"/><path d="M9.05 9.85V20.5"/><path d="M16.9 3.5c1.65 2.45 1.65 6.4 0 8.5"/><path d="M16.9 12V20.5"/></svg>
+        <h3>Formation des équipes</h3>
+        <p>Gestes métier · salle · bar · accueil · hébergement</p>
+      </article>
+      <article class="dom tilt rv" data-d="4">
+        <span class="dom__n">04</span>
+        <svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.25 2.75h7.5l4.5 4.5v14h-12Z"/><path d="M13.5 2.75v4.75h4.75"/><path d="M9.25 12.5h6M9.25 16.25h4.25"/></svg>
+        <h3>Standards et organisation</h3>
+        <p>Procédures · check-lists · fiches de poste · contrôle de l’application</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ==================== REPÈRES ==================== -->
-
-<section class="marks">
-  <div class="wrap">
-    <div class="marks__g">
-      <div class="mark" data-rv="up"><div class="mark__k">Depuis 2010</div><div class="mark__v">en salle, du service gastronomique au protocole d’État</div></div>
-      <div class="mark" data-rv="up"><div class="mark__k">Depuis 2020</div><div class="mark__v">formation d’équipes et d’encadrants</div></div>
-      <div class="mark" data-rv="up"><div class="mark__k">FR · AR</div><div class="mark__v">formations animées dans les deux langues</div></div>
-      <div class="mark" data-rv="up"><div class="mark__k">Tout le Maroc</div><div class="mark__v">Tanger, Casablanca, Marrakech, Agadir</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== CONSTAT ==================== -->
-
-<section class="section s-sable">
-  <div class="wrap">
-    <div class="constat">
-      <h2 class="display constat__t" data-rv="left">Un établissement peut être rénové, bien commercialisé et parfaitement décoré, et livrer malgré tout une expérience irrégulière.</h2>
-      <div class="constat__p" data-rv="right">
-        <p class="lead">Parce que l’irrégularité ne vient presque jamais du manque de bonne volonté. Elle vient de l’absence de standard écrit, d’un encadrement intermédiaire promu sans avoir été formé au management, et de nouveaux collaborateurs qui apprennent le métier en regardant faire leur voisin.</p>
-        <p class="lead">Dyani Hospitality n’intervient pas seulement pour former. Nous observons vos services, identifions où l’expérience se rompt, écrivons les standards qui manquent, formons les équipes à les tenir, puis vérifions sur le terrain qu’ils tiennent encore trois mois plus tard.</p>
-        <p class="constat__end">L’objectif n’est pas de vous rendre dépendant d’un consultant. C’est de laisser derrière nous un système qui fonctionne sans nous.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== INTERVENTIONS ==================== -->
-
-<section class="section s-navy" id="interventions">
-  <div class="wrap">
-    <div class="head-row u-mb-xl" data-rv="up">
-      <div>
-        <p class="eyebrow">Interventions</p>
-        <h2 class="display h-1 head">Quatre domaines d’intervention, un seul objectif</h2>
-        <p class="lead u-mt-l">Chaque mission combine ces registres selon ce que révèle le diagnostic. Ils sont rarement isolés.</p>
-      </div>
-      <button class="btn btn--light btn--sm" type="button" data-go="contact">Parler de votre besoin</button>
-    </div>
-
-    <div class="dom">
-      <article class="dom__c" data-rv="up"><span class="dom__n">01</span><h3>Service et expérience client</h3><p>Accueil, relation client, gestion des réclamations et cohérence de l’expérience à chaque point de contact.</p></article>
-      <article class="dom__c" data-rv="up"><span class="dom__n">02</span><h3>Encadrement et management</h3><p>Formation des chefs de rang, maîtres d’hôtel, gouvernantes et chefs de réception au management de terrain.</p></article>
-      <article class="dom__c" data-rv="up"><span class="dom__n">03</span><h3>Formation des équipes</h3><p>Montée en compétences sur les gestes métier de la salle, du bar, de l’accueil et de l’hébergement.</p></article>
-      <article class="dom__c" data-rv="up"><span class="dom__n">04</span><h3>Standards et organisation</h3><p>Rédaction des procédures, check-lists et fiches de poste, puis contrôle de leur application réelle.</p></article>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== MÉTHODE ==================== -->
-
-<section class="section s-sable" id="methode">
-  <div class="wrap">
-    <div data-rv="up" class="u-mb-m u-nar-62">
+<!-- =====================================================
+     5. MÉTHODE — défilement horizontal épinglé (desktop),
+        swipe (mobile)
+     ===================================================== -->
+<section class="method" id="methode">
+  <div class="method__pin">
+    <div class="method__head wrap">
       <p class="eyebrow">Méthode</p>
-      <h2 class="display h-1 head">Une méthode en sept temps</h2>
-      <p class="lead u-mt-l">Chaque étape produit un livrable. Aucune n’est facultative&nbsp;: c’est leur enchaînement qui fait tenir le résultat dans la durée.</p>
+      <h2 class="h2">Sept temps. <em>Aucun facultatif.</em></h2>
+      <p class="method__sub">Chaque étape produit un livrable. C’est leur enchaînement qui fait tenir le résultat.</p>
+      <div class="method__prog" aria-hidden="true"><span id="mprog"></span></div>
     </div>
-
-    <ol class="steps">
-      <li class="steps__i" data-rv="up">
-        <div class="steps__h">
-          <svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1.75 12S5.4 5.75 12 5.75 22.25 12 22.25 12 18.6 18.25 12 18.25 1.75 12 1.75 12Z"/><circle cx="12" cy="12" r="3.1"/></svg>
-          <span class="steps__n" aria-hidden="true">01</span>
-        </div>
-        <h3 class="display steps__t">Observer</h3>
-        <p class="steps__d">Plusieurs services suivis en conditions réelles, sans intervenir.</p>
-      </li>
-      <li class="steps__i" data-rv="up">
-        <div class="steps__h">
-          <svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="10.75" cy="10.75" r="6.5"/><path d="m15.6 15.6 4.9 4.9"/></svg>
-          <span class="steps__n" aria-hidden="true">02</span>
-        </div>
-        <h3 class="display steps__t">Diagnostiquer</h3>
-        <p class="steps__d">Les points de rupture identifiés, et leurs causes réelles.</p>
-      </li>
-      <li class="steps__i" data-rv="up">
-        <div class="steps__h">
-          <svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.25 2.75h7.5l4.5 4.5v14h-12Z"/><path d="M13.5 2.75v4.75h4.75"/><path d="M9.25 12.5h6M9.25 16.25h4.25"/></svg>
-          <span class="steps__n" aria-hidden="true">03</span>
-        </div>
-        <h3 class="display steps__t">Structurer</h3>
-        <p class="steps__d">Standards, procédures et check-lists rédigés dans un format utilisable.</p>
-      </li>
-      <li class="steps__i" data-rv="up">
-        <div class="steps__h">
-          <svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9.25" cy="8" r="3.1"/><path d="M3.25 19.5a6 6 0 0 1 12 0"/><path d="M16.4 5.3a3.1 3.1 0 0 1 0 5.4"/><path d="M17.9 14.4a6 6 0 0 1 2.85 5.1"/></svg>
-          <span class="steps__n" aria-hidden="true">04</span>
-        </div>
-        <h3 class="display steps__t">Former</h3>
-        <p class="steps__d">Transmission aux équipes, sur place et en situation.</p>
-      </li>
-      <li class="steps__i" data-rv="up">
-        <div class="steps__h">
-          <svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.75 19.25 19.25 4.75"/><path d="M10.5 4.75h8.75V13.5"/></svg>
-          <span class="steps__n" aria-hidden="true">05</span>
-        </div>
-        <h3 class="display steps__t">Déployer</h3>
-        <p class="steps__d">Encadrement accompagné sur les premiers services d’application.</p>
-      </li>
-      <li class="steps__i" data-rv="up">
-        <div class="steps__h">
-          <svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 20.25h17"/><path d="M7.25 20.25v-5.5M12 20.25V7.75M16.75 20.25v-8.5"/></svg>
-          <span class="steps__n" aria-hidden="true">06</span>
-        </div>
-        <h3 class="display steps__t">Mesurer</h3>
-        <p class="steps__d">Visite mystère, grille d’écart et indicateurs convenus.</p>
-      </li>
-      <li class="steps__i" data-rv="up">
-        <div class="steps__h">
-          <svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.25 12A8.25 8.25 0 0 1 5.6 17.2"/><path d="M3.75 12A8.25 8.25 0 0 1 18.4 6.8"/><path d="M18.9 3.5v3.6h-3.6"/><path d="M5.1 20.5v-3.6h3.6"/></svg>
-          <span class="steps__n" aria-hidden="true">07</span>
-        </div>
-        <h3 class="display steps__t">Optimiser</h3>
-        <p class="steps__d">Correction de ce qui n’a pas tenu, ajustement à l’exploitation.</p>
-      </li>
+    <ol class="method__track" id="mtrack">
+      <li class="step"><span class="step__n">01</span><svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M1.75 12S5.4 5.75 12 5.75 22.25 12 22.25 12 18.6 18.25 12 18.25 1.75 12 1.75 12Z"/><circle cx="12" cy="12" r="3.1"/></svg><h3>Observer</h3><p>Plusieurs services suivis en conditions réelles, sans intervenir. Ce que l’on voit un vendredi soir ne se lit dans aucun document.</p></li>
+      <li class="step"><span class="step__n">02</span><svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.75" cy="10.75" r="6.5"/><path d="m15.6 15.6 4.9 4.9"/></svg><h3>Diagnostiquer</h3><p>Les points de rupture et leurs causes&nbsp;: problème de compétence ou d’organisation.</p></li>
+      <li class="step"><span class="step__n">03</span><svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.25 2.75h7.5l4.5 4.5v14h-12Z"/><path d="M13.5 2.75v4.75h4.75"/><path d="M9.25 12.5h6M9.25 16.25h4.25"/></svg><h3>Structurer</h3><p>Standards, procédures, check-lists et fiches de poste, dans un format que vos équipes utiliseront.</p></li>
+      <li class="step"><span class="step__n">04</span><svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.25" cy="8" r="3.1"/><path d="M3.25 19.5a6 6 0 0 1 12 0"/><path d="M16.4 5.3a3.1 3.1 0 0 1 0 5.4"/><path d="M17.9 14.4a6 6 0 0 1 2.85 5.1"/></svg><h3>Former</h3><p>Sur place, en situation, dans la langue de travail des équipes.</p></li>
+      <li class="step"><span class="step__n">05</span><svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.75 19.25 19.25 4.75"/><path d="M10.5 4.75h8.75V13.5"/></svg><h3>Déployer</h3><p>L’encadrement accompagné pendant les premiers services, là où les standards se perdent.</p></li>
+      <li class="step"><span class="step__n">06</span><svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.25h17"/><path d="M7.25 20.25v-5.5M12 20.25V7.75M16.75 20.25v-8.5"/></svg><h3>Mesurer</h3><p>Visite mystère, grille d’écart aux standards, indicateurs convenus avec la direction.</p></li>
+      <li class="step"><span class="step__n">07</span><svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.25 12A8.25 8.25 0 0 1 5.6 17.2"/><path d="M3.75 12A8.25 8.25 0 0 1 18.4 6.8"/><path d="M18.9 3.5v3.6h-3.6"/><path d="M5.1 20.5v-3.6h3.6"/></svg><h3>Optimiser</h3><p>Corriger ce qui n’a pas tenu, ajuster les procédures à la réalité de l’exploitation.</p></li>
     </ol>
   </div>
 </section>
 
-<!-- ==================== SUR LE TERRAIN ==================== -->
-
-<section class="section s-navy" id="terrain">
+<!-- =====================================================
+     6. SUR LE TERRAIN
+     ===================================================== -->
+<section class="sec sec--ink" id="terrain">
   <div class="wrap">
-
-    <div data-rv="up" class="u-mb-l u-nar-62">
-      <p class="eyebrow">Sur le terrain</p>
-      <h2 class="display h-1 head">Ce à quoi ressemble une intervention</h2>
-      <p class="lead u-mt-l">
-        La formation ne se passe pas dans une salle de séminaire, à distance de l’exploitation.
-        Elle se passe là où le service a lieu, avec les équipes qui l’assurent, sur le matériel
-        qu’elles utilisent réellement.
-      </p>
+    <div class="sec__head">
+      <div>
+        <p class="eyebrow rv">Sur le terrain</p>
+        <h2 class="h2 split-words">Là où le service a lieu. <em>Pas en séminaire.</em></h2>
+      </div>
+      <p class="sec__aside rv">Avec les équipes qui l’assurent, sur le matériel qu’elles utilisent réellement.</p>
     </div>
 
-    <div class="terr__top">
-      <!-- ------------------------------------------------------------
-           VIDÉO
-           Format vertical 480×848, 34 s. Le fichier n'est chargé
-           qu'au clic (preload="none") : la page reste légère.
-           ⚠ LÉGENDE À CONFIRMER — décrire ce que montre la séquence.
-           ------------------------------------------------------------ -->
-      <figure class="vframe u-m0" data-rv="scale">
-        <div class="vframe__in">
-          <!-- preload="metadata" : le navigateur ne télécharge que l'en-tête
-               et affiche la première image réelle de la séquence. Le corps
-               de la vidéo (5 Mo) n'est chargé qu'au clic. -->
-          <video preload="metadata" playsinline width="480" height="848">
-            <source src="assets/video/formation-terrain.mp4" type="video/mp4">
-            Votre navigateur ne peut pas lire cette vidéo.
-          </video>
-          <button class="vframe__ov" type="button" aria-label="Lire la vidéo de la session de formation">
-            <span class="vplay" aria-hidden="true">
-              <svg width="17" height="20" viewBox="0 0 17 20" fill="none"><path d="M16 10 1 19V1l15 9Z" fill="currentColor"/></svg>
-            </span>
-          </button>
-          <div class="vframe__meta"><span>Formation serveurs</span><span>0:34</span></div>
-        </div>
-        <figcaption class="vframe__cap">
-          Formation de serveurs — théorie et pratique.
-          Séquence filmée pendant une session, chez RLM Service.
-        </figcaption>
+    <div class="field">
+      <figure class="video rv" data-cursor="Lire">
+        <video preload="none" playsinline width="480" height="848" poster="assets/img/terrain-standards.jpg">
+          <source src="assets/video/formation-terrain.mp4" type="video/mp4">
+        </video>
+        <button class="video__play" type="button" aria-label="Lire la vidéo de la session de formation"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M16 10 1 19V1l15 9Z"/></svg></button>
+        <figcaption><span>Formation serveurs — chez RLM Service</span><span>0:34</span></figcaption>
       </figure>
 
-      <div class="terr__say" data-rv="right">
-        <p class="lead">
-          Une équipe n’apprend pas un standard en l’écoutant. Elle l’apprend en l’exécutant,
-          corrigée sur le moment, jusqu’à ce que le geste tienne sans qu’elle ait à y penser.
-          C’est la raison pour laquelle chaque mission commence par plusieurs services observés
-          en conditions réelles, et non par un support de présentation.
-        </p>
-        <p class="lead">
-          Les documents remis — procédures, check-lists, fiches de poste — ne sont pas des livrables
-          de fin de mission. Ce sont les outils avec lesquels les équipes travaillent pendant la
-          formation, puis après notre départ.
-        </p>
-        <p class="terr__pull">
-          Ce qui n’a pas été exécuté devant moi n’a pas été formé.
-        </p>
+      <div class="cards" id="tcards" aria-label="Photographies de terrain">
+        <button class="card rv" data-d="1" type="button" data-cursor="Voir" data-lb="0">
+          <span class="card__img reveal"><picture><source srcset="assets/img/terrain-standards.webp" type="image/webp"><img src="assets/img/terrain-standards.jpg" alt="Présentation d’une grille de procédure de service à une équipe réunie autour d’une table dressée" width="1200" height="1600" loading="lazy" decoding="async"></picture></span>
+          <span class="card__n">01</span>
+          <span class="card__t">Le standard s’écrit avant de s’enseigner</span>
+          <span class="card__d">Tant qu’une procédure n’est pas écrite, chacun l’applique à sa manière.</span>
+        </button>
+        <button class="card rv" data-d="2" type="button" data-cursor="Voir" data-lb="1">
+          <span class="card__img reveal"><picture><source srcset="assets/img/terrain-posture.webp" type="image/webp"><img src="assets/img/terrain-posture.jpg" alt="Une collaboratrice en tenue de service adopte la posture d’accueil devant le reste de l’équipe" width="1200" height="1600" loading="lazy" decoding="async"></picture></span>
+          <span class="card__n">02</span>
+          <span class="card__t">La posture se corrige debout</span>
+          <span class="card__d">On le fait exécuter, on le reprend, on le refait.</span>
+        </button>
+        <button class="card rv" data-d="3" type="button" data-cursor="Voir" data-lb="2">
+          <span class="card__img reveal"><picture><source srcset="assets/img/terrain-prestation.webp" type="image/webp"><img src="assets/img/terrain-prestation.jpg" alt="Ibrahim Dyani en tenue de service, en prestation dans un espace d’exposition privé" width="1400" height="1867" loading="lazy" decoding="async"></picture></span>
+          <span class="card__n">03</span>
+          <span class="card__t">Le niveau enseigné est celui qui est exercé</span>
+          <span class="card__d">Je n’ai pas quitté la salle pour former.</span>
+        </button>
       </div>
     </div>
 
-    <!-- ------------------------------------------------------------
-         PHOTOGRAPHIES — cliquables, visionneuse plein écran
-         ------------------------------------------------------------ -->
-    <div class="tgrid" data-rv="up">
+    <details class="more more--dark rv">
+      <summary><span>En savoir plus</span><i aria-hidden="true"></i></summary>
+      <div class="more__in">
+        <p>Une équipe n’apprend pas un standard en l’écoutant. Elle l’apprend en l’exécutant, corrigée sur le moment, jusqu’à ce que le geste tienne sans qu’elle ait à y penser. C’est la raison pour laquelle chaque mission commence par plusieurs services observés en conditions réelles, et non par un support de présentation.</p>
+        <p>Les documents remis — procédures, check-lists, fiches de poste — ne sont pas des livrables de fin de mission. Ce sont les outils avec lesquels les équipes travaillent pendant la formation, puis après notre départ.</p>
+      </div>
+    </details>
+  </div>
+</section>
 
-      <button class="tcard" type="button" aria-label="Agrandir : le standard avant d’être enseigné">
-        <span class="tcard__f">
-          <picture>
-            <source srcset="assets/img/terrain-standards.webp" type="image/webp">
-            <img src="assets/img/terrain-standards.jpg"
-                 alt="Session de formation&nbsp;: présentation d’une grille de procédure de service à une équipe réunie autour d’une table dressée"
-                 width="1200" height="1600" loading="lazy" decoding="async">
-          </picture>
-          <span class="tcard__z" aria-hidden="true">
-            <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="6" cy="6" r="4.6" stroke="currentColor" stroke-width="1.1"/><path d="M9.5 9.5 13 13M6 4v4M4 6h4" stroke="currentColor" stroke-width="1.1"/></svg>
-          </span>
-        </span>
-        <span class="tcard__n">01</span>
-        <span class="tcard__t">Le standard s’écrit avant de s’enseigner</span>
-        <span class="tcard__d">Ce qui doit être fait avant le service, sur place, après, et en cas d’imprévu. Tant qu’une procédure n’est pas écrite, chacun l’applique à sa manière — et l’expérience client devient irrégulière.</span>
-      </button>
+<!-- citation plein écran -->
+<section class="pull" aria-label="Citation">
+  <div class="pull__media" data-parallax="0.12"><picture><source srcset="assets/img/terrain-posture.webp" type="image/webp"><img src="assets/img/terrain-posture.jpg" alt="" width="1200" height="1600" loading="lazy" decoding="async"></picture></div>
+  <blockquote class="pull__q wrap">
+    <p class="split-words">Ce qui n’a pas été exécuté devant moi <em>n’a pas été formé.</em></p>
+    <cite>Ibrahim Dyani</cite>
+  </blockquote>
+</section>
 
-      <button class="tcard" type="button" aria-label="Agrandir : la posture se corrige debout">
-        <span class="tcard__f">
-          <picture>
-            <source srcset="assets/img/terrain-posture.webp" type="image/webp">
-            <img src="assets/img/terrain-posture.jpg"
-                 alt="Mise en situation&nbsp;: une collaboratrice en tenue de service adopte la posture d’accueil devant le reste de l’équipe"
-                 width="1200" height="1600" loading="lazy" decoding="async">
-          </picture>
-          <span class="tcard__z" aria-hidden="true">
-            <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="6" cy="6" r="4.6" stroke="currentColor" stroke-width="1.1"/><path d="M9.5 9.5 13 13M6 4v4M4 6h4" stroke="currentColor" stroke-width="1.1"/></svg>
-          </span>
-        </span>
-        <span class="tcard__n">02</span>
-        <span class="tcard__t">La posture se corrige debout, pas sur un support</span>
-        <span class="tcard__d">Tenue, présentation, placement, distance au client&nbsp;: une mise en situation devant l’équipe. Un geste ne se corrige pas en le décrivant — on le fait exécuter, on le reprend, on le refait.</span>
-      </button>
+<!-- =====================================================
+     7. ÉTUDE DE CAS — LE CONSTANTIN
+     ===================================================== -->
+<section class="sec sec--os" id="constantin">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <!-- Aucune année : la maquette v2 annonçait «&nbsp;2024&nbsp;», date qui
+             ne figure nulle part sur le site actuel et que rien ne
+             vérifie. À rétablir si le client la confirme. -->
+        <p class="eyebrow rv">Étude de cas · Knokke-Heist</p>
+        <h2 class="h2 split-words">Le Constantin. <em>Du chantier au premier service.</em></h2>
+      </div>
+      <p class="sec__aside rv">Au cœur du Carré d’Or, une maison à construire entièrement&nbsp;: sans carte, sans équipe, sans procédures.</p>
+    </div>
 
-      <button class="tcard" type="button" aria-label="Agrandir : le niveau enseigné est celui qui est exercé">
-        <span class="tcard__f">
-          <picture>
-            <source srcset="assets/img/terrain-prestation.webp" type="image/webp">
-            <img src="assets/img/terrain-prestation.jpg"
-                 alt="Ibrahim Dyani en tenue de service, en prestation dans un espace d’exposition privé"
-                 width="1400" height="1867" loading="lazy" decoding="async">
-          </picture>
-          <span class="tcard__z" aria-hidden="true">
-            <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="6" cy="6" r="4.6" stroke="currentColor" stroke-width="1.1"/><path d="M9.5 9.5 13 13M6 4v4M4 6h4" stroke="currentColor" stroke-width="1.1"/></svg>
-          </span>
-        </span>
-        <span class="tcard__n">03</span>
-        <span class="tcard__t">Le niveau enseigné est celui qui est exercé</span>
-        <span class="tcard__d">Direction de service en lieu d’exception. Je n’ai pas quitté la salle pour former&nbsp;: c’est ce qui permet d’enseigner des exigences réelles plutôt qu’une théorie du métier.</span>
-      </button>
+    <div class="ba rv" id="ba" data-cursor="Glisser">
+      <div class="ba__img ba__after"><picture><source srcset="assets/img/constantin-02.webp" type="image/webp"><img src="assets/img/constantin-02.jpg" alt="Après&nbsp;: la salle du Constantin dressée, la veille du premier service" width="900" height="1200" loading="lazy" decoding="async"></picture></div>
+      <div class="ba__img ba__before"><picture><source srcset="assets/img/constantin-06.webp" type="image/webp"><img src="assets/img/constantin-06.jpg" alt="Avant&nbsp;: le chantier, mobilier encore sous bâche" width="900" height="1200" loading="lazy" decoding="async"></picture></div>
+      <span class="ba__tag ba__tag--l">Avant</span><span class="ba__tag ba__tag--r">Après</span>
+      <span class="ba__bar" aria-hidden="true"><span class="ba__knob"><svg viewBox="0 0 24 24"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
+      <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après">
+    </div>
 
+    <div class="case">
+      <div class="case__scope">
+        <h3 class="h3 rv">Le périmètre</h3>
+        <div class="acc">
+          <details class="acc__i rv" open><summary><b>01</b>Carte et prix<i aria-hidden="true"></i></summary><p>Conception des menus et construction de la grille tarifaire.</p></details>
+          <details class="acc__i rv"><summary><b>02</b>Fournisseurs et arts de la table<i aria-hidden="true"></i></summary><p>Sélection des partenaires, de la vaisselle, du linge et du verre.</p></details>
+          <details class="acc__i rv"><summary><b>03</b>Système de caisse<i aria-hidden="true"></i></summary><p>Paramétrage complet, de la fiche produit à l’encaissement.</p></details>
+          <details class="acc__i rv"><summary><b>04</b>Recrutement et formation<i aria-hidden="true"></i></summary><p>Constitution de l’équipe de salle, d’un effectif sans expérience commune jusqu’au premier service.</p></details>
+          <details class="acc__i rv"><summary><b>05</b>Procédures et organisation<i aria-hidden="true"></i></summary><p>Cahier des charges, fiches de poste, séquence de service et contrôles.</p></details>
+        </div>
+      </div>
+      <blockquote class="case__q rv">
+        <p>Une ouverture réussie ne se mesure pas au jour où les portes s’ouvrent, mais à la capacité de la maison à tenir la même exigence une fois le projet transmis.</p>
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="gal" aria-label="Galerie du Constantin">
+    <div class="gal__track">
+      <figure class="gal__f" data-cursor="Voir"><span class="reveal"><picture><source srcset="assets/img/constantin-04.webp" type="image/webp"><img src="assets/img/constantin-04.jpg" alt="La façade du Constantin, Carré d’Or de Knokke-Heist" width="738" height="985" loading="lazy" decoding="async"></picture></span><figcaption>La façade, Carré d’Or</figcaption></figure>
+      <figure class="gal__f" data-cursor="Voir"><span class="reveal"><picture><source srcset="assets/img/constantin-03.webp" type="image/webp"><img src="assets/img/constantin-03.jpg" alt="Dressage d’une assiette au passe, en cuisine" width="900" height="1200" loading="lazy" decoding="async"></picture></span><figcaption>Le passe, au premier service</figcaption></figure>
+      <figure class="gal__f" data-cursor="Voir"><span class="reveal"><picture><source srcset="assets/img/constantin-05.webp" type="image/webp"><img src="assets/img/constantin-05.jpg" alt="La carte posée sur une table dressée" width="900" height="1200" loading="lazy" decoding="async"></picture></span><figcaption>La carte, éditée et posée</figcaption></figure>
+      <figure class="gal__f" data-cursor="Voir"><span class="reveal"><picture><source srcset="assets/img/constantin-07.webp" type="image/webp"><img src="assets/img/constantin-07.jpg" alt="La salle en service, vue depuis la rue à la tombée du jour" width="900" height="1200" loading="lazy" decoding="async"></picture></span><figcaption>La salle, à la tombée du jour</figcaption></figure>
+      <figure class="gal__f" data-cursor="Voir"><span class="reveal"><picture><source srcset="assets/img/constantin-01.webp" type="image/webp"><img src="assets/img/constantin-01.jpg" alt="Ibrahim Dyani disposant les compositions florales avant le service" width="659" height="1200" loading="lazy" decoding="async"></picture></span><figcaption>Les derniers détails</figcaption></figure>
     </div>
   </div>
 </section>
 
-<!-- ==================== FORMATIONS ==================== -->
+<!-- =====================================================
+     8. RECOMMANDATION
+     ===================================================== -->
+<section class="sec sec--ink reco" id="avis">
+  <div class="wrap reco__g">
+    <div class="reco__src rv">
+      <picture class="reco__emblem"><source srcset="assets/img/emblem-be.webp" type="image/webp"><img src="assets/img/emblem-be.png" alt="Armoiries du Royaume de Belgique" width="102" height="128" loading="lazy" decoding="async"></picture>
+      <p class="eyebrow">Recommandation</p>
+      <p class="reco__who">Morgan Picot</p>
+      <p class="reco__role">Maître d’Hôtel principal — JML Concept<br><span>Traiteur officiel de la Famille Royale de Belgique · Bruxelles</span></p>
+    </div>
+    <div class="reco__body">
+      <blockquote class="reco__q split-words">«&nbsp;Je recommande très chaleureusement et sans aucune réserve […] pour toute fonction impliquant exigence, discrétion, rigueur protocolaire et <em>service de très haut niveau.</em>&nbsp;»</blockquote>
+      <ul class="reco__tags">
+        <li class="rv" data-d="1">Diriger et harmoniser des équipes de service</li>
+        <li class="rv" data-d="2">Anticiper les attentes des hôtes</li>
+        <li class="rv" data-d="3">Préserver la sérénité sous forte pression</li>
+        <li class="rv" data-d="4">Un niveau d’excellence constant</li>
+      </ul>
+      <details class="more more--dark rv">
+        <summary><span>Lire l’extrait complet</span><i aria-hidden="true"></i></summary>
+        <div class="more__in">
+          <p>«&nbsp;Ibrahim a évolué à mes côtés sur des missions requérant une précision irréprochable, avant d’assurer lui-même des fonctions de Maître d’Hôtel en autonomie.&nbsp;»</p>
+          <p>Aptitudes relevées dans la lettre&nbsp;: diriger et harmoniser des équipes de service&nbsp;; anticiper les attentes des hôtes avec une justesse remarquable&nbsp;; préserver la fluidité et la sérénité d’un événement, même sous forte pression&nbsp;; maintenir un niveau d’excellence constant, du premier briefing à la fin de service.</p>
+          <p class="muted">Lettre de recommandation complète disponible sur demande.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
 
-<section class="section" id="formations">
+<!-- =====================================================
+     9. FORMATIONS — 4 familles, détail dans un panneau
+     ===================================================== -->
+<section class="sec sec--os" id="formations">
   <div class="wrap">
-    <div class="head-row u-mb-xl" data-rv="up">
+    <div class="sec__head">
       <div>
-        <p class="eyebrow">Formations</p>
-        <h2 class="display h-1 head">Douze programmes, ajustés à votre établissement</h2>
-        <p class="lead u-mt-l">Durées indicatives, ajustées à votre organisation. Quatre familles, douze programmes.</p>
+        <p class="eyebrow rv">Formations</p>
+        <h2 class="h2 split-words">Douze programmes, <em>ajustés à votre maison.</em></h2>
       </div>
-      <button class="btn btn--line btn--sm" type="button" data-go="contact">Demander le catalogue</button>
+      <p class="sec__aside rv">Quatre familles. Durées indicatives, ajustées à votre organisation.</p>
     </div>
 
-    <ul class="fams" data-rv="up">
-      <li class="fams__i">
-        <span class="fams__ic" aria-hidden="true"><svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.1 3.5v4.4a1.95 1.95 0 0 0 3.9 0V3.5"/><path d="M9.05 9.85V20.5"/><path d="M16.9 3.5c1.65 2.45 1.65 6.4 0 8.5"/><path d="M16.9 12V20.5"/></svg></span>
-        <span class="fams__t">Salle et service</span>
-        <span class="fams__c">4 programmes</span>
+    <div class="fams">
+      <button class="fam tilt rv" data-d="1" type="button" data-drawer="d1" aria-haspopup="dialog">
+        <svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.1 3.5v4.4a1.95 1.95 0 0 0 3.9 0V3.5"/><path d="M9.05 9.85V20.5"/><path d="M16.9 3.5c1.65 2.45 1.65 6.4 0 8.5"/><path d="M16.9 12V20.5"/></svg>
+        <span class="fam__c">4 programmes</span><span class="fam__t">Salle et service</span><span class="fam__go">Voir le détail <svg class="arr" viewBox="0 0 16 10" aria-hidden="true"><path d="M11 1l4 4-4 4M15 5H0"/></svg></span>
+      </button>
+      <button class="fam tilt rv" data-d="2" type="button" data-drawer="d2" aria-haspopup="dialog">
+        <svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.25 18.3h15.5"/><path d="M6.4 18.3a5.6 5.6 0 0 1 11.2 0"/><path d="M12 12.7v-2.1"/><circle cx="12" cy="9.5" r="1.05"/></svg>
+        <span class="fam__c">3 programmes</span><span class="fam__t">Accueil et relation client</span><span class="fam__go">Voir le détail <svg class="arr" viewBox="0 0 16 10" aria-hidden="true"><path d="M11 1l4 4-4 4M15 5H0"/></svg></span>
+      </button>
+      <button class="fam tilt rv" data-d="3" type="button" data-drawer="d3" aria-haspopup="dialog">
+        <svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9.4" r="3.15"/><path d="M6.4 20.6a5.6 5.6 0 0 1 11.2 0"/><circle cx="4.9" cy="8.8" r="2.05"/><circle cx="19.1" cy="8.8" r="2.05"/><path d="M1.9 16.6a3.55 3.55 0 0 1 2.95-3.45"/><path d="M22.1 16.6a3.55 3.55 0 0 0-2.95-3.45"/></svg>
+        <span class="fam__c">3 programmes</span><span class="fam__t">Encadrement intermédiaire</span><span class="fam__go">Voir le détail <svg class="arr" viewBox="0 0 16 10" aria-hidden="true"><path d="M11 1l4 4-4 4M15 5H0"/></svg></span>
+      </button>
+      <button class="fam tilt rv" data-d="4" type="button" data-drawer="d4" aria-haspopup="dialog">
+        <svg class="ic ic--lg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.4" y="3.4" width="7.6" height="7.6" rx="1.5"/><rect x="13" y="3.4" width="7.6" height="7.6" rx="1.5"/><rect x="3.4" y="13" width="7.6" height="7.6" rx="1.5"/><path d="M16.8 13.6v6.4M13.6 16.8h6.4"/></svg>
+        <span class="fam__c">2 programmes</span><span class="fam__t">Formats spécifiques</span><span class="fam__go">Voir le détail <svg class="arr" viewBox="0 0 16 10" aria-hidden="true"><path d="M11 1l4 4-4 4M15 5H0"/></svg></span>
+      </button>
+    </div>
+
+    <div class="price rv">
+      <p><b>Le tarif dépend de ce que vous avez besoin de corriger.</b> Un échange, une observation sur site, puis une proposition chiffrée.</p>
+      <p class="price__offer">La première visite d’observation est offerte.</p>
+      <a class="btn btn--ink magnet" href="#contact"><span>Demander le catalogue</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- panneaux de détail (lisibles sans JS : affichés en fin de section) -->
+<div class="drawers">
+  <aside class="drawer" id="d1" role="dialog" aria-modal="true" aria-labelledby="d1t">
+    <div class="drawer__in">
+      <button class="drawer__x" type="button" aria-label="Fermer"><i></i><i></i></button>
+      <p class="eyebrow">Formations · 4 programmes</p>
+      <h3 class="h3" id="d1t">Salle et service</h3>
+      <ul class="progs">
+        <li><div><b>Fondamentaux du service en salle</b><span>Commis, serveurs, chefs de rang</span></div><em>2 jours</em></li>
+        <li><div><b>Le métier de Maître d’Hôtel</b><span>Maîtres d’hôtel, responsables de salle</span></div><em>3 jours</em></li>
+        <li><div><b>Vente additionnelle et conseil au client</b><span>Salle, bar, réception</span></div><em>1 jour</em></li>
+        <li><div><b>Tenir le standard en forte affluence</b><span>Équipes complètes, avant saison</span></div><em>1 jour</em></li>
+      </ul>
+      <a class="btn btn--brass" href="#contact" data-close>Demander ce programme</a>
+    </div>
+  </aside>
+  <aside class="drawer" id="d2" role="dialog" aria-modal="true" aria-labelledby="d2t">
+    <div class="drawer__in">
+      <button class="drawer__x" type="button" aria-label="Fermer"><i></i><i></i></button>
+      <p class="eyebrow">Formations · 3 programmes</p>
+      <h3 class="h3" id="d2t">Accueil et relation client</h3>
+      <ul class="progs">
+        <li><div><b>L’accueil et les premières secondes</b><span>Réception, hôtes d’accueil, voituriers</span></div><em>1 jour</em></li>
+        <li><div><b>Gestion des réclamations et récupération de service</b><span>Tout personnel en contact</span></div><em>1 jour</em></li>
+        <li><div><b>Posture professionnelle et codes de l’hospitalité</b><span>Tout personnel en contact</span></div><em>1 jour</em></li>
+      </ul>
+      <a class="btn btn--brass" href="#contact" data-close>Demander ce programme</a>
+    </div>
+  </aside>
+  <aside class="drawer" id="d3" role="dialog" aria-modal="true" aria-labelledby="d3t">
+    <div class="drawer__in">
+      <button class="drawer__x" type="button" aria-label="Fermer"><i></i><i></i></button>
+      <p class="eyebrow">Formations · 3 programmes</p>
+      <h3 class="h3" id="d3t">Encadrement intermédiaire</h3>
+      <ul class="progs">
+        <li><div><b>Briefer, contrôler, corriger&nbsp;: le manager de terrain</b><span>Encadrement intermédiaire</span></div><em>2 jours</em></li>
+        <li><div><b>Intégrer un nouveau collaborateur en quinze jours</b><span>Encadrement et ressources humaines</span></div><em>1 jour</em></li>
+        <li><div><b>Coordination salle, cuisine et réception</b><span>Chefs de service et encadrants</span></div><em>1 jour</em></li>
+      </ul>
+      <a class="btn btn--brass" href="#contact" data-close>Demander ce programme</a>
+    </div>
+  </aside>
+  <aside class="drawer" id="d4" role="dialog" aria-modal="true" aria-labelledby="d4t">
+    <div class="drawer__in">
+      <button class="drawer__x" type="button" aria-label="Fermer"><i></i><i></i></button>
+      <p class="eyebrow">Formations · 2 programmes</p>
+      <h3 class="h3" id="d4t">Formats spécifiques</h3>
+      <ul class="progs">
+        <li><div><b>Service banquet et événementiel</b><span>Traiteurs, équipes d’extras, salles de réception</span></div><em>1 à 2 jours</em></li>
+        <li><div><b>Petit-déjeuner et accueil en maison d’hôtes</b><span>Riads, maisons d’hôtes, villas</span></div><em>1 jour</em></li>
+      </ul>
+      <a class="btn btn--brass" href="#contact" data-close>Demander ce programme</a>
+    </div>
+  </aside>
+  <div class="drawer__veil" aria-hidden="true"></div>
+</div>
+
+<!-- =====================================================
+     10. POUR QUI — établissements + profils
+     ===================================================== -->
+<section class="sec sec--lin" id="etablissements">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <p class="eyebrow rv">Pour qui</p>
+        <h2 class="h2 split-words">Les maisons dont le service <em>fait la différence.</em></h2>
+      </div>
+      <p class="sec__aside rv">Une salle exceptionnelle ne compense jamais un service approximatif — elle le rend visible.</p>
+    </div>
+
+    <ol class="chain" id="chain">
+      <li class="rv" data-d="1"><span class="chain__dot"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 20.75h19"/><path d="M4.4 20.75V5.65a1.4 1.4 0 0 1 1.4-1.4h12.4a1.4 1.4 0 0 1 1.4 1.4v15.1"/><path d="M7.9 8.1h2.2M13.9 8.1h2.2M7.9 11.9h2.2M13.9 11.9h2.2"/><path d="M10 20.75v-3.9a2 2 0 0 1 4 0v3.9"/></svg></span><b>Hôtels et resorts</b><span>3 à 5 étoiles, boutique-hôtels</span></li>
+      <li class="rv" data-d="2"><span class="chain__dot"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.75 20.75h18.5"/><path d="M4.9 20.75V10.9a7.1 7.1 0 0 1 14.2 0v9.85"/><path d="M9.6 20.75v-4.6a2.4 2.4 0 0 1 4.8 0v4.6"/></svg></span><b>Riads et maisons d’hôtes</b><span>Équipes polyvalentes</span></li>
+      <li class="rv" data-d="3"><span class="chain__dot"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12.4" r="4.6"/><path d="M3.15 3.75v3.6a1.55 1.55 0 0 0 3.1 0V3.75"/><path d="M4.7 7.35V20.25"/><path d="M19.4 3.75c1.3 1.95 1.3 5.1 0 6.8"/><path d="M19.4 10.55V20.25"/></svg></span><b>Restaurants</b><span>Gastronomiques, premium</span></li>
+      <li class="rv" data-d="4"><span class="chain__dot"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 8.4h12.1v5.3a4.6 4.6 0 0 1-4.6 4.6H8.2a4.6 4.6 0 0 1-4.6-4.6Z"/><path d="M15.7 9.85h1.5a2.55 2.55 0 0 1 0 5.1h-1.5"/><path d="M3.35 21h12.6"/></svg></span><b>Cafés et concepts</b><span>Rooftops, beach clubs</span></li>
+      <li class="rv" data-d="5"><span class="chain__dot"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.9h5.8l-1.5 4.4a1.4 1.4 0 0 1-2.8 0Z"/><path d="M7.9 9.9v5.4M6.1 16h3.6"/><path d="M13.2 4.9H19l-1.5 4.4a1.4 1.4 0 0 1-2.8 0Z"/><path d="M16.1 9.9v5.4M14.3 16h3.6"/></svg></span><b>Traiteurs et événementiel</b><span>Banquets, mariages, réceptions</span></li>
+      <li class="rv" data-d="6"><span class="chain__dot"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 20.75h19"/><path d="M4.15 20.75V11.1h4.4v9.65"/><path d="M8.55 20.75V6.55h6.6v14.2"/><path d="M15.15 20.75v-6.4h4.7v6.4"/></svg></span><b>Groupes et chaînes</b><span>Standards multi-sites</span></li>
+    </ol>
+
+    <!-- =====================================================
+         DEUX LIEUX — la section n'était faite que de
+         pictogrammes ; ces deux photographies lui donnent de la
+         matière. Cadre circulaire, comme les profils plus bas :
+         l'anneau devient un motif de la page, pas un accident.
+         ===================================================== -->
+    <ul class="duo">
+      <li class="duo__i rv" data-d="1">
+        <span class="duo__ring">
+          <span class="duo__ph reveal">
+            <picture><source srcset="assets/img/etab-hotel.webp" type="image/webp"><img src="assets/img/etab-hotel.jpg" alt="Sonnette de réception en laiton sur le comptoir d’un hôtel" width="820" height="820" loading="lazy" decoding="async"></picture>
+          </span>
+        </span>
+        <span class="duo__t">Hôtels et resorts</span>
+        <span class="duo__d">La première impression se forme avant le premier mot.</span>
       </li>
-      <li class="fams__i">
-        <span class="fams__ic" aria-hidden="true"><svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.25 18.3h15.5"/><path d="M6.4 18.3a5.6 5.6 0 0 1 11.2 0"/><path d="M12 12.7v-2.1"/><circle cx="12" cy="9.5" r="1.05"/></svg></span>
-        <span class="fams__t">Accueil et relation client</span>
-        <span class="fams__c">3 programmes</span>
-      </li>
-      <li class="fams__i">
-        <span class="fams__ic" aria-hidden="true"><svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="9.4" r="3.15"/><path d="M6.4 20.6a5.6 5.6 0 0 1 11.2 0"/><circle cx="4.9" cy="8.8" r="2.05"/><circle cx="19.1" cy="8.8" r="2.05"/><path d="M1.9 16.6a3.55 3.55 0 0 1 2.95-3.45"/><path d="M22.1 16.6a3.55 3.55 0 0 0-2.95-3.45"/></svg></span>
-        <span class="fams__t">Encadrement intermédiaire</span>
-        <span class="fams__c">3 programmes</span>
-      </li>
-      <li class="fams__i">
-        <span class="fams__ic" aria-hidden="true"><svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.4" y="3.4" width="7.6" height="7.6" rx="1.5"/><rect x="13" y="3.4" width="7.6" height="7.6" rx="1.5"/><rect x="3.4" y="13" width="7.6" height="7.6" rx="1.5"/><path d="M16.8 13.6v6.4M13.6 16.8h6.4"/></svg></span>
-        <span class="fams__t">Formats spécifiques</span>
-        <span class="fams__c">2 programmes</span>
+      <li class="duo__i rv" data-d="3">
+        <span class="duo__ring">
+          <span class="duo__ph reveal">
+            <picture><source srcset="assets/img/etab-cafe.webp" type="image/webp"><img src="assets/img/etab-cafe.jpg" alt="Escalier hélicoïdal et fauteuils dans un lobby contemporain" width="820" height="820" loading="lazy" decoding="async"></picture>
+          </span>
+        </span>
+        <span class="duo__t">Cafés et concepts</span>
+        <span class="duo__d">Des équipes polyvalentes — jamais un standard polyvalent.</span>
       </li>
     </ul>
 
-    <div class="fold" data-rv="up">
-      <button class="btn btn--line btn--sm fold__b" type="button"
-              aria-expanded="true" aria-controls="formations-detail"
-              data-open="Voir le détail des 12 formations" data-close="Masquer le détail">
-        <span class="fold__lbl">Masquer le détail</span>
-        <span class="fold__i" aria-hidden="true"></span>
-      </button>
-    </div>
-
-    <div class="fold__p open" id="formations-detail">
-      <div class="fold__in">
-      <div class="fam">
-        <!-- Famille 1 -->
-        <button class="fam__h" type="button" aria-expanded="true" aria-controls="f1">
-          <span class="fam__t">Salle et service</span>
-          <span class="fam__r"><span class="fam__c">4 programmes</span><span class="fam__i" aria-hidden="true"></span></span>
-        </button>
-        <div class="fam__p open" id="f1">
-          <div class="fam__in">
-            <div class="prog"><div><div class="prog__n">Fondamentaux du service en salle</div><div class="prog__w">Commis, serveurs, chefs de rang</div></div><div class="prog__d">2 jours</div></div>
-            <div class="prog"><div><div class="prog__n">Le métier de Maître d’Hôtel</div><div class="prog__w">Maîtres d’hôtel, responsables de salle</div></div><div class="prog__d">3 jours</div></div>
-            <div class="prog"><div><div class="prog__n">Vente additionnelle et conseil au client</div><div class="prog__w">Salle, bar, réception</div></div><div class="prog__d">1 jour</div></div>
-            <div class="prog"><div><div class="prog__n">Tenir le standard en forte affluence</div><div class="prog__w">Équipes complètes, avant saison</div></div><div class="prog__d">1 jour</div></div>
-          </div>
-        </div>
-
-        <!-- Famille 2 -->
-        <button class="fam__h" type="button" aria-expanded="false" aria-controls="f2">
-          <span class="fam__t">Accueil et relation client</span>
-          <span class="fam__r"><span class="fam__c">3 programmes</span><span class="fam__i" aria-hidden="true"></span></span>
-        </button>
-        <div class="fam__p" id="f2">
-          <div class="fam__in">
-            <div class="prog"><div><div class="prog__n">L’accueil et les premières secondes</div><div class="prog__w">Réception, hôtes d’accueil, voituriers</div></div><div class="prog__d">1 jour</div></div>
-            <div class="prog"><div><div class="prog__n">Gestion des réclamations et récupération de service</div><div class="prog__w">Tout personnel en contact</div></div><div class="prog__d">1 jour</div></div>
-            <div class="prog"><div><div class="prog__n">Posture professionnelle et codes de l’hospitalité</div><div class="prog__w">Tout personnel en contact</div></div><div class="prog__d">1 jour</div></div>
-          </div>
-        </div>
-
-        <!-- Famille 3 -->
-        <button class="fam__h" type="button" aria-expanded="false" aria-controls="f3">
-          <span class="fam__t">Encadrement intermédiaire</span>
-          <span class="fam__r"><span class="fam__c">3 programmes</span><span class="fam__i" aria-hidden="true"></span></span>
-        </button>
-        <div class="fam__p" id="f3">
-          <div class="fam__in">
-            <div class="prog"><div><div class="prog__n">Briefer, contrôler, corriger&nbsp;: le manager de terrain</div><div class="prog__w">Encadrement intermédiaire</div></div><div class="prog__d">2 jours</div></div>
-            <div class="prog"><div><div class="prog__n">Intégrer un nouveau collaborateur en quinze jours</div><div class="prog__w">Encadrement et ressources humaines</div></div><div class="prog__d">1 jour</div></div>
-            <div class="prog"><div><div class="prog__n">Coordination salle, cuisine et réception</div><div class="prog__w">Chefs de service et encadrants</div></div><div class="prog__d">1 jour</div></div>
-          </div>
-        </div>
-
-        <!-- Famille 4 -->
-        <button class="fam__h" type="button" aria-expanded="false" aria-controls="f4">
-          <span class="fam__t">Formats spécifiques</span>
-          <span class="fam__r"><span class="fam__c">2 programmes</span><span class="fam__i" aria-hidden="true"></span></span>
-        </button>
-        <div class="fam__p" id="f4">
-          <div class="fam__in">
-            <div class="prog"><div><div class="prog__n">Service banquet et événementiel</div><div class="prog__w">Traiteurs, équipes d’extras, salles de réception</div></div><div class="prog__d">1 à 2 jours</div></div>
-            <div class="prog"><div><div class="prog__n">Petit-déjeuner et accueil en maison d’hôtes</div><div class="prog__w">Riads, maisons d’hôtes, villas</div></div><div class="prog__d">1 jour</div></div>
-          </div>
-        </div>
+    <!-- =====================================================
+         LES PROFILS — liste à gauche, portrait au centre d'un
+         anneau de progression à droite. L'anneau avance seul et
+         passe au profil suivant ; survoler, cliquer ou tabuler
+         reprend la main. Sans JavaScript, les six profils
+         restent lisibles les uns sous les autres.
+         ===================================================== -->
+    <div class="swap u-mt" id="swap">
+      <div class="swap__head">
+        <h3 class="h3 rv">Les profils que je forme</h3>
+        <p class="swap__sub rv">Six niveaux, six attentes. Le contenu d’une formation ne se règle pas sur un intitulé de poste, mais sur ce que la personne doit tenir pendant le service.</p>
       </div>
-      </div>
-    </div>
 
-    <div class="note" data-rv="up">
-      <p class="lead"><b>Le tarif dépend de ce que vous avez besoin de corriger.</b> Nombre de journées, effectif, niveau de départ, lieu d’intervention&nbsp;: annoncer un prix avant d’avoir observé un service reviendrait à vous vendre un programme dont nous ignorons s’il répond à votre problème.</p>
-      <p class="lead">Un échange, une observation sur site, puis une proposition chiffrée. <b>La première visite d’observation est offerte.</b></p>
-    </div>
-  </div>
-</section>
+      <div class="swap__g">
+        <ol class="swap__list" role="tablist" aria-label="Profils formés">
+          <li class="rv" data-d="1"><button class="swap__b" type="button" role="tab" id="pt0" aria-controls="pp0" aria-selected="true" data-i="0">
+            <span class="swap__k">01</span><span class="swap__n">Commis et serveurs</span>
+            <span class="swap__fill" aria-hidden="true"></span>
+          </button></li>
+          <li class="rv" data-d="2"><button class="swap__b" type="button" role="tab" id="pt1" aria-controls="pp1" aria-selected="false" tabindex="-1" data-i="1">
+            <span class="swap__k">02</span><span class="swap__n">Chefs de rang</span>
+            <span class="swap__fill" aria-hidden="true"></span>
+          </button></li>
+          <li class="rv" data-d="3"><button class="swap__b" type="button" role="tab" id="pt2" aria-controls="pp2" aria-selected="false" tabindex="-1" data-i="2">
+            <span class="swap__k">03</span><span class="swap__n">Maîtres d’hôtel</span>
+            <span class="swap__fill" aria-hidden="true"></span>
+          </button></li>
+          <li class="rv" data-d="4"><button class="swap__b" type="button" role="tab" id="pt3" aria-controls="pp3" aria-selected="false" tabindex="-1" data-i="3">
+            <span class="swap__k">04</span><span class="swap__n">Managers de terrain</span>
+            <span class="swap__fill" aria-hidden="true"></span>
+          </button></li>
+          <li class="rv" data-d="5"><button class="swap__b" type="button" role="tab" id="pt4" aria-controls="pp4" aria-selected="false" tabindex="-1" data-i="4">
+            <span class="swap__k">05</span><span class="swap__n">Accueil et réception</span>
+            <span class="swap__fill" aria-hidden="true"></span>
+          </button></li>
+          <li class="rv" data-d="6"><button class="swap__b" type="button" role="tab" id="pt5" aria-controls="pp5" aria-selected="false" tabindex="-1" data-i="5">
+            <span class="swap__k">06</span><span class="swap__n">Extras et événementiel</span>
+            <span class="swap__fill" aria-hidden="true"></span>
+          </button></li>
+        </ol>
 
-<!-- ==================== ÉTABLISSEMENTS ==================== -->
-
-<section class="section s-sable" id="etablissements">
-  <div class="wrap">
-    <h2 class="display h-1 head u-mb-l" data-rv="up">Les établissements dont le service fait la différence</h2>
-
-    <ol class="chain">
-      <li class="chain__i" data-rv="up">
-        <span class="chain__dot" aria-hidden="true"><svg class="chain__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 20.75h19"/><path d="M4.4 20.75V5.65a1.4 1.4 0 0 1 1.4-1.4h12.4a1.4 1.4 0 0 1 1.4 1.4v15.1"/><path d="M7.9 8.1h2.2M13.9 8.1h2.2M7.9 11.9h2.2M13.9 11.9h2.2"/><path d="M10 20.75v-3.9a2 2 0 0 1 4 0v3.9"/></svg></span>
-        <span class="chain__n">Hôtels et resorts</span>
-        <span class="chain__d">Indépendants, 3 à 5 étoiles, boutique-hôtels</span>
-      </li>
-      <li class="chain__i" data-rv="up">
-        <span class="chain__dot" aria-hidden="true"><svg class="chain__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.75 20.75h18.5"/><path d="M4.9 20.75V10.9a7.1 7.1 0 0 1 14.2 0v9.85"/><path d="M9.6 20.75v-4.6a2.4 2.4 0 0 1 4.8 0v4.6"/></svg></span>
-        <span class="chain__n">Riads et maisons d’hôtes</span>
-        <span class="chain__d">Petites structures, équipes polyvalentes</span>
-      </li>
-      <li class="chain__i" data-rv="up">
-        <span class="chain__dot" aria-hidden="true"><svg class="chain__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12.4" r="4.6"/><path d="M3.15 3.75v3.6a1.55 1.55 0 0 0 3.1 0V3.75"/><path d="M4.7 7.35V20.25"/><path d="M19.4 3.75c1.3 1.95 1.3 5.1 0 6.8"/><path d="M19.4 10.55V20.25"/></svg></span>
-        <span class="chain__n">Restaurants</span>
-        <span class="chain__d">Gastronomiques, premium, indépendants</span>
-      </li>
-      <li class="chain__i" data-rv="up">
-        <span class="chain__dot" aria-hidden="true"><svg class="chain__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.6 8.4h12.1v5.3a4.6 4.6 0 0 1-4.6 4.6H8.2a4.6 4.6 0 0 1-4.6-4.6Z"/><path d="M15.7 9.85h1.5a2.55 2.55 0 0 1 0 5.1h-1.5"/><path d="M3.35 21h12.6"/></svg></span>
-        <span class="chain__n">Cafés et concepts</span>
-        <span class="chain__d">Coffee shops, rooftops, beach clubs</span>
-      </li>
-      <li class="chain__i" data-rv="up">
-        <span class="chain__dot" aria-hidden="true"><svg class="chain__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g transform="rotate(-13 7.5 11)"><path d="M4.6 4.9h5.8l-1.5 4.4a1.4 1.4 0 0 1-2.8 0Z"/><path d="M7.5 9.9v5.4"/><path d="M5.7 16h3.6"/></g><g transform="rotate(13 16.5 11)"><path d="M13.6 4.9h5.8l-1.5 4.4a1.4 1.4 0 0 1-2.8 0Z"/><path d="M16.5 9.9v5.4"/><path d="M14.7 16h3.6"/></g></svg></span>
-        <span class="chain__n">Traiteurs et événementiel</span>
-        <span class="chain__d">Banquets, mariages, réceptions d’entreprise</span>
-      </li>
-      <li class="chain__i" data-rv="up">
-        <span class="chain__dot" aria-hidden="true"><svg class="chain__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 20.75h19"/><path d="M4.15 20.75V11.1h4.4v9.65"/><path d="M8.55 20.75V6.55h6.6v14.2"/><path d="M15.15 20.75v-6.4h4.7v6.4"/><path d="M10.9 9.9h1.9M10.9 13.5h1.9"/></svg></span>
-        <span class="chain__n">Groupes et chaînes</span>
-        <span class="chain__d">Déploiement de standards multi-sites</span>
-      </li>
-    </ol>
-
-    <div class="etab__sous">
-      <div class="arch" data-rv="left">
-        <div class="arch__img"><picture data-par="22"><source srcset="assets/img/reception-jardin.webp" type="image/webp"><img src="assets/img/reception-jardin.jpg" alt="Table dressée pour une réception" width="1000" height="1250" loading="lazy" decoding="async"></picture></div>
-      </div>
-      <p class="cap" data-rv="right">Une salle exceptionnelle ne compense jamais un service approximatif — elle le rend visible.</p>
-    </div>
-
-    <!-- profils formés : réponse au « pour qui », à côté des établissements -->
-    <div class="profils">
-      <h3 class="display h-2 u-mb-26" data-rv="up">Les profils que je forme</h3>
-      <ul class="prof" aria-label="Profils formés, faire glisser pour tout voir">
-        <li class="prof__i" data-rv="up">
-          <div class="prof__card">
-            <span class="prof__med" aria-hidden="true">
-              <svg class="prof__ring" viewBox="0 0 64 64"><circle cx="32" cy="32" r="31" pathLength="100"/></svg>
-              <span class="prof__k">01</span>
-            </span>
-            <div class="prof__h">
-              <svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4.7" y="8.15" width="14.6" height="7.7" rx="3.4"/><path d="M4.7 12H1.85"/><path d="M19.3 12h2.85"/></svg>
-              <h4 class="prof__n">Commis et serveurs</h4>
+        <div class="swap__stage rv" data-d="2">
+          <div class="swap__ring" id="swapring">
+            <svg class="swap__prog" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="swap__trk" cx="60" cy="60" r="58"/>
+              <circle class="swap__arc" cx="60" cy="60" r="58" pathLength="100"/>
+            </svg>
+            <div class="swap__ph" aria-hidden="true">
+              <picture class="is-on"><source srcset="assets/img/terrain-posture.webp" type="image/webp"><img src="assets/img/terrain-posture.jpg" alt="" width="1200" height="1600" loading="lazy" decoding="async"></picture>
+              <picture><source srcset="assets/img/hero-dressage.webp" type="image/webp"><img src="assets/img/hero-dressage.jpg" alt="" width="900" height="1125" loading="lazy" decoding="async"></picture>
+              <picture><source srcset="assets/img/terrain-prestation.webp" type="image/webp"><img src="assets/img/terrain-prestation.jpg" alt="" width="1400" height="1867" loading="lazy" decoding="async"></picture>
+              <picture><source srcset="assets/img/terrain-standards.webp" type="image/webp"><img src="assets/img/terrain-standards.jpg" alt="" width="1200" height="1600" loading="lazy" decoding="async"></picture>
+              <picture><source srcset="assets/img/reception-jardin.webp" type="image/webp"><img src="assets/img/reception-jardin.jpg" alt="" width="1000" height="1250" loading="lazy" decoding="async"></picture>
+              <picture><source srcset="assets/img/constantin-02.webp" type="image/webp"><img src="assets/img/constantin-02.jpg" alt="" width="900" height="1200" loading="lazy" decoding="async"></picture>
             </div>
-            <p class="prof__d">Gestes métier, séquence de service, rythme</p>
+            <span class="swap__badge" aria-hidden="true"><i>01</i><b>/ 06</b></span>
           </div>
-        </li>
-        <li class="prof__i" data-rv="up">
-          <div class="prof__card">
-            <span class="prof__med" aria-hidden="true">
-              <svg class="prof__ring" viewBox="0 0 64 64"><circle cx="32" cy="32" r="31" pathLength="100"/></svg>
-              <span class="prof__k">02</span>
-            </span>
-            <div class="prof__h">
-              <svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.1 3.5v4.4a1.95 1.95 0 0 0 3.9 0V3.5"/><path d="M9.05 9.85V20.5"/><path d="M16.9 3.5c1.65 2.45 1.65 6.4 0 8.5"/><path d="M16.9 12V20.5"/></svg>
-              <h4 class="prof__n">Chefs de rang</h4>
+
+          <div class="swap__panels">
+            <div class="swap__p is-on" role="tabpanel" id="pp0" aria-labelledby="pt0" tabindex="0">
+              <p class="swap__pt">Commis et serveurs</p>
+              <p class="swap__pd">Gestes métier, séquence de service, rythme. Le socle&nbsp;: ce qui doit être juste avant même d’être rapide.</p>
             </div>
-            <p class="prof__d">Tenue d’un rang, conseil au client, vente additionnelle</p>
-          </div>
-        </li>
-        <li class="prof__i" data-rv="up">
-          <div class="prof__card">
-            <span class="prof__med" aria-hidden="true">
-              <svg class="prof__ring" viewBox="0 0 64 64"><circle cx="32" cy="32" r="31" pathLength="100"/></svg>
-              <span class="prof__k">03</span>
-            </span>
-            <div class="prof__h">
-              <svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.7 9.4 3.5 6.4v11.2l6.2-3Z"/><path d="M14.3 9.4l6.2-3v11.2l-6.2-3Z"/><rect x="9.55" y="8.5" width="4.9" height="7" rx="1.35"/></svg>
-              <h4 class="prof__n">Maîtres d’hôtel et responsables de salle</h4>
+            <div class="swap__p" role="tabpanel" id="pp1" aria-labelledby="pt1" tabindex="0" hidden>
+              <p class="swap__pt">Chefs de rang</p>
+              <p class="swap__pd">Tenue d’un rang, conseil au client, vente additionnelle. Vendre sans vendre&nbsp;: renseigner assez bien pour que le client choisisse mieux.</p>
             </div>
-            <p class="prof__d">Direction du service, coordination avec la cuisine, gestion de l’incident</p>
-          </div>
-        </li>
-        <li class="prof__i" data-rv="up">
-          <div class="prof__card">
-            <span class="prof__med" aria-hidden="true">
-              <svg class="prof__ring" viewBox="0 0 64 64"><circle cx="32" cy="32" r="31" pathLength="100"/></svg>
-              <span class="prof__k">04</span>
-            </span>
-            <div class="prof__h">
-              <svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="9.4" r="3.15"/><path d="M6.4 20.6a5.6 5.6 0 0 1 11.2 0"/><circle cx="4.9" cy="8.8" r="2.05"/><circle cx="19.1" cy="8.8" r="2.05"/><path d="M1.9 16.6a3.55 3.55 0 0 1 2.95-3.45"/><path d="M22.1 16.6a3.55 3.55 0 0 0-2.95-3.45"/></svg>
-              <h4 class="prof__n">Managers et encadrement intermédiaire</h4>
+            <div class="swap__p" role="tabpanel" id="pp2" aria-labelledby="pt2" tabindex="0" hidden>
+              <p class="swap__pt">Maîtres d’hôtel</p>
+              <p class="swap__pd">Direction du service, coordination avec la cuisine, gestion de l’incident. Tenir la salle quand rien ne se passe comme prévu.</p>
             </div>
-            <p class="prof__d">Briefing, contrôle, feedback, intégration des nouveaux, tenue du standard</p>
-          </div>
-        </li>
-        <li class="prof__i" data-rv="up">
-          <div class="prof__card">
-            <span class="prof__med" aria-hidden="true">
-              <svg class="prof__ring" viewBox="0 0 64 64"><circle cx="32" cy="32" r="31" pathLength="100"/></svg>
-              <span class="prof__k">05</span>
-            </span>
-            <div class="prof__h">
-              <svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.25 18.3h15.5"/><path d="M6.4 18.3a5.6 5.6 0 0 1 11.2 0"/><path d="M12 12.7v-2.1"/><circle cx="12" cy="9.5" r="1.05"/></svg>
-              <h4 class="prof__n">Personnel d’accueil et de réception</h4>
+            <div class="swap__p" role="tabpanel" id="pp3" aria-labelledby="pt3" tabindex="0" hidden>
+              <p class="swap__pt">Managers de terrain</p>
+              <p class="swap__pd">Briefer, contrôler, corriger, intégrer. C’est souvent là que tout se joue&nbsp;: former l’encadrant améliore tous les services suivants.</p>
             </div>
-            <p class="prof__d">Premières secondes, posture, gestion des réclamations</p>
-          </div>
-        </li>
-        <li class="prof__i" data-rv="up">
-          <div class="prof__card">
-            <span class="prof__med" aria-hidden="true">
-              <svg class="prof__ring" viewBox="0 0 64 64"><circle cx="32" cy="32" r="31" pathLength="100"/></svg>
-              <span class="prof__k">06</span>
-            </span>
-            <div class="prof__h">
-              <svg class="steps__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.4" y="5.4" width="17.2" height="15.2" rx="2"/><path d="M3.4 10.1h17.2"/><path d="M8.1 3.4v4M15.9 3.4v4"/><path d="m12 12.9 1.03 2.09 2.31.34-1.67 1.63.39 2.3L12 18.17l-2.06 1.09.39-2.3-1.67-1.63 2.31-.34Z"/></svg>
-              <h4 class="prof__n">Équipes d’extras et personnel événementiel</h4>
+            <div class="swap__p" role="tabpanel" id="pp4" aria-labelledby="pt4" tabindex="0" hidden>
+              <p class="swap__pt">Accueil et réception</p>
+              <p class="swap__pd">Premières secondes, posture, gestion des réclamations. Le moment où l’impression se forme, et où elle se rattrape.</p>
             </div>
-            <p class="prof__d">Mise à niveau rapide avant une prestation, homogénéité du service</p>
+            <div class="swap__p" role="tabpanel" id="pp5" aria-labelledby="pt5" tabindex="0" hidden>
+              <p class="swap__pt">Extras et événementiel</p>
+              <p class="swap__pd">Mise à niveau rapide avant une prestation, homogénéité du service. Une équipe réunie pour un soir doit tenir le niveau d’un personnel permanent.</p>
+            </div>
           </div>
-        </li>
-      </ul>
-      <div class="prof__dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== ÉTUDE DE CAS — LE CONSTANTIN ==================== -->
-
-<section class="section s-navy" id="constantin">
-  <div class="wrap">
-
-    <div data-rv="up" class="u-mb-xl u-nar-62">
-      <p class="eyebrow">Étude de cas</p>
-      <h2 class="display h-1 head">Ouverture du Constantin &mdash; Knokke-Heist</h2>
-      <p class="lead u-mt-l">
-        De l’ouverture du chantier au premier service, j’ai accompagné la création du Constantin,
-        au cœur du Carré d’Or. Une maison à construire entièrement&nbsp;: sans carte, sans équipe,
-        sans procédures.
-      </p>
-    </div>
-
-    <!-- diptyque : le chantier, puis la salle prête -->
-    <div class="cas__dip">
-      <figure class="cas__f" data-rv="left">
-        <div class="cas__im">
-            <picture>
-              <source srcset="assets/img/constantin-06.webp" type="image/webp">
-              <img src="assets/img/constantin-06.jpg" alt="Le chantier du Constantin : mobilier sous bâche et échelle dans la future salle" width="900" height="1200" loading="lazy" decoding="async">
-            </picture>
-          </div>
-        <figcaption class="cas__cap"><span class="cas__t">Avant</span>Le chantier, mobilier encore sous bâche.</figcaption>
-      </figure>
-      <figure class="cas__f" data-rv="right">
-        <div class="cas__im">
-            <picture>
-              <source srcset="assets/img/constantin-02.webp" type="image/webp">
-              <img src="assets/img/constantin-02.jpg" alt="La salle du Constantin dressée, tables rondes et sol en damier" width="900" height="1200" loading="lazy" decoding="async">
-            </picture>
-          </div>
-        <figcaption class="cas__cap"><span class="cas__t">Après</span>La salle dressée, la veille du premier service.</figcaption>
-      </figure>
-    </div>
-
-    <!-- périmètre de la mission -->
-    <div class="cas__per">
-      <h3 class="display h-2 u-mb-26" data-rv="up">Le périmètre de la mission</h3>
-      <ol class="cas__l" data-rv="up">
-        <li class="cas__li">
-          <span class="cas__ln" aria-hidden="true">01</span>
-          <div><div class="cas__lt">Carte et prix</div><div class="cas__ld">Conception des menus et construction de la grille tarifaire.</div></div>
-        </li>
-        <li class="cas__li">
-          <span class="cas__ln" aria-hidden="true">02</span>
-          <div><div class="cas__lt">Fournisseurs et arts de la table</div><div class="cas__ld">Sélection des partenaires, de la vaisselle, du linge et du verre.</div></div>
-        </li>
-        <li class="cas__li">
-          <span class="cas__ln" aria-hidden="true">03</span>
-          <div><div class="cas__lt">Système de caisse</div><div class="cas__ld">Paramétrage complet, de la fiche produit à l’encaissement.</div></div>
-        </li>
-        <li class="cas__li">
-          <span class="cas__ln" aria-hidden="true">04</span>
-          <div><div class="cas__lt">Recrutement et formation</div><div class="cas__ld">Constitution de l’équipe de salle, d’un effectif sans expérience commune jusqu’au premier service.</div></div>
-        </li>
-        <li class="cas__li">
-          <span class="cas__ln" aria-hidden="true">05</span>
-          <div><div class="cas__lt">Procédures et organisation</div><div class="cas__ld">Cahier des charges, fiches de poste, séquence de service et contrôles.</div></div>
-        </li>
-      </ol>
-    </div>
-
-    <!-- galerie -->
-    <div class="cas__g">
-        <figure class="cas__gf" data-rv="up">
-          <div class="cas__im">
-            <picture>
-              <source srcset="assets/img/constantin-04.webp" type="image/webp">
-              <img src="assets/img/constantin-04.jpg" alt="La façade du Constantin et ses enseignes, dans le Carré d’Or de Knokke-Heist" width="738" height="985" loading="lazy" decoding="async">
-            </picture>
-          </div>
-          <figcaption class="cas__gc">La façade, Carré d’Or</figcaption>
-        </figure>
-        <figure class="cas__gf" data-rv="up">
-          <div class="cas__im">
-            <picture>
-              <source srcset="assets/img/constantin-03.webp" type="image/webp">
-              <img src="assets/img/constantin-03.jpg" alt="Dressage d’une assiette au passe, en cuisine" width="900" height="1200" loading="lazy" decoding="async">
-            </picture>
-          </div>
-          <figcaption class="cas__gc">Le passe, au premier service</figcaption>
-        </figure>
-        <figure class="cas__gf" data-rv="up">
-          <div class="cas__im">
-            <picture>
-              <source srcset="assets/img/constantin-05.webp" type="image/webp">
-              <img src="assets/img/constantin-05.jpg" alt="La carte posée sur une table dressée" width="900" height="1200" loading="lazy" decoding="async">
-            </picture>
-          </div>
-          <figcaption class="cas__gc">La carte, éditée et posée</figcaption>
-        </figure>
-        <figure class="cas__gf" data-rv="up">
-          <div class="cas__im">
-            <picture>
-              <source srcset="assets/img/constantin-07.webp" type="image/webp">
-              <img src="assets/img/constantin-07.jpg" alt="La salle en service, vue depuis la rue à la tombée du jour" width="900" height="1200" loading="lazy" decoding="async">
-            </picture>
-          </div>
-          <figcaption class="cas__gc">La salle, à la tombée du jour</figcaption>
-        </figure>
-    </div>
-
-    <!-- ce qui reste après le départ -->
-    <div class="cas__end">
-      <div class="cas__ep" data-rv="left">
-        <div class="cas__im">
-            <picture>
-              <source srcset="assets/img/constantin-01.webp" type="image/webp">
-              <img src="assets/img/constantin-01.jpg" alt="Ibrahim Dyani disposant les compositions florales dans la salle, avant le service" width="659" height="1200" loading="lazy" decoding="async">
-            </picture>
-          </div>
-      </div>
-      <div class="cas__eq" data-rv="right">
-        <p class="lead">
-          Au-delà de l’ouverture, l’objectif était de construire une maison capable de fonctionner
-          sans moi&nbsp;: cahier des charges, fiches de poste, procédures, et transmission des
-          savoir-faire à l’encadrement.
-        </p>
-        <blockquote class="quote">Une ouverture réussie ne se mesure pas au jour où les portes s’ouvrent, mais à la capacité de la maison à tenir la même exigence une fois le projet transmis.</blockquote>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ==================== FONDATEUR ==================== -->
-
-<section class="section" id="fondateur">
-  <div class="wrap">
-
-    <div data-rv="up" class="u-nar-62 u-mb-xl">
-      <p class="eyebrow">Le fondateur</p>
-      <h2 class="display h-1 fond__t">Je forme des équipes depuis six ans, sans avoir quitté la salle</h2>
-      <p class="fond__id"><b>Ibrahim Dyani</b> &mdash; Maître d’Hôtel, formateur et consultant en organisation opérationnelle.</p>
-    </div>
-
-    <div class="fond">
-      <div class="fond__b" data-rv="up">
-        <p class="lead">La formation n’est pas une reconversion&nbsp;: elle fait partie de mon métier depuis 2020. Chez JML Concept, traiteur officiel du Palais Royal de Belgique, j’ai formé les équipes de service aux exigences du protocole &mdash; y compris des extras réunis pour un seul événement, qui devaient tenir le niveau d’un personnel permanent.</p>
-
-        <blockquote class="quote">C’est exactement ce que je fais pour vous&nbsp;: régler le niveau d’une équipe sur le standard que votre établissement veut atteindre.</blockquote>
-
-        <p class="lead">Je forme aussi les managers, et c’est souvent là que tout se joue. Un chef de rang promu maître d’hôtel sait servir, mais personne ne lui a appris à briefer, à contrôler sans humilier, ni à faire tenir un standard un samedi soir complet. Former un serveur améliore un service&nbsp;; former son encadrant améliore tous les suivants.</p>
-      </div>
-
-      <aside class="fond__a" data-rv="up">
-        <h3 class="fond__at">Maisons et institutions servies</h3>
-        <div class="refs">
-          <span class="ref">Palais Royal de Belgique</span>
-          <span class="ref">Parlement européen</span>
-          <span class="ref">Commission européenne</span>
-          <span class="ref">Louis Vuitton</span>
-          <span class="ref">Chanel</span>
-          <span class="ref">Hermès</span>
-          <span class="ref">Tiffany &amp; Co.</span>
-        </div>
-        <p class="refs__n">Institutions et maisons pour lesquelles des prestations de service ont été assurées.</p>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== RECOMMANDATION ==================== -->
-
-<section class="section s-sable" id="avis">
-  <div class="wrap">
-    <div data-rv="up" class="u-mb-m u-nar-34">
-      <p class="eyebrow">Recommandation</p>
-      <h2 class="display u-h-reco">Recommandé par le Maître d’Hôtel principal de JML Concept</h2>
-    </div>
-
-    <div class="reco">
-      <div data-rv="left">
-        <div class="reco__src">
-          <picture class="reco__emblem">
-            <source srcset="assets/img/emblem-be.webp" type="image/webp">
-            <img src="assets/img/emblem-be.png" alt="Armoiries du Royaume de Belgique" width="102" height="128" loading="lazy" decoding="async">
-          </picture>
-          <div class="reco__who">Morgan Picot</div>
-          <div class="reco__role">Maître d’Hôtel principal &mdash; JML Concept</div>
-          <div class="reco__from">Traiteur officiel de la Famille Royale de Belgique<br>Bruxelles, Belgique</div>
-        </div>
-
-        <blockquote class="reco__q">&laquo;&nbsp;Ibrahim a évolué à mes côtés sur des missions requérant une précision irréprochable, avant d’assurer lui-même des fonctions de Maître d’Hôtel en autonomie.&nbsp;&raquo;</blockquote>
-
-        <blockquote class="reco__q">&laquo;&nbsp;Je recommande très chaleureusement et sans aucune réserve [&hellip;] pour toute fonction impliquant exigence, discrétion, rigueur protocolaire et service de très haut niveau.&nbsp;&raquo;</blockquote>
-
-        <p class="reco__note">Lettre de recommandation complète disponible sur demande.</p>
-      </div>
-
-      <div class="reco__side" data-rv="right">
-        <p class="reco__intro">Les aptitudes relevées dans la lettre&nbsp;:</p>
-        <ul class="reco__list">
-          <li>Diriger et harmoniser des équipes de service</li>
-          <li>Anticiper les attentes des hôtes avec une justesse remarquable</li>
-          <li>Préserver la fluidité et la sérénité d’un événement, même sous forte pression</li>
-          <li>Maintenir un niveau d’excellence constant, du premier briefing à la fin de service</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== LANGUES ==================== -->
-
-<section class="section s-navy">
-  <div class="wrap">
-    <div class="lang">
-      <h2 class="display h-1" data-rv="left">Vos équipes sont formées dans leur langue</h2>
-      <div class="lang__p" data-rv="right">
-        <p class="lead">Un standard expliqué en français à la direction, puis transmis en arabe au commis de salle, est un standard qui sera appliqué. Traduit approximativement par un chef de rang au milieu du service, il ne le sera pas.</p>
-        <p class="lead">Les formations sont animées indifféremment en français ou en arabe. Les supports remis à vos équipes sont en français.</p>
-        <div class="lang__d">
-          <div><div class="lang__k">Français</div><div class="lang__v">Langue maternelle</div></div>
-          <div><div class="lang__k" lang="ar" dir="rtl">العربية</div><div class="lang__v">Langue maternelle</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== CONTACT ==================== -->
+<!-- =====================================================
+     11. LE FONDATEUR + LANGUES
+     ===================================================== -->
+<section class="sec sec--os" id="fondateur">
+  <div class="wrap founder">
+    <div class="founder__img rv" data-cursor="">
+      <span class="reveal"><picture><source srcset="assets/img/terrain-prestation.webp" type="image/webp"><img src="assets/img/terrain-prestation.jpg" alt="Ibrahim Dyani en tenue de service" width="1400" height="1867" loading="lazy" decoding="async"></picture></span>
+    </div>
+    <div class="founder__txt">
+      <p class="eyebrow rv">Le fondateur</p>
+      <h2 class="h2 split-words">Je forme des équipes <em>sans avoir quitté la salle.</em></h2>
+      <p class="founder__id rv"><b>Ibrahim Dyani</b> — Maître d’Hôtel, formateur et consultant en organisation opérationnelle.</p>
+      <blockquote class="founder__q rv">Régler le niveau d’une équipe sur le standard que votre établissement veut atteindre.</blockquote>
+      <p class="rv">Former un serveur améliore un service&nbsp;; <b>former son encadrant améliore tous les suivants.</b></p>
 
-<section class="section" id="contact">
+      <details class="more rv">
+        <summary><span>Son parcours</span><i aria-hidden="true"></i></summary>
+        <div class="more__in">
+          <p>La formation n’est pas une reconversion&nbsp;: elle fait partie de mon métier depuis 2020. Chez JML Concept, traiteur officiel du Palais Royal de Belgique, j’ai formé les équipes de service aux exigences du protocole — y compris des extras réunis pour un seul événement, qui devaient tenir le niveau d’un personnel permanent.</p>
+          <p>Je forme aussi les managers, et c’est souvent là que tout se joue. Un chef de rang promu maître d’hôtel sait servir, mais personne ne lui a appris à briefer, à contrôler sans humilier, ni à faire tenir un standard un samedi soir complet.</p>
+        </div>
+      </details>
+
+      <div class="langs rv">
+        <p class="langs__t">Vos équipes sont formées dans leur langue.</p>
+        <div class="langs__g">
+          <div><b>Français</b><span>Langue maternelle</span></div>
+          <div><b lang="ar" dir="rtl">العربية</b><span>Langue maternelle</span></div>
+        </div>
+        <p class="muted">Animation en français ou en arabe. Supports remis en français.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     12. CONTACT
+     ===================================================== -->
+<section class="sec sec--ink" id="contact">
   <div class="wrap">
-    <div data-rv="up" class="u-mb-l">
-      <p class="eyebrow">Prendre contact</p>
-      <h2 class="display h-1 head">Votre demande est déjà rédigée</h2>
-      <p class="lead u-mt-l">Sélectionnez, complétez si vous le souhaitez, puis envoyez. Seule votre adresse e-mail est nécessaire pour que nous puissions vous répondre&nbsp;: le message s’adapte à ce que vous renseignez.</p>
+    <div class="sec__head">
+      <div>
+        <p class="eyebrow rv">Prendre contact</p>
+        <h2 class="h2 split-words">Votre demande <em>est déjà rédigée.</em></h2>
+      </div>
+      <p class="sec__aside rv">Sélectionnez, complétez si vous le souhaitez, envoyez. Seul votre e-mail est nécessaire.</p>
     </div>
 
-    <dl class="coord" data-rv="up">
-      <div><dt>E-mail</dt><dd data-coord="mail" data-coord-link><span class="coord__w">Affichage…</span></dd></div>
-      <div><dt>WhatsApp</dt><dd data-coord="tel" data-coord-link><span class="coord__w">Affichage…</span></dd></div>
-      <div><dt>Base</dt><dd>Tanger, Maroc</dd></div>
-      <div><dt>Zone d’intervention</dt><dd>Tout le Maroc</dd></div>
-    </dl>
+    <form class="builder rv" id="fContact" novalidate>
+      <div class="builder__f">
+        <div class="hp" aria-hidden="true"><label for="hp-site">Ne pas remplir ce champ</label><input type="text" id="hp-site" name="site" tabindex="-1" autocomplete="off"></div>
 
-    <form class="builder" id="fContact" data-rv="up" novalidate>
-      <div class="bpane bpane--f">
-        <h3>Votre demande</h3>
-
-        <!-- Champ-piège anti-robot : masqué, jamais présenté à un visiteur.
-             Rempli => l'envoi est refusé silencieusement. Ne pas supprimer. -->
-        <div class="hp-field" aria-hidden="true">
-          <label for="hp-site">Ne pas remplir ce champ</label>
-          <input type="text" id="hp-site" name="site" tabindex="-1" autocomplete="off">
-        </div>
-        <p class="bsub">Seul votre e-mail est nécessaire — le message se construit au fur et à mesure.</p>
-
-        <div class="bf">
-          <span class="blab" id="l-dom">Domaine concerné</span>
-          <div class="chips" role="group" aria-labelledby="l-dom" id="cDom">
+        <fieldset class="bf"><legend>Domaine concerné</legend>
+          <div class="chips" data-group="dom">
             <button class="chip" type="button" aria-pressed="false" data-v="le service et l’expérience client">Service et expérience client</button>
             <button class="chip" type="button" aria-pressed="false" data-v="l’encadrement et le management">Encadrement et management</button>
             <button class="chip" type="button" aria-pressed="false" data-v="la formation des équipes">Formation des équipes</button>
             <button class="chip" type="button" aria-pressed="false" data-v="les standards et l’organisation">Standards et organisation</button>
             <button class="chip" type="button" aria-pressed="false" data-v="__flou">Je ne sais pas encore</button>
           </div>
-        </div>
-
-        <div class="bf">
-          <span class="blab" id="l-etab">Votre établissement</span>
-          <div class="chips" role="group" aria-labelledby="l-etab" id="cEtab">
+        </fieldset>
+        <fieldset class="bf"><legend>Votre établissement</legend>
+          <div class="chips" data-group="etab" data-single>
             <button class="chip" type="button" aria-pressed="false" data-v="un hôtel">Hôtel</button>
             <button class="chip" type="button" aria-pressed="false" data-v="un riad">Riad</button>
             <button class="chip" type="button" aria-pressed="false" data-v="un restaurant">Restaurant</button>
@@ -946,113 +705,72 @@
             <button class="chip" type="button" aria-pressed="false" data-v="une activité traiteur">Traiteur</button>
             <button class="chip" type="button" aria-pressed="false" data-v="un groupe multi-sites">Groupe</button>
           </div>
+        </fieldset>
+        <div class="bgrid">
+          <label class="fl"><input type="text" name="nom" autocomplete="name" placeholder=" "><span>Votre nom</span></label>
+          <label class="fl"><input type="text" name="ville" autocomplete="address-level2" placeholder=" "><span>Ville</span></label>
+          <label class="fl"><input type="text" name="etablissement" autocomplete="organization" placeholder=" "><span>Nom de l’établissement</span></label>
+          <label class="fl"><input type="number" name="effectif" min="1" inputmode="numeric" placeholder=" "><span>Personnes à former</span></label>
         </div>
-
-        <div class="bf bgrid">
-          <div><label class="blab" for="b-nom">Votre nom</label><input class="bin" type="text" id="b-nom" name="nom" autocomplete="name" placeholder="…"></div>
-          <div><label class="blab" for="b-ville">Ville</label><input class="bin" type="text" id="b-ville" name="ville" autocomplete="address-level2" placeholder="Tanger, Casablanca…"></div>
-        </div>
-
-        <div class="bf bgrid">
-          <div><label class="blab" for="b-nomet">Nom de l’établissement</label><input class="bin" type="text" id="b-nomet" name="etablissement" autocomplete="organization" placeholder="…"></div>
-          <div><label class="blab" for="b-eff">Personnes à former</label><input class="bin" type="number" id="b-eff" name="effectif" min="1" inputmode="numeric" placeholder="ex. 14"></div>
-        </div>
-
-        <div class="bf"><label class="blab" for="b-mail">Votre e-mail</label><input class="bin" type="email" id="b-mail" name="email" autocomplete="email" required placeholder="…"></div>
-        <div class="bf"><label class="blab" for="b-plus">Une précision&nbsp;?</label><textarea class="bin" id="b-plus" name="precision" placeholder="Nos équipes de salle manquent de méthode à l’accueil…"></textarea></div>
+        <label class="fl"><input type="email" name="email" autocomplete="email" required placeholder=" "><span>Votre e-mail *</span></label>
+        <label class="fl"><textarea name="precision" rows="3" placeholder=" "></textarea><span>Une précision&nbsp;?</span></label>
       </div>
 
-      <div class="bpane bpane--p">
-        <p class="plab">Aperçu du message</p>
-        <div class="bubble" id="preview" aria-live="polite"></div>
-        <div class="pspacer"></div>
-        <div class="send">
-          <button class="btn btn--light" id="bMail" type="submit">
-            <span class="ico" aria-hidden="true"><svg width="17" height="14" viewBox="0 0 18 15" fill="none" aria-hidden="true"><rect x=".7" y=".7" width="16.6" height="13.6" rx="2.4" stroke="currentColor" stroke-width="1.3"/><path d="m1.4 2.2 7.6 5.5 7.6-5.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-            <span class="txt"><b>Envoyer par e-mail</b><span data-coord="mail"></span></span>
-            <svg class="go" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M9 1l4 4-4 4M13 5H0" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <a class="btn btn--ghost" id="bWa" href="#" target="_blank" rel="noopener noreferrer">
-            <span class="ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.4a6.6 6.6 0 0 0-5.7 9.9L1.4 14.6l3.4-.9A6.6 6.6 0 1 0 8 1.4Z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/><path d="M5.7 5c.2-.4.4-.4.6-.4h.4c.1 0 .3 0 .4.4l.5 1.1c0 .2 0 .3-.1.4l-.3.4c-.1.1-.2.2 0 .4a4.6 4.6 0 0 0 2 1.7c.2.1.3 0 .4 0l.5-.5c.1-.2.2-.1.4 0l1 .5c.2.1.3.2.3.3 0 .2 0 .8-.3 1.1-.3.3-.8.5-1.2.5-1 0-2.4-.7-3.4-1.7A7 7 0 0 1 5.3 6.3c0-.5.2-1 .4-1.3Z" fill="currentColor"/></svg></span>
-            <span class="txt"><b>Envoyer sur WhatsApp</b><span data-coord="tel"></span></span>
-            <svg class="go" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M9 1l4 4-4 4M13 5H0" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <div class="send__f">
-            <span class="send__m" data-coord="mail"></span>
-            <button class="copy" type="button" id="bCopy">Copier le message</button>
-          </div>
-          <p class="sstat" id="sendStat" role="status" aria-live="polite" hidden></p>
+      <div class="builder__p">
+        <!-- Référence de la demande : engendrée par le navigateur à
+             l'ouverture, reprise dans le message envoyé et dans
+             l'e-mail reçu. Elle donne au visiteur quelque chose à
+             citer s'il relance, et au destinataire de quoi relier
+             une réponse à sa demande. -->
+        <div class="pvhead">
+          <p class="eyebrow">Aperçu du message</p>
+          <p class="dref"><span>Référence</span><b data-ref>…</b></p>
         </div>
+        <div class="letter" id="preview" aria-live="polite"></div>
+        <div class="send">
+          <button class="btn btn--brass magnet" type="submit" id="bMail"><span>Envoyer par e-mail</span><svg class="arr" viewBox="0 0 16 10" aria-hidden="true"><path d="M11 1l4 4-4 4M15 5H0"/></svg></button>
+          <a class="btn btn--ghost" id="bWa" data-wa href="#" target="_blank" rel="noopener noreferrer"><span>Envoyer sur WhatsApp</span></a>
+          <button class="link" type="button" id="bCopy">Copier le message</button>
+        </div>
+        <p class="sstat" id="sendStat" role="status" aria-live="polite" hidden></p>
       </div>
     </form>
+
+    <dl class="coord">
+      <div><dt>E-mail</dt><dd data-coord="mail">—</dd></div>
+      <div><dt>WhatsApp</dt><dd data-coord="tel">—</dd></div>
+      <div><dt>Base</dt><dd>Tanger, Maroc</dd></div>
+      <div><dt>Zone</dt><dd>Tout le Maroc</dd></div>
+    </dl>
   </div>
 </section>
 </main>
 
-<!-- ==================== DOCK MOBILE ==================== -->
-<div class="dock" id="dock">
-  <div class="dock__in">
-    <div class="dock__l"><b>Demander un diagnostic</b>Première visite d’observation offerte</div>
-    <button class="btn btn--light btn--sm" type="button" data-go="contact">Commencer</button>
-  </div>
+<!-- WhatsApp flottant (mobile) -->
+<a class="fab" data-wa href="#" target="_blank" rel="noopener noreferrer" aria-label="Écrire sur WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.6 4.8 16a8.2 8.2 0 1 1 3.2 3.2Z"/><path d="M8.9 9.1c.4 2.9 3.1 5.6 6 6l1-1.7 2 1-.6 1.9a5.6 5.6 0 0 1-5.1-1.5 5.6 5.6 0 0 1-1.5-5.1l1.9-.6 1 2Z"/></svg></a>
+
+<!-- Visionneuse -->
+<div class="lbox" id="lbox" role="dialog" aria-modal="true" aria-label="Photographie agrandie" hidden>
+  <button class="lbox__x" type="button" aria-label="Fermer"><i></i><i></i></button>
+  <button class="lbox__nav lbox__nav--p" type="button" aria-label="Précédente">‹</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="lbox__nav lbox__nav--n" type="button" aria-label="Suivante">›</button>
 </div>
 
-<!-- Visionneuse plein écran des photographies de terrain -->
-<div class="lbox" id="lbox" role="dialog" aria-modal="true" aria-label="Photographie agrandie" aria-hidden="true">
-  <button class="lbox__nav lbox__nav--p" type="button" aria-label="Photographie précédente">
-    <svg width="9" height="14" viewBox="0 0 9 14" fill="none"><path d="M8 1 2 7l6 6" stroke="currentColor" stroke-width="1.2"/></svg>
-  </button>
-  <figure class="lbox__fig u-m0">
-    <img alt="">
-    <figcaption class="lbox__cap"></figcaption>
-  </figure>
-  <button class="lbox__nav lbox__nav--n" type="button" aria-label="Photographie suivante">
-    <svg width="9" height="14" viewBox="0 0 9 14" fill="none"><path d="m1 1 6 6-6 6" stroke="currentColor" stroke-width="1.2"/></svg>
-  </button>
-  <button class="lbox__x" type="button" aria-label="Fermer">
-    <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="m1 1 12 12M13 1 1 13" stroke="currentColor" stroke-width="1.2"/></svg>
-  </button>
-</div>
-
-<!-- ==================== PIED ==================== -->
-<footer class="site-footer">
+<footer class="ft">
   <div class="wrap">
-    <div class="foot__g">
-      <div>
-        <picture class="foot__logo"><source srcset="assets/img/logo-light.webp" type="image/webp"><img src="assets/img/logo-light.png" alt="Dyani Hospitality" width="880" height="231"></picture>
-        <p class="foot__b">Formation des équipes, standards de service et organisation opérationnelle pour l’hôtellerie et la restauration au Maroc.</p>
-      </div>
-      <nav aria-label="Navigation du pied de page">
-        <h4>Navigation</h4>
-        <ul>
-          <li><button class="lbtn" type="button" data-go="interventions">Interventions</button></li>
-          <li><button class="lbtn" type="button" data-go="methode">Méthode</button></li>
-          <li><button class="lbtn" type="button" data-go="terrain">Sur le terrain</button></li>
-          <li><button class="lbtn" type="button" data-go="formations">Formations</button></li>
-          <li><button class="lbtn" type="button" data-go="etablissements">Établissements</button></li>
-          <li><button class="lbtn" type="button" data-go="constantin">Étude de cas</button></li>
-          <li><button class="lbtn" type="button" data-go="fondateur">Le fondateur</button></li>
-        </ul>
+    <p class="ft__big split-words">Le service ne s’improvise pas. <em>Il s’organise.</em></p>
+    <div class="ft__g">
+      <picture class="ft__logo"><source srcset="assets/img/logo-light.webp" type="image/webp"><img src="assets/img/logo-light.png" alt="Dyani Hospitality" width="880" height="231" loading="lazy"></picture>
+      <nav aria-label="Pied de page">
+        <a href="#methode">Méthode</a><a href="#terrain">Sur le terrain</a><a href="#constantin">Étude de cas</a><a href="#formations">Formations</a><a href="#fondateur">Le fondateur</a><a href="#contact">Contact</a>
       </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li data-coord="mail" data-coord-link></li>
-          <li data-coord="tel" data-coord-link></li>
-          <li>Tanger, Maroc</li>
-        </ul>
-      </div>
-      <!-- Colonne « Informations » retirée à la demande du client.
-           Les pages /legal/ et /en/legal/ existent toujours et restent
-           accessibles ; il suffit de rétablir ce bloc pour les relier. -->
+      <div class="ft__c"><span data-coord="mail"></span><span data-coord="tel"></span><span>Tanger, Maroc</span></div>
     </div>
-    <div class="foot__bt">
-      <span>&copy; <span id="year"></span> Dyani Hospitality. Tous droits réservés.</span>
-      <span>Formation et conseil en Hospitality — Maroc</span>
-    </div>
+    <div class="ft__bt"><span>© <span id="year">2026</span> Dyani Hospitality</span><span>Formation et conseil en Hospitality — Maroc</span></div>
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20260924" defer></script>
+<script src="v2.js?v=20260924" defer></script>
 </body>
 </html>
