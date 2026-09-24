@@ -114,6 +114,30 @@ et l'échec ressemble à tort à une clé invalide.
 
 ## Ce que la mise en ligne a demandé (fait le 24/09/2026)
 
+## Suivi — 24-25/09/2026
+
+- `/v2/` n'existe plus du tout : les règles de redirection ont été
+  retirées de `_redirects`. L'adresse renvoie une simple 404, comme
+  n'importe quelle page qui n'a jamais existé.
+- **Pages légales refondues** à la charte v2 (`legal/index.html`,
+  `en/legal/index.html`) : même contenu, nouvel habillage. Elles
+  restent `index, follow` et dans `sitemap.xml` — aucun lien depuis le
+  site ne pointe vers elles pour l'instant. **À publier avec un lien
+  quand Ibrahim le demandera.**
+  - L'en-tête ne réutilise pas `.is-solid` (pensé pour flotter,
+    transparent, par-dessus une photo qui défile) : posé en dur au
+    sommet d'une page sans photo, il rendait un gris délavé. Une
+    classe dédiée, `.hd--doc`, pose directement le graphite plein.
+  - Le sélecteur de langue, caché en mobile ailleurs sur le site car
+    remplacé par le menu burger, est rétabli sur ces pages : elles
+    n'ont pas de burger pour le remplacer.
+- **Nettoyage** : `assets/js/main.js`, `assets/css/style.css` et
+  `assets/fonts/` (Bricolage Grotesque, Manrope ancienne monture)
+  supprimés — plus aucune page ne les chargeait après la refonte des
+  pages légales. Le `.gitignore` exclut désormais `*.zip` et
+  `.claude/` : aucun outillage de travail ne doit se retrouver dans le
+  dépôt du client.
+
 1. `v2/index.html` et `v2/en/index.html` sont devenus `index.html` et
    `en/index.html` ; `v2.css`, `v2.js`, `v2-boot.js` et `fonts/` sont
    remontés à la racine.
@@ -127,8 +151,9 @@ et l'échec ressemble à tort à une clé invalide.
    les pages correspondantes, pour que les liens déjà partagés ne
    tombent pas en 404.
 6. `assets/js/main.js` retiré : plus aucune page ne le chargeait.
-   `assets/css/style.css` et `assets/fonts/` restent — les pages
-   légales s'en servent encore.
+   Les pages légales, refondues à la charte v2, ne dépendent plus
+   de `assets/css/style.css` ni de `assets/fonts/` : ces fichiers
+   ont été retirés à leur tour.
 
 ## Reste à faire
 

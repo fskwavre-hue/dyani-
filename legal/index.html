@@ -14,30 +14,29 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="theme-color" content="#1C1E24">
+<meta name="theme-color" content="#14151A">
 
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16.png">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 
-<link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../assets/fonts/bricolage-latin.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../assets/fonts/manrope-latin.woff2">
-<link rel="stylesheet" href="../assets/css/style.css?v=20260921b">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../fonts/cormorant-garamond-latin-500-normal.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../fonts/manrope-latin-400-normal.woff2">
+<link rel="stylesheet" href="../v2.css?v=20260924">
 </head>
-<body class="loaded">
+<body>
 
-<header class="site-header stuck" id="header">
-  <nav class="nav" aria-label="Navigation principale">
-    <a class="brand" href="/" aria-label="Dyani Hospitality"><picture><source srcset="../assets/img/logo.webp" type="image/webp"><img src="../assets/img/logo.png" alt="Dyani Hospitality" width="880" height="231"></picture></a>
-    <div class="nav__act">
-      <div class="lang-sw">
-        <a href="/legal/" hreflang="fr" lang="fr" aria-current="true">FR</a>
-        <a href="/en/legal/" hreflang="en" lang="en">EN</a>
-      </div>
-    </div>
-  </nav>
+<!-- .hd--doc pose un fond opaque en dur (voir v2.css) : sans photo
+     derrière l'en-tête, il lui faut sa propre couleur. Aucun script
+     n'est chargé sur cette page — rien ne l'ajouterait. -->
+<header class="hd hd--doc">
+  <a class="hd__brand" href="/" aria-label="Dyani Hospitality — retour au site">
+    <picture><source srcset="../assets/img/logo-light.webp" type="image/webp"><img src="../assets/img/logo-light.png" alt="Dyani Hospitality" width="880" height="231"></picture>
+  </a>
+  <div class="hd__act">
+    <div class="lang"><a href="/legal/" hreflang="fr" aria-current="true">FR</a><a href="/en/legal/" hreflang="en">EN</a></div>
+  </div>
 </header>
 
 <main class="doc" id="main">
@@ -49,7 +48,7 @@
         Retour au site
       </a>
 
-      <h1 class="display doc__t">Mentions légales et confidentialité</h1>
+      <h1 class="doc__t">Mentions légales et confidentialité</h1>
       <p class="doc__maj">Dernière mise à jour&nbsp;: 18 septembre 2026</p>
 
 
@@ -168,11 +167,11 @@
   </div>
 </main>
 
-<footer class="site-footer">
+<footer class="ft ft--doc">
   <div class="wrap">
-    <div class="foot__bt">
-      <span>&copy; <span id="year">2026</span> Dyani Hospitality. Tous droits réservés.</span>
-      <span><a class="foot__a" href="/">Retour au site</a></span>
+    <div class="ft__bt">
+      <span>&copy; Dyani Hospitality</span>
+      <span><a href="/">Retour au site</a></span>
     </div>
   </div>
 </footer>

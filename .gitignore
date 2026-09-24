@@ -12,6 +12,12 @@ src vid et photo/
 # ferait doublon et alourdirait le déploiement pour rien.
 *.zip
 
+# Réglages d'outils locaux. Ce dépôt est celui du client : rien de
+# l'outillage de travail n'a à s'y retrouver.
+.claude/
+.vscode/
+.idea/
+
 # Résidus de système
 Thumbs.db
 desktop.ini

@@ -28,9 +28,7 @@ CSS et JavaScript que l'on dépose tels quels chez n'importe quel hébergeur.
 ├── fonts/                  Cormorant Garamond + Manrope (OFL)
 ├── REFONTE-V2.md           notice de la refonte (masquée au public)
 ├── assets/
-│   ├── css/style.css       ancienne feuille — sert encore aux pages légales
 │   ├── img/                photographies, icônes, image de partage
-│   ├── fonts/              anciennes polices — pages légales
 │   └── video/              séquence filmée
 └── src vid et photo/       ORIGINAUX fournis par le client (voir plus bas)
 ```
