@@ -268,8 +268,25 @@ const CONFIG = {
   /* ---------- vidéo ---------- */
   $$('.video').forEach((f) => {
     const v = $('video', f), b = $('.video__play', f);
-    b.addEventListener('click', () => { v.controls = true; v.play(); f.classList.add('is-playing'); });
+    const segs = $$('.video__seg', f);
+    const start = () => { v.controls = true; v.play(); f.classList.add('is-playing'); };
+    b.addEventListener('click', start);
     v.addEventListener('pause', () => { if (v.ended) { f.classList.remove('is-playing'); v.controls = false; } });
+    // tirets de scène : remplissage selon le temps de lecture, clic = saut à la scène
+    const fill = () => {
+      const t = v.currentTime;
+      segs.forEach((s, i) => {
+        const a = +s.dataset.t, z = segs[i + 1] ? +segs[i + 1].dataset.t : v.duration || a + 1;
+        s.style.setProperty('--f', Math.min(1, Math.max(0, (t - a) / (z - a))));
+      });
+    };
+    v.addEventListener('timeupdate', fill);
+    v.addEventListener('ended', () => segs.forEach((s) => s.style.removeProperty('--f')));
+    segs.forEach((s) => s.addEventListener('click', () => {
+      const seek = () => { v.currentTime = +s.dataset.t; fill(); };
+      v.readyState ? seek() : v.addEventListener('loadedmetadata', seek, { once: true });
+      start();
+    }));
   });
 
   /* ---------- visionneuse ---------- */

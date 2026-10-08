@@ -323,6 +323,17 @@ ol,ul{list-style:none;padding:0}
 .video.is-playing .video__play{opacity:0;pointer-events:none}
 .video figcaption{position:absolute;left:18px;right:18px;bottom:16px;display:flex;justify-content:space-between;font-size:.74rem;letter-spacing:.06em;color:rgba(246,245,242,.85);pointer-events:none}
 .video.is-playing figcaption{opacity:0}
+/* Tirets de scène, façon « stories » : un par séquence de la vidéo,
+   proportionnel à sa durée. Visibles dès l'affiche, ils se remplissent
+   à la lecture et permettent de sauter d'une scène à l'autre. */
+.video__segs{position:absolute;z-index:2;top:12px;left:14px;right:14px;display:flex;gap:5px}
+.video__seg{flex:var(--w) 1 0;height:20px;display:flex;align-items:center;cursor:pointer}
+.video__seg i{position:relative;display:block;width:100%;height:3px;border-radius:2px;background:rgba(246,245,242,.32);overflow:hidden;transition:height .3s var(--ease)}
+.video__seg i::after{content:"";position:absolute;inset:0;background:var(--os);transform:scaleX(var(--f,0));transform-origin:left}
+.video__seg:hover i,.video__seg:focus-visible i{height:5px}
+.video__seg:nth-child(1){--w:5.7}.video__seg:nth-child(2){--w:6.6}.video__seg:nth-child(3){--w:10}.video__seg:nth-child(4){--w:8.9}.video__seg:nth-child(5){--w:3}
+.video__seg:first-child{--f:1}
+.video.is-playing .video__seg:first-child{--f:0}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .card{text-align:left;display:flex;flex-direction:column;gap:0;color:var(--os)}
 .card__img{display:block;aspect-ratio:3/4;overflow:hidden;margin-bottom:22px;background:var(--navy)}
